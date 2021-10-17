@@ -1,6 +1,5 @@
 html {
   overflow-y: scroll;
-  font-size: 14px;
 }
 
 body {
@@ -8,7 +7,6 @@ body {
   margin: 0;
   font-family: "Noto Sans KR", "san-serif";
   font-size: 14px;
-  color: $black;
 
   //reset
   div,
@@ -37,11 +35,12 @@ body {
     list-style: none;
   }
 
-  cursor: none;
-
   a {
     text-decoration: none;
-    color: $black;
+    color:#222;
+    &:hover{
+      cursor: none;
+    }
   }
 
   .clearFix::after {

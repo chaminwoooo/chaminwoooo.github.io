@@ -1,6 +1,5 @@
 html {
   overflow-y: scroll;
-  font-size: 13px;
 }
 
 body {
@@ -8,8 +7,6 @@ body {
   margin: 0;
   font-family: "Noto Sans KR", "san-serif";
   font-size: 14px;
-  color: #222;
-  cursor: none;
 }
 
 body div,
@@ -43,6 +40,10 @@ body a {
   color: #222;
 }
 
+body a:hover {
+  cursor: none;
+}
+
 body .clearFix::after {
   content: "";
   display: block;
@@ -50,8 +51,6 @@ body .clearFix::after {
 }
 
 header {
-  --color-texta: #1d1d1d;
-  --color-textb: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,9 +83,9 @@ header nav ul {
 }
 
 header nav ul li {
-  padding: 0 8px;
+  padding-left: 12px;
 }
 
 header nav ul li:first-child {
-  padding: 0;
+  padding-left: 0;
 }

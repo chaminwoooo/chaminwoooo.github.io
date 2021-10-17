@@ -4,8 +4,6 @@
 
 // Index
 header {
-  --color-texta: #1d1d1d;
-  --color-textb: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,10 +22,10 @@ header {
       align-items: center;
 
       li {
-        padding: 0 8px;
+        padding-left: 12px;
 
         &:first-child {
-          padding: 0;
+          padding-left: 0;
         }
       }
     }
