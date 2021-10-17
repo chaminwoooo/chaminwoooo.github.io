@@ -1,0 +1,30 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans KR", "san-serif";
+  font-size: 14px;
+  cursor: none;
+}
+
+body *,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body div,
+body ul,
+body ol {
+  padding: 0;
+  margin: 0;
+}
+
+body ul,
+body li {
+  list-style: none;
+}
+
+body a {
+  text-decoration: none;
+}

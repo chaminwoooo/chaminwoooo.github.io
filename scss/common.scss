@@ -1,0 +1,52 @@
+html {
+  overflow-y: scroll;
+  font-size: 13px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans KR", "san-serif";
+  font-size: 14px;
+  color: $black;
+
+  //reset
+  div,
+  dl,
+  dt,
+  dd,
+  ul,
+  ol,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  form,
+  fieldset,
+  p,
+  button,
+  input {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  cursor: none;
+
+  a {
+    text-decoration: none;
+    color: $black;
+  }
+
+  .clearFix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
