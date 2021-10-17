@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   overflow-y: scroll;
   font-size: 13px;
@@ -51,6 +50,8 @@ body .clearFix::after {
 }
 
 header {
+  --color-texta: #1d1d1d;
+  --color-textb: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,12 +65,6 @@ header {
       flex-wrap: wrap;
   background-color: #e9ecef;
   padding: 0 24px;
-  --color-texta: #1d1d1d;
-  --color-textb: #fff;
-  /* 점선이 들어갈 ::after(pseudo)요소 만들고 크기값 설정해주기*/
-  /* hover된 링크의 글자 색상 정의(하얀색)*/
-  /* .hovered-link 선택자명은 추후 JS로 추가할 예정!*/
-  /* .gnb li a:hover::after의 svg에 배경이미지 지정!*/
 }
 
 header h1 {
@@ -94,48 +89,4 @@ header nav ul li {
 
 header nav ul li:first-child {
   padding: 0;
-}
-
-header .cursor {
-  width: 3rem;
-  height: 3rem;
-  border: 2px solid var(--color-texta);
-  border-radius: 50%;
-  position: absolute;
-  z-index: 1000;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  pointer-events: none;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  -webkit-transition-property: background, -webkit-transform;
-  transition-property: background, -webkit-transform;
-  transition-property: background, transform;
-  transition-property: background, transform, -webkit-transform;
-  -webkit-transform-origin: 100% 100%;
-          transform-origin: 100% 100%;
-  -webkit-backdrop-filter: sepia(20%);
-          backdrop-filter: sepia(20%);
-  background-size: cover;
-}
-
-header .cursor-glow {
-  -webkit-transform: scale(2);
-          transform: scale(2);
-  background-color: var(--color-texta);
-}
-
-header .gnb li a:hover::after {
-  width: calc(100% - 2rem);
-  height: 3px;
-  background-size: contain;
-  /* 배경 이미지(svg)가 알맞게 들어가도록*/
-}
-
-header .hovered-link {
-  color: var(--color-textb) !important;
-}
-
-header .hovered-link::after {
-  background-image: url("../img/mouse-circle.svg");
 }
