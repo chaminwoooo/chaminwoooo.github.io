@@ -51,6 +51,13 @@
   min-height: 1px;
   padding: $card-spacer-x;
   color: $card-color;
+
+  // Icons
+  .logo{
+    &-html{
+      background-image: url(../../../img/html-logo.png) none center center;
+    }
+  }
 }
 
 .card-title {

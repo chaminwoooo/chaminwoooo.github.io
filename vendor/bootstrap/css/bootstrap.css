@@ -5123,6 +5123,10 @@ input[type="button"].btn-block {
   padding: 1.25rem;
 }
 
+.card-body .logo-html {
+  background-image: url(../../../img/html-logo.png) none center center;
+}
+
 .card-title {
   margin-bottom: 0.75rem;
 }
