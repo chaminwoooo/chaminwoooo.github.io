@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coca-Cola</title>
-    
+
     <link rel="stylesheet" href="../css/main.css">
 </head>
+
 <body>
     <header>
         <div class="top-area">
@@ -23,19 +25,58 @@
         </div>
     </header>
     <article>
-        <section id="content-1">
-            <div class="box-container">
-                빨간색 영역은 텍스트 크게 해서 채우고 
-                아래 하얀색 영역은 음료수 고르는 박스컨테이너로 3개 ~ 4개 생성
-                > 애니메이션 필요 
-                'Choose me' or 'Click me' or 'Pick me'
-                mouseover 하면 애니메이션 효과 javascript 로 구현 
-                컨텐츠 - 1 이름 : 음료수>?
-            </div>
+        <section id="content-1" class="product-container">
+            <h2 class="main-title">PRODUCT</h2>
+            <ul class="product-wrap">
+                <li>
+                    <div class="img-wrap">
+                        <img src="../img/product_cocacola_modal_img1.jpeg" alt="">
+                        <div class="product-title">
+                            <p>ORIGINAL</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-wrap">
+                        <img src="../img/product_zero_modal_img1.jpeg" alt="">
+                        <div class="product-title">
+                            <p>ZERO SUGAR</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-wrap">
+                        <img src="../img/product_zeroc_modal_img1.jpeg" alt="">
+                        <div class="product-title">
+                            <p>ZERO CAFFEINE</p>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
         </section>
     </article>
     <footer>
         footer
     </footer>
+
+    <script>
+        // 마우스 호버시 이벤트인데 쿼리셀렉터올 을 쓰는 경우에는 꼭 for 나 forEach 문을 활용해야함
+        // 처음에 변수에 왜 's' 붙이는지 몰랐는데 파라미터 값에 단수로 작성해야되서 그런 것 같음 
+        // 's' 안붙이고 변수 선언 안해도 파라미터로 알아서 붙으니깐 잘 기억하고
+        // 화살표 함수 익숙해지게 자주 사용 
+        let productLists = document.querySelectorAll('.product-wrap li');
+        productLists.forEach(productList => {
+            productList.addEventListener("mouseover",function () {
+                console.log('hello');
+                productList.classList.add('hover');
+            });
+            productList.addEventListener("mouseleave",function () {
+                console.log('bye');
+                productList.classList.remove('hover');
+            });
+        });
+    </script>
 </body>
+
 </html>
