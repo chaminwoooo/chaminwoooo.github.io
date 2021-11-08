@@ -1,7 +1,7 @@
 // header menu
 const menuHeight = document.querySelector('header').offsetHeight;
 const sectionHeight = document.querySelector("#content-1").offsetTop;
-const sectionHeight2 = document.querySelector("#test").offsetTop;
+const sectionHeight2 = document.querySelector("#content-2").offsetTop;
 
 const nav1 = document.querySelector('.nav1');
 const nav2 = document.querySelector(".nav2");
@@ -31,4 +31,15 @@ productLists.forEach((productList) => {
     console.log("bye");
     productList.classList.remove("hover");
   });
+});
+
+
+
+// 브랜드 무한루프스크롤
+const scrollContainer = document.querySelector('.brand-list');
+scrollContainer.addEventListener('mouseover',()=>{
+  scrollContainer.style.transform = 'translate(-50%)'
+});
+scrollContainer.addEventListener('mouseout',()=>{
+  scrollContainer.style.transform = 'translate(0)'
 });

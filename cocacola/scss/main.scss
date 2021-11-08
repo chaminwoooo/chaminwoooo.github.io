@@ -63,6 +63,23 @@ header {
   background-position: top;
 }
 
+#content-2{
+  height: 100vh;
+  .main-title{
+    color: $black;
+  }
+  .brand-list{
+    display: flex;
+    overflow: hidden;
+    li{
+      margin-left: 12px;
+      img{
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
 //product-wrap
 .product-wrap {
   display: flex;
