@@ -273,7 +273,6 @@ header nav ul li:first-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
 }
 
 #content-2 .brand-list li {
@@ -282,6 +281,15 @@ header nav ul li:first-child {
 
 #content-2 .brand-list li img {
   border-radius: 10px;
+}
+
+#content-2 .swiper-container {
+  width: 100%;
+  margin-top: 32px;
+}
+
+#content-2 .swiper-container .swiper-slide {
+  width: 120px;
 }
 
 .product-wrap {

@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coca-Cola</title>
 
-    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/main.css">
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script defer src="../js/main.js"></script>
@@ -68,20 +68,51 @@
 
         <section id="content-2">
             <h2 class="main-title">BRANDS</h2>
-            <ul class="brand-list">
-                <li><img src="../img/cocacola-122x60.png" alt="코카콜라"></li>
-                <li><img src="../img/sprite-new-logo-122x60.rendition.120.60.png" alt=""></li>
-                <li><img src="../img/Fanta-122x60.rendition.120.60.jpg" alt=""></li>
-                <li><img src="../img/Schweppes-122x60.rendition.120.60.jpg" alt=""></li>
-                <li><img src="../img/toreta-122X60.rendition.120.60.jpg" alt=""></li>
-                <li><img src="../img/vitaminwater-122x60.rendition.120.60.jpg" alt=""></li>
-            </ul>
+                <div class="swiper-container mySwiper">
+                    <ul class="brand-list swiper-wrapper">
+                        <li class="swiper-slide"><img src="../img/cocacola-122x60.png" alt="코카콜라"></li>
+                        <li class="swiper-slide"><img src="../img/sprite-new-logo-122x60.rendition.120.60.png" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/Fanta-122x60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/Schweppes-122x60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/toreta-122X60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/Powerade-122x60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/vitaminwater-122x60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/DrPepper.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/Georgia-122x60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/Minute-Maid-122x60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/Pyeongchangsoo-122x60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/Cocopalm-122x60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/ambasa-122X60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/vio-logo-122x60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/Sun-of-Mate-122x60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/Sunny10-122x60.rendition.120.60.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../img/w-tea-logo-122.rendition.120.60.png" alt=""></li>
+                    </ul>
+                </div>
         </section>
+
+
     </article>
     <footer>
         footer
     </footer>
+    <script>
+        
+        const swiper = new Swiper('.mySwiper', {
+            slidesPerView:'auto',
+            speed:10e3,
+            delay:0,
+            autoplay:{
+                delay:0,
+                disableOnInteraction:!1
+            },
+            loop:true,
+            spaceBetween:20
+        })
 
+
+        
+    </script>
 </body>
 
 </html>

@@ -34,12 +34,3 @@ productLists.forEach((productList) => {
 });
 
 
-
-// 브랜드 무한루프스크롤
-const scrollContainer = document.querySelector('.brand-list');
-scrollContainer.addEventListener('mouseover',()=>{
-  scrollContainer.style.transform = 'translate(-50%)'
-});
-scrollContainer.addEventListener('mouseout',()=>{
-  scrollContainer.style.transform = 'translate(0)'
-});
