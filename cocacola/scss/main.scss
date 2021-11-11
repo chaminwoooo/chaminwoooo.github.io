@@ -46,112 +46,6 @@ header {
     }
   }
 }
-
-.main-title {
-  font-size: 32px;
-  color: $white;
-  text-align: center;
-  padding: 24px 0;
-}
-// content
-#content-1 {
-  width: 100%;
-  height: 100vh;
-  padding: 0 20px;
-  background: url(../img/hero_bg.png) center center no-repeat;
-  background-size: contain;
-  background-position: top;
-}
-
-#content-2{
-  height: 100vh;
-  .main-title{
-    color: $black;
-  }
-  .brand-list{
-    display: flex;
-    // overflow: hidden;
-    li{
-      margin-left: 12px;
-      img{
-        border-radius: 10px;
-      }
-    }
-  }
-  .swiper-container{
-    width: 100%;
-    margin-top: 32px;
-    .swiper-slide{
-      width: 120px;
-    }
-  }
-}
-
-//product-wrap
-.product-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 12px;
-  li {
-    position: relative;
-    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    margin: 2px 2px 2px 0;
-    & + li {
-      margin-left: 3%;
-    }
-    // hover 시 이벤트
-    &.hover {
-      animation: shake 0.1s ease-in-out 0.1s infinite alternate;
-
-      .product-title {
-        background-color: rgba(173, 181, 189, 0.5);
-        border-radius: 10px 10px 0 0;
-        transition: all 0.3s ease-in;
-        p {
-          opacity: 1;
-          transition: all 0.3s ease-in;
-        }
-      }
-    }
-    .img-wrap {
-      img {
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-      }
-    }
-    .product-title {
-      position: absolute;
-      top: 0;
-      z-index: 3;
-      display: block;
-      width: 100%;
-      padding: 12px 0;
-      text-align: center;
-
-      p {
-        opacity: 0;
-        color: $white;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 32px;
-      }
-    }
-  }
-}
-// shake animation
-@keyframes shake{
-  from{
-    transform: rotate(3deg);
-  }
-  to{
-    transform-origin: center;
-    transform: rotate(-3deg);
-  }
-}
 // box-continaer
 .box-wrap {
   width: 100%;
@@ -171,3 +65,119 @@ header {
     }
   }
 }
+
+
+.main-title {
+  font-size: 32px;
+  color: $black;
+  text-align: center;
+  padding: 24px 0;
+}
+// content
+#content-1 {
+  // shake animation
+  @keyframes shake {
+    from {
+      transform: rotate(3deg);
+    }
+    to {
+      transform-origin: center;
+      transform: rotate(-3deg);
+    }
+  }
+  width: 100%;
+  height: 100vh;
+  padding: 0 20px;
+  background: url(../img/hero_bg.png) center center no-repeat;
+  background-size: contain;
+  background-position: top;
+
+  // product-wrap
+  .product-wrap {
+    .main-title{
+      color: $white;
+    }
+    .product-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-top: 12px;
+      li {
+        position: relative;
+        box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        margin: 2px 2px 2px 0;
+        & + li {
+          margin-left: 3%;
+        }
+        // hover 시 이벤트
+        &.hover {
+          animation: shake 0.1s ease-in-out 0.1s infinite alternate;
+
+          .product-title {
+            background-color: rgba(173, 181, 189, 0.5);
+            border-radius: 10px 10px 0 0;
+            transition: all 0.3s ease-in;
+            p {
+              opacity: 1;
+              transition: all 0.3s ease-in;
+            }
+          }
+        }
+        .img-wrap {
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+          }
+        }
+        .product-title {
+          position: absolute;
+          top: 0;
+          z-index: 3;
+          display: block;
+          width: 100%;
+          padding: 12px 0;
+          text-align: center;
+
+          p {
+            opacity: 0;
+            color: $white;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 32px;
+          }
+        }
+      }
+    }
+  }
+
+  // brand-wrap
+  .brand-wrap {
+    .brand-list {
+      display: flex;
+      // overflow: hidden;
+      li {
+        margin-left: 12px;
+        img {
+          border-radius: 10px;
+        }
+      }
+    }
+    .swiper-container {
+      width: 100%;
+      margin-top: 32px;
+      overflow: hidden;
+      .swiper-slide {
+        width: 120px;
+      }
+    }
+  }
+}
+
+#content-2 {
+  padding: 0 20px;
+  height: 100vh;
+}
+
