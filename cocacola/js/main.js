@@ -34,3 +34,12 @@ productLists.forEach((productList) => {
 });
 
 
+// popup show/hide
+function popupShow() {
+  document.querySelector('.popup-wrap').className = 'popup-wrap show'
+}
+function popupClose() {
+  document.querySelector('.popup-wrap').className = 'popup-wrap'
+}
+document.querySelector('#popup-show').addEventListener('click',popupShow);
+document.querySelector('#popup-close').addEventListener('click',popupClose);
