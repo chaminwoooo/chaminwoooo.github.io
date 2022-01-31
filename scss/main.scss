@@ -1,86 +1,87 @@
 @import "reset.scss";
 @import "common.scss";
-header{
-    position: relative;
-    z-index: 2;
+header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 24px;
+  padding: 2% 4%;
+  font-size: 1.6rem;
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-wrap: nowrap;
-    margin-top: 24px;
-    padding: 16px 32px;
-    font-size: 20px;
-    font-weight: 500;
-    .logo{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        font-size: 36px;
-        font-weight: 700;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        width: 150px;
-        height: auto;
-        span{
-            width: 100px;
-            height: auto;
-            img{
-                width: 100%
-            }
-        };
+    justify-content: center;
+    width: 18%;
+    height: auto;
+    span {
+      width: 100px;
+      height: auto;
+      img {
+        width: 100%;
+        vertical-align: bottom;
+      }
     }
+  }
 
-    .header-border{
-
-        &-left-top{
-            position: absolute;
-            top: 10%;
-            left: 32px;
-            width: 35%;
-            height: 1px;
-            background-color: #303030;
-        }
-        &-left-bottom{
-            position: absolute;
-            top: 10%;
-            left: 32px;
-            width: 35%;
-            height: 1px;
-            background-color: #303030;
-        }
-        &-right-top{
-            position: absolute;
-            top: 10%;
-            right: 32px;
-            width: 35%;
-            height: 1px;
-            background-color: #303030;
-        }
-        &-right-bottom{
-            position: absolute;
-            top: 10%;
-            right: 32px;
-            width: 35%;
-            height: 1px;
-            background-color: #303030;
-        }
+  .header-border {
+    &-left-top {
+      position: absolute;
+      top: 10%;
+      left: 5%;
+      width: 35%;
+      height: 1px;
+      background-color: #303030;
     }
-
-    .copy{
-        &-info{
-            display: block;
-        }
-        &-clock{
-            display: block;
-            position: absolute;
-            right: 10rem;
-        }
+    &-left-bottom {
+      position: absolute;
+      bottom: 10%;
+      left: 5%;
+      width: 35%;
+      height: 1px;
+      background-color: #303030;
     }
+    &-right-top {
+      position: absolute;
+      top: 10%;
+      right: 5%;
+      width: 35%;
+      height: 1px;
+      background-color: #303030;
+    }
+    &-right-bottom {
+      position: absolute;
+      bottom: 10%;
+      right: 5%;
+      width: 35%;
+      height: 1px;
+      background-color: #303030;
+    }
+  }
+
+  .copy {
+    &-info {
+      display: block;
+      margin-left: 2%;
+      font-family: "Zen Kurenaido", sans-serif;
+    }
+    &-clock {
+      display: block;
+      position: absolute;
+      right: 5%;
+      margin-right: 2%;
+      font-family: "Zen Kurenaido", sans-serif;
+    }
+  }
 }
 
-.page{
-    &::before{
-    content: '';
+.page {
+  &::before {
+    content: "";
     width: 100%;
     height: 100%;
     background-image: url(../img/paper-texture-narrow.png);
@@ -91,15 +92,24 @@ header{
     left: 0;
     right: 0;
     z-index: 0;
-    }
+  }
 }
-.nav{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    padding: 32px 0;
-    font-size: 24px;
-    font-weight: 600;
+.nav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 32px 0;
+  font-size: 2.4rem;
+  position: relative;
+  z-index: 2;
+  font-family: "Zen Kurenaido", sans-serif;
+  li {
     position: relative;
-    z-index: 2;
+    .highlighted {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }

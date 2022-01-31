@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Zen+Kurenaido&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -14,9 +15,11 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
+}
+
+html {
+  font-size: 10px;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -26,7 +29,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-  line-height: 1;
+  line-height: 1.5;
 }
 
 ol, ul {
@@ -55,6 +58,7 @@ table {
 
 body {
   background-color: #e6e2dd;
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -66,9 +70,8 @@ header {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   margin-top: 24px;
-  padding: 16px 32px;
-  font-size: 20px;
-  font-weight: 500;
+  padding: 2% 4%;
+  font-size: 1.6rem;
 }
 
 header .logo {
@@ -77,8 +80,6 @@ header .logo {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 36px;
-  font-weight: 700;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,7 +88,7 @@ header .logo {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 150px;
+  width: 18%;
   height: auto;
 }
 
@@ -98,12 +99,13 @@ header .logo span {
 
 header .logo span img {
   width: 100%;
+  vertical-align: bottom;
 }
 
 header .header-border-left-top {
   position: absolute;
   top: 10%;
-  left: 32px;
+  left: 5%;
   width: 35%;
   height: 1px;
   background-color: #303030;
@@ -111,8 +113,8 @@ header .header-border-left-top {
 
 header .header-border-left-bottom {
   position: absolute;
-  top: 10%;
-  left: 32px;
+  bottom: 10%;
+  left: 5%;
   width: 35%;
   height: 1px;
   background-color: #303030;
@@ -121,7 +123,7 @@ header .header-border-left-bottom {
 header .header-border-right-top {
   position: absolute;
   top: 10%;
-  right: 32px;
+  right: 5%;
   width: 35%;
   height: 1px;
   background-color: #303030;
@@ -129,8 +131,8 @@ header .header-border-right-top {
 
 header .header-border-right-bottom {
   position: absolute;
-  top: 10%;
-  right: 32px;
+  bottom: 10%;
+  right: 5%;
   width: 35%;
   height: 1px;
   background-color: #303030;
@@ -138,16 +140,20 @@ header .header-border-right-bottom {
 
 header .copy-info {
   display: block;
+  margin-left: 2%;
+  font-family: "Zen Kurenaido", sans-serif;
 }
 
 header .copy-clock {
   display: block;
   position: absolute;
-  right: 10rem;
+  right: 5%;
+  margin-right: 2%;
+  font-family: "Zen Kurenaido", sans-serif;
 }
 
 .page::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   background-image: url(../img/paper-texture-narrow.png);
@@ -169,8 +175,20 @@ header .copy-clock {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   padding: 32px 0;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 2.4rem;
   position: relative;
   z-index: 2;
+  font-family: "Zen Kurenaido", sans-serif;
+}
+
+.nav li {
+  position: relative;
+}
+
+.nav li .highlighted {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
