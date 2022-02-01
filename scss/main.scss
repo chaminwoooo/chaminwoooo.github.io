@@ -71,9 +71,10 @@ header {
     }
     &-clock {
       display: block;
+      width: 8%;
+      white-space: nowrap;
       position: absolute;
       right: 5%;
-      margin-right: 2%;
       font-family: "Zen Kurenaido", sans-serif;
     }
   }
@@ -105,11 +106,29 @@ header {
   font-family: "Zen Kurenaido", sans-serif;
   li {
     position: relative;
+    &.hover {
+      .highlighted {
+        path {
+          display: block;
+          animation: highlightWord 0.5s ease-in-out forwards;
+        }
+      }
+    }
     .highlighted {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      path{
+        display: none;
+        stroke-dasharray: 180;
+        stroke-dashoffset: 180;
+      }
     }
+  }
+}
+@keyframes highlightWord {
+  to {
+    stroke-dashoffset: 0;
   }
 }

@@ -146,9 +146,10 @@ header .copy-info {
 
 header .copy-clock {
   display: block;
+  width: 8%;
+  white-space: nowrap;
   position: absolute;
   right: 5%;
-  margin-right: 2%;
   font-family: "Zen Kurenaido", sans-serif;
 }
 
@@ -185,10 +186,34 @@ header .copy-clock {
   position: relative;
 }
 
+.nav li.hover .highlighted path {
+  display: block;
+  -webkit-animation: highlightWord 0.5s ease-in-out forwards;
+          animation: highlightWord 0.5s ease-in-out forwards;
+}
+
 .nav li .highlighted {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.nav li .highlighted path {
+  display: none;
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+}
+
+@-webkit-keyframes highlightWord {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes highlightWord {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
