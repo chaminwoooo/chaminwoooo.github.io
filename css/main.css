@@ -69,9 +69,14 @@ header {
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 24px;
   padding: 2% 4%;
   font-size: 1.6rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 header .logo {
@@ -146,10 +151,7 @@ header .copy-info {
 
 header .copy-clock {
   display: block;
-  width: 8%;
-  white-space: nowrap;
-  position: absolute;
-  right: 5%;
+  margin-right: 2%;
   font-family: "Zen Kurenaido", sans-serif;
 }
 

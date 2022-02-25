@@ -5,9 +5,12 @@ header {
   z-index: 2;
   display: flex;
   flex-wrap: nowrap;
+  justify-content: space-between;
   margin-top: 24px;
   padding: 2% 4%;
   font-size: 1.6rem;
+  box-sizing: border-box;
+
   .logo {
     position: absolute;
     top: 50%;
@@ -71,10 +74,7 @@ header {
     }
     &-clock {
       display: block;
-      width: 8%;
-      white-space: nowrap;
-      position: absolute;
-      right: 5%;
+      margin-right: 2%;
       font-family: "Zen Kurenaido", sans-serif;
     }
   }
