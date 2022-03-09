@@ -58,7 +58,12 @@ table {
 
 body {
   background-color: #e6e2dd;
-  font-family: "Roboto", sans-serif;
+  font-family: "Zen Kurenaido", "Roboto", sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .hidden {
@@ -85,8 +90,6 @@ header {
   margin-top: 24px;
   padding: 2% 4%;
   font-size: 1.6rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 header .logo {
@@ -120,34 +123,25 @@ header .logo span img {
   vertical-align: bottom;
 }
 
-header .copy-info {
+header .copy {
   display: block;
   width: 38%;
   height: 100%;
   margin-left: 1%;
   padding: 1% 0;
-  font-family: "Zen Kurenaido", sans-serif;
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
 }
 
-header .copy-info span {
+header .copy.info span {
   margin-left: 2%;
 }
 
-header .copy-clock {
-  display: block;
+header .copy.clock {
   text-align: right;
-  width: 38%;
-  height: 100%;
-  padding: 1% 0;
-  margin-right: 1%;
-  font-family: "Zen Kurenaido", sans-serif;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
 }
 
-header .copy-clock #clock {
+header .copy.clock #clock {
   margin-right: 2%;
 }
 
@@ -177,7 +171,6 @@ header .copy-clock #clock {
   font-size: 2.4rem;
   position: relative;
   z-index: 2;
-  font-family: "Zen Kurenaido", sans-serif;
 }
 
 .nav li {
@@ -214,4 +207,46 @@ header .copy-clock #clock {
   to {
     stroke-dashoffset: 0;
   }
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 2% 4%;
+}
+
+.footer .info {
+  width: 50%;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 2% 4%;
+  position: relative;
+}
+
+.footer .info.intro .footer-img-wrap {
+  width: 100%;
+}
+
+.footer .info.intro .footer-img-wrap .txt-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .info.intro .footer-img-wrap .txt-wrap img {
+  width: 20%;
+}
+
+.footer .info.intro .footer-img-wrap img {
+  width: 50%;
+}
+
+.footer .info.contact {
+  border-left: 1px solid #000;
 }
