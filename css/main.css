@@ -76,6 +76,11 @@ body {
           clip-path: polygon(0 0, 0 0, 0 0);
 }
 
+.title.medium {
+  font-size: 24px;
+  font-weight: 500;
+}
+
 header {
   position: relative;
   z-index: 2;
@@ -213,40 +218,47 @@ header .copy.clock #clock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  padding: 2% 4%;
+  width: 90%;
+  margin: 0 auto;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 .footer .info {
-  width: 50%;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
+  width: 100%;
   padding: 2% 4%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-.footer .info.intro .footer-img-wrap {
+.footer .info .man-wrap {
+  width: 12%;
+}
+
+.footer .info .man-wrap img {
   width: 100%;
 }
 
-.footer .info.intro .footer-img-wrap .txt-wrap {
+.footer .info .txt-wrap {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
+  top: 10%;
+  left: 15%;
+  width: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.footer .info.intro .footer-img-wrap .txt-wrap img {
+.footer .info .txt-wrap img {
   width: 20%;
 }
 
-.footer .info.intro .footer-img-wrap img {
-  width: 50%;
-}
-
-.footer .info.contact {
-  border-left: 1px solid #000;
+.footer .info .contact {
+  display: block;
+  font-size: 16px;
 }

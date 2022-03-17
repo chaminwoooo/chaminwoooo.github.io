@@ -18,3 +18,8 @@ body {
   -webkit-clip-path: polygon(0 0, 0 0, 0 0);
           clip-path: polygon(0 0, 0 0, 0 0);
 }
+
+.title.medium {
+  font-size: 24px;
+  font-weight: 500;
+}

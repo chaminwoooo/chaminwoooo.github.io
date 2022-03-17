@@ -3,8 +3,8 @@ body {
   background-color: #e6e2dd;
   font-family: "Zen Kurenaido", "Roboto", sans-serif;
 }
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 .hidden {
   position: absolute;
@@ -13,4 +13,11 @@ body {
   margin: -1px;
   overflow: hidden;
   clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+.title {
+  &.medium {
+    font-size: 24px;
+    font-weight: 500;
+  }
 }
