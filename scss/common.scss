@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Zen+Kurenaido&display=swap");
 body {
   background-color: #e6e2dd;
+  background-image: url(../img/paper-texture-narrow.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   font-family: "Zen Kurenaido", "Roboto", sans-serif;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -15,9 +19,17 @@ body {
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
-.title {
-  &.medium {
-    font-size: 24px;
-    font-weight: 500;
-  }
+@mixin title-h2{
+  font-size: 36px;
+  font-weight: 600;
+}
+
+@mixin title-h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+@mixin title-h4 {
+  font-size: 20px;
+  font-weight: 500;
 }

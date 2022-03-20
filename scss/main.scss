@@ -1,7 +1,7 @@
 @import "reset.scss";
 @import "common.scss";
 
-// header
+/* header */
 header {
   position: relative;
   z-index: 2;
@@ -54,22 +54,9 @@ header {
     }
   }
 }
+/* // header */
 
-.page {
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-image: url(../img/paper-texture-narrow.png);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 0;
-  }
-}
+/* nav */
 .nav {
   display: flex;
   flex-wrap: nowrap;
@@ -107,6 +94,52 @@ header {
     stroke-dashoffset: 0;
   }
 }
+/* // nav */
+
+/* main */
+section.main-txt {
+  width: 90%;
+  margin: 0 auto;
+  padding: 5% 0;
+
+  .main-title{
+    @include title-h2;
+    letter-spacing: 0.08em;
+    position: relative;
+    margin-bottom: 2%;
+    &::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+    }
+  }
+  .stack-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 2% 0;
+    .img-wrap {
+      width: 45%;
+      img {
+        width: 100%;
+      }
+    }
+    .txt-wrap {
+      width: 50%;
+      h3 {
+        @include title-h3;
+      }
+      .desc-title {
+        @include title-h4;
+      }
+    }
+  }
+}
+/*// main */
 
 //footer
 .footer {
@@ -137,7 +170,10 @@ header {
         width: 20%;
       }
     }
-    .contact{
+    .contact {
+      .title {
+        @include title-h3;
+      }
       display: block;
       font-size: 16px;
     }

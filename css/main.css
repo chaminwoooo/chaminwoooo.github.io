@@ -58,6 +58,9 @@ table {
 
 body {
   background-color: #e6e2dd;
+  background-image: url(../img/paper-texture-narrow.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   font-family: "Zen Kurenaido", "Roboto", sans-serif;
 }
 
@@ -76,11 +79,7 @@ body {
           clip-path: polygon(0 0, 0 0, 0 0);
 }
 
-.title.medium {
-  font-size: 24px;
-  font-weight: 500;
-}
-
+/* header */
 header {
   position: relative;
   z-index: 2;
@@ -150,20 +149,8 @@ header .copy.clock #clock {
   margin-right: 2%;
 }
 
-.page::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-image: url(../img/paper-texture-narrow.png);
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 0;
-}
-
+/* // header */
+/* nav */
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -214,6 +201,67 @@ header .copy.clock #clock {
   }
 }
 
+/* // nav */
+/* main */
+section.main-txt {
+  width: 90%;
+  margin: 0 auto;
+  padding: 5% 0;
+}
+
+section.main-txt .main-title {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  position: relative;
+  margin-bottom: 2%;
+}
+
+section.main-txt .main-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+
+section.main-txt .stack-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2% 0;
+}
+
+section.main-txt .stack-list .img-wrap {
+  width: 45%;
+}
+
+section.main-txt .stack-list .img-wrap img {
+  width: 100%;
+}
+
+section.main-txt .stack-list .txt-wrap {
+  width: 50%;
+}
+
+section.main-txt .stack-list .txt-wrap h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+section.main-txt .stack-list .txt-wrap .desc-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/*// main */
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -261,4 +309,9 @@ header .copy.clock #clock {
 .footer .info .contact {
   display: block;
   font-size: 16px;
+}
+
+.footer .info .contact .title {
+  font-size: 24px;
+  font-weight: 500;
 }
