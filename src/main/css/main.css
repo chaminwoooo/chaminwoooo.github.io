@@ -77,6 +77,12 @@ section.main-txt .stack-list .txt-wrap h3 { font-size: 2.4em; font-weight: 500; 
 
 section.main-txt .stack-list .txt-wrap .desc-title { font-size: 2em; font-weight: 500; font-weight: 600; }
 
+section.main-txt .stack-list .txt-wrap .progress-wrap { position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+section.main-txt .stack-list .txt-wrap .progress-wrap .progress-bg { position: relative; z-index: 2; width: 100%; height: 20px; }
+
+section.main-txt .stack-list .txt-wrap .progress-wrap .progress-fill { position: absolute; top: 0; left: 0; z-index: 3; width: 100%; height: 20px; }
+
 /*// main */
 .footer { display: -webkit-box; display: -ms-flexbox; display: flex; width: 90%; margin: 0 auto; border-top: 1px solid #000; border-bottom: 1px solid #000; }
 
