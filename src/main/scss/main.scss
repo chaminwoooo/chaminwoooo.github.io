@@ -140,6 +140,7 @@ section.main-txt {
       }
       .desc-title {
         @include title-h4;
+        font-weight: 600;
       }
     }
   }

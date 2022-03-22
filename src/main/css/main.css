@@ -75,7 +75,7 @@ section.main-txt .stack-list .txt-wrap { width: 50%; }
 
 section.main-txt .stack-list .txt-wrap h3 { font-size: 2.4em; font-weight: 500; }
 
-section.main-txt .stack-list .txt-wrap .desc-title { font-size: 2em; font-weight: 500; }
+section.main-txt .stack-list .txt-wrap .desc-title { font-size: 2em; font-weight: 500; font-weight: 600; }
 
 /*// main */
 .footer { display: -webkit-box; display: -ms-flexbox; display: flex; width: 90%; margin: 0 auto; border-top: 1px solid #000; border-bottom: 1px solid #000; }
