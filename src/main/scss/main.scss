@@ -117,15 +117,20 @@ section.main-txt {
       background-color: #000;
     }
   }
+
+  // StackList 
   .stack-list {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    align-items: flex-start;
     padding: 2% 0;
     .img-wrap {
       width: 45%;
+      text-align: center;
       img {
-        width: 100%;
+        width: 50%;
+        max-width: 200px;
       }
     }
     .txt-wrap {
@@ -175,7 +180,7 @@ section.main-txt {
         @include title-h3;
       }
       display: block;
-      font-size: 16px;
+      font-size: 1.6em;
     }
   }
 }
