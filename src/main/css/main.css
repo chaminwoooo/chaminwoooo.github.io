@@ -61,7 +61,7 @@ header .copy.clock #clock { margin-right: 2%; }
 /* main */
 section.main-txt { width: 90%; margin: 0 auto; padding: 5% 0; }
 
-section.main-txt .main-title { font-size: 36px; font-weight: 600; letter-spacing: 0.08em; position: relative; margin-bottom: 2%; }
+section.main-txt .main-title { font-size: 3.6em; font-weight: 600; letter-spacing: 0.08em; position: relative; margin-bottom: 2%; }
 
 section.main-txt .main-title::before { content: ''; position: absolute; left: 0; bottom: -10px; width: 100%; height: 2px; background-color: #000; }
 
@@ -73,9 +73,9 @@ section.main-txt .stack-list .img-wrap img { width: 50%; max-width: 200px; }
 
 section.main-txt .stack-list .txt-wrap { width: 50%; }
 
-section.main-txt .stack-list .txt-wrap h3 { font-size: 24px; font-weight: 500; }
+section.main-txt .stack-list .txt-wrap h3 { font-size: 2.4em; font-weight: 500; }
 
-section.main-txt .stack-list .txt-wrap .desc-title { font-size: 20px; font-weight: 500; }
+section.main-txt .stack-list .txt-wrap .desc-title { font-size: 2em; font-weight: 500; }
 
 /*// main */
 .footer { display: -webkit-box; display: -ms-flexbox; display: flex; width: 90%; margin: 0 auto; border-top: 1px solid #000; border-bottom: 1px solid #000; }
@@ -92,4 +92,4 @@ section.main-txt .stack-list .txt-wrap .desc-title { font-size: 20px; font-weigh
 
 .footer .info .contact { display: block; font-size: 1.6em; }
 
-.footer .info .contact .title { font-size: 24px; font-weight: 500; }
+.footer .info .contact .title { font-size: 2.4em; font-weight: 500; }
