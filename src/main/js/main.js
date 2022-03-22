@@ -24,3 +24,32 @@ hightedWords.forEach((hightedWord) => {
         hightedWord.classList.remove("hover");
     });
 });
+
+// stacklist
+const percentHtml = document.querySelector('.progress-html .percent');
+const percentCss = document.querySelector('.progress-css .percent');
+const percentJs = document.querySelector('.progress-js .percent');
+
+const progressHtml = document.querySelector('.progress-fill.case1 rect');
+const progressCss = document.querySelector('.progress-fill.case2 rect');
+const progressJs = document.querySelector('.progress-fill.case3 rect');
+
+const numHtml = percentHtml.innerText = "80"
+const numCss = percentCss.innerText = "80"
+const numJs = percentJs.innerText = "65"
+
+// progressHtml.style.width = numHtml + "%"
+progressCss.style.width = numCss + "%"
+progressJs.style.width = numJs + "%"
+
+function progressBar() {
+    // progressHtml.animate({
+    //     width:"0%",width:numHtml +"%"
+    // },2000);
+
+    // progressHtml.setTimeout(() => {
+    //     progressHtml.style.width = numHtml + "%"
+    // }, 2000);
+    
+}
+progressBar();
