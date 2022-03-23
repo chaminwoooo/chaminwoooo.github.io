@@ -33,3 +33,10 @@ body {
   font-size: 2em;
   font-weight: 500;
 }
+
+@mixin txt-list{
+  font-size: 1.6em;
+  li+li{
+    margin-top: 1.2em;
+  }
+}
