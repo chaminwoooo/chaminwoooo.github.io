@@ -1,5 +1,5 @@
-@import "reset.scss";
-@import "common.scss";
+@import 'reset.scss';
+@import 'common.scss';
 
 /* header */
 header {
@@ -108,7 +108,7 @@ section.main-txt {
     position: relative;
     margin-bottom: 2%;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       bottom: -10px;
@@ -132,15 +132,15 @@ section.main-txt {
         width: 50%;
       }
     }
-    .profile-txt{
+    .profile-txt {
       width: 50%;
       font-size: 1.6em;
       letter-spacing: -0.05em;
       word-break: keep-all;
-      .profile-desc{
+      .profile-desc {
       }
     }
-    .profile-edu{
+    .profile-edu {
       @include txt-list;
       width: 100%;
       margin-top: 4em;
@@ -164,11 +164,8 @@ section.main-txt {
     }
     .txt-wrap {
       width: 50%;
-      h3 {
+      h3.desc-title {
         @include title-h3;
-      }
-      .desc-title {
-        @include title-h4;
         font-weight: 600;
       }
       .progress-wrap {
@@ -181,6 +178,9 @@ section.main-txt {
           z-index: 2;
           width: 100%;
           height: 20px;
+          rect {
+            fill: #495057;
+          }
         }
         .progress-fill {
           position: absolute;
@@ -189,11 +189,34 @@ section.main-txt {
           z-index: 3;
           width: 100%;
           height: 20px;
+          rect {
+            fill: #868e96;
+          }
+        }
+        .progress-percent {
+          font-size: 1.8em;
+          font-weight: 600;
+          margin-top: 0.8em;
         }
       }
 
       .desc-txt {
         @include txt-list;
+      }
+    }
+  }
+
+  // Career
+  .career-list {
+    margin-top: 2.4em;
+    @include txt-list;
+    li {
+      dt {
+        font-size: 1.6em;
+        font-weight: 500;
+      }
+      dd {
+        font-size: 1.4em;
       }
     }
   }
@@ -214,7 +237,7 @@ section.main-txt {
     display: flex;
     align-items: flex-end;
     .man-wrap {
-      width: 12%;
+      width: 20%;
       img {
         width: 100%;
       }
@@ -222,7 +245,7 @@ section.main-txt {
     .txt-wrap {
       position: absolute;
       top: 10%;
-      left: 15%;
+      left: 20%;
       width: 10%;
       display: flex;
       img {

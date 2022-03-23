@@ -16,11 +16,11 @@ setInterval(GetClock, 1000);
 const hightedWords = document.querySelectorAll('.nav li');
 hightedWords.forEach((hightedWord) => {
     hightedWord.addEventListener("mouseover", function () {
-        console.log("hello");
+        // console.log("hello");
         hightedWord.classList.add("hover");
     });
     hightedWord.addEventListener("mouseleave", function () {
-        console.log("bye");
+        // console.log("bye");
         hightedWord.classList.remove("hover");
     });
 });
@@ -29,27 +29,53 @@ hightedWords.forEach((hightedWord) => {
 const percentHtml = document.querySelector('.progress-html .percent');
 const percentCss = document.querySelector('.progress-css .percent');
 const percentJs = document.querySelector('.progress-js .percent');
-
 const progressHtml = document.querySelector('.progress-fill.case1 rect');
 const progressCss = document.querySelector('.progress-fill.case2 rect');
 const progressJs = document.querySelector('.progress-fill.case3 rect');
+let numHtml = percentHtml.innerText = 85
+let numCss = percentCss.innerText = 80
+let numJs = percentJs.innerText = 65
 
-const numHtml = percentHtml.innerText = "80"
-const numCss = percentCss.innerText = "80"
-const numJs = percentJs.innerText = "65"
-
-// progressHtml.style.width = numHtml + "%"
+progressHtml.style.width = numHtml + "%"
 progressCss.style.width = numCss + "%"
 progressJs.style.width = numJs + "%"
 
-function progressBar() {
-    // progressHtml.animate({
-    //     width:"0%",width:numHtml +"%"
-    // },2000);
+function progressIncrease() {
+    const progressHtml = document.querySelector('.progress-fill.case1 rect');
+    let progressWidth = 0;
+    let intervalHtml  = setInterval(frame, 20);
+    let intervalCss  = setInterval(frame, 20);
+    let intervalJs  = setInterval(frame, 20);
 
-    // progressHtml.setTimeout(() => {
-    //     progressHtml.style.width = numHtml + "%"
-    // }, 2000);
-    
+    function frame() {
+        if (progressWidth >= numHtml) {
+            clearInterval(intervalHtml);
+        }else {
+            progressWidth++;
+            progressHtml.style.width = progressWidth + '%';
+        }
+        if (progressWidth >= numCss) {
+            clearInterval(intervalCss);
+        }else {
+            progressWidth++;
+            progressCss.style.width = progressWidth + '%';
+        }
+        if (progressWidth >= numJs) {
+            clearInterval(intervalJs);
+        }else {
+            progressWidth++;
+            progressJs.style.width = progressWidth + '%';
+        }
+    }
 }
-progressBar();
+progressIncrease();
+
+// planNav.find('li').click(function(){
+//     $(window).off('scroll.planNavEvent');
+//     navLayer.addClass('fixed');
+//     navLayer.find('.navImg img').removeClass('on');
+//     navLayer.find('.navImg img').eq($(this).index()).addClass('on');
+//     $('html,body').stop().animate({scrollTop:$('#'+$(this).text()).offset().top - (navHeight + topHeight)},800,function(){
+//         panNavInit();
+//     });
+// });
