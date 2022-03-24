@@ -26,6 +26,10 @@ https://velog.io/@junghyeonsu/%EA%B7%B8%EB%9F%B0-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%
 https://hyeonsu-jung.vercel.app/
 포트폴리오 참고자료 (내용구성)
 
+
+https://velog.io/@miyoni/nav-bar
+네비 스크롤 이벤트 스크립트
+
 test
 1. HTML5 & CSS3
 - HTML 구조, HTML 태그의 종류
@@ -187,3 +191,48 @@ test
 } -->
 
 
+<!-- js -->
+<!-- // stacklist
+const percentHtml = document.querySelector('.progress-html .percent');
+const percentCss = document.querySelector('.progress-css .percent');
+const percentJs = document.querySelector('.progress-js .percent');
+const progressHtml = document.querySelector('.progress-fill.case1 rect');
+const progressCss = document.querySelector('.progress-fill.case2 rect');
+const progressJs = document.querySelector('.progress-fill.case3 rect');
+let numHtml = percentHtml.innerText = 85
+let numCss = percentCss.innerText = 80
+let numJs = percentJs.innerText = 65
+
+progressHtml.style.width = numHtml + "%"
+progressCss.style.width = numCss + "%"
+progressJs.style.width = numJs + "%"
+
+function progressIncrease() {
+    const progressHtml = document.querySelector('.progress-fill.case1 rect');
+    let progressWidth = 0;
+    let intervalHtml  = setInterval(frame, 20);
+    let intervalCss  = setInterval(frame, 20);
+    let intervalJs  = setInterval(frame, 20);
+
+    function frame() {
+        if (progressWidth >= numHtml) {
+            clearInterval(intervalHtml);
+        }else {
+            progressWidth++;
+            progressHtml.style.width = progressWidth + '%';
+        }
+        if (progressWidth >= numCss) {
+            clearInterval(intervalCss);
+        }else {
+            progressWidth++;
+            progressCss.style.width = progressWidth + '%';
+        }
+        if (progressWidth >= numJs) {
+            clearInterval(intervalJs);
+        }else {
+            progressWidth++;
+            progressJs.style.width = progressWidth + '%';
+        }
+    }
+}
+progressIncrease(); -->

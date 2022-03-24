@@ -75,45 +75,20 @@ section.main-txt .profile-wrap .profile-picture img { width: 50%; }
 
 section.main-txt .profile-wrap .profile-txt { width: 50%; font-size: 1.6em; letter-spacing: -0.05em; word-break: keep-all; }
 
-section.main-txt .profile-wrap .profile-edu { font-size: 1.6em; width: 100%; margin-top: 4em; }
+section.main-txt .work-wrap { margin-top: 2.4em; font-size: 1.6em; }
 
-section.main-txt .profile-wrap .profile-edu li + li { margin-top: 1.2em; }
+section.main-txt .work-wrap li + li { margin-top: 1.2em; }
 
-section.main-txt .stack-list { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; padding: 4% 0; }
+section.main-txt .work-wrap li dt { font-size: 1.6em; font-weight: 500; }
 
-section.main-txt .stack-list .img-wrap { width: 30%; text-align: center; }
+section.main-txt .work-wrap li dd { font-size: 1.4em; }
 
-section.main-txt .stack-list .img-wrap img { width: 100%; max-width: 200px; }
+section.main-txt .career-wrap { font-size: 1.6em; width: 100%; margin-top: 4em; }
 
-section.main-txt .stack-list .txt-wrap { width: 50%; }
-
-section.main-txt .stack-list .txt-wrap h3.desc-title { font-size: 2.4em; font-weight: 500; font-weight: 600; }
-
-section.main-txt .stack-list .txt-wrap .progress-wrap { position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 4% 0; }
-
-section.main-txt .stack-list .txt-wrap .progress-wrap .progress-bg { position: relative; z-index: 2; width: 100%; height: 20px; }
-
-section.main-txt .stack-list .txt-wrap .progress-wrap .progress-bg rect { fill: #495057; }
-
-section.main-txt .stack-list .txt-wrap .progress-wrap .progress-fill { position: absolute; top: 0; left: 0; z-index: 3; width: 100%; height: 20px; }
-
-section.main-txt .stack-list .txt-wrap .progress-wrap .progress-fill rect { fill: #868e96; }
-
-section.main-txt .stack-list .txt-wrap .progress-wrap .progress-percent { font-size: 1.8em; font-weight: 600; margin-top: 0.8em; }
-
-section.main-txt .stack-list .txt-wrap .desc-txt { font-size: 1.6em; }
-
-section.main-txt .stack-list .txt-wrap .desc-txt li + li { margin-top: 1.2em; }
-
-section.main-txt .career-list { margin-top: 2.4em; font-size: 1.6em; }
-
-section.main-txt .career-list li + li { margin-top: 1.2em; }
-
-section.main-txt .career-list li dt { font-size: 1.6em; font-weight: 500; }
-
-section.main-txt .career-list li dd { font-size: 1.4em; }
+section.main-txt .career-wrap li + li { margin-top: 1.2em; }
 
 /*// main */
+/* footer */
 .footer { display: -webkit-box; display: -ms-flexbox; display: flex; width: 90%; margin: 0 auto; border-top: 1px solid #000; border-bottom: 1px solid #000; }
 
 .footer .info { width: 100%; padding: 2% 4%; position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
@@ -129,3 +104,5 @@ section.main-txt .career-list li dd { font-size: 1.4em; }
 .footer .info .contact { display: block; font-size: 1.6em; }
 
 .footer .info .contact .title { font-size: 2.4em; font-weight: 500; }
+
+/*// footer */

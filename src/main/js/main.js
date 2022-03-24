@@ -12,8 +12,14 @@ function GetClock() {
 GetClock();
 setInterval(GetClock, 1000);
 
+
 // nav hover event
 const hightedWords = document.querySelectorAll('.nav li');
+let About = document.querySelector('#about').offsetTop;
+let Works = document.querySelector('#works').offsetTop;
+let Career = document.querySelector('#career').offsetTop;
+let Playground = document.querySelector('#playGround').offsetTop;
+
 hightedWords.forEach((hightedWord) => {
     hightedWord.addEventListener("mouseover", function () {
         // console.log("hello");
@@ -23,59 +29,20 @@ hightedWords.forEach((hightedWord) => {
         // console.log("bye");
         hightedWord.classList.remove("hover");
     });
+    hightedWord.addEventListener('click',function(){
+        window.scroll({top:eval(this.innerText),behavior:'smooth'})
+        console.log('clickclick');
+        console.log('id값' + this.innerText)
+        
+    })
 });
 
-// stacklist
-const percentHtml = document.querySelector('.progress-html .percent');
-const percentCss = document.querySelector('.progress-css .percent');
-const percentJs = document.querySelector('.progress-js .percent');
-const progressHtml = document.querySelector('.progress-fill.case1 rect');
-const progressCss = document.querySelector('.progress-fill.case2 rect');
-const progressJs = document.querySelector('.progress-fill.case3 rect');
-let numHtml = percentHtml.innerText = 85
-let numCss = percentCss.innerText = 80
-let numJs = percentJs.innerText = 65
+// 스크롤 확인용
+document.addEventListener('scroll', function navScroll() {
+    let scrollY = document.documentElement.scrollTop;
+    console.log('scroll : ' + scrollY);
+});
 
-progressHtml.style.width = numHtml + "%"
-progressCss.style.width = numCss + "%"
-progressJs.style.width = numJs + "%"
 
-function progressIncrease() {
-    const progressHtml = document.querySelector('.progress-fill.case1 rect');
-    let progressWidth = 0;
-    let intervalHtml  = setInterval(frame, 20);
-    let intervalCss  = setInterval(frame, 20);
-    let intervalJs  = setInterval(frame, 20);
 
-    function frame() {
-        if (progressWidth >= numHtml) {
-            clearInterval(intervalHtml);
-        }else {
-            progressWidth++;
-            progressHtml.style.width = progressWidth + '%';
-        }
-        if (progressWidth >= numCss) {
-            clearInterval(intervalCss);
-        }else {
-            progressWidth++;
-            progressCss.style.width = progressWidth + '%';
-        }
-        if (progressWidth >= numJs) {
-            clearInterval(intervalJs);
-        }else {
-            progressWidth++;
-            progressJs.style.width = progressWidth + '%';
-        }
-    }
-}
-progressIncrease();
 
-// planNav.find('li').click(function(){
-//     $(window).off('scroll.planNavEvent');
-//     navLayer.addClass('fixed');
-//     navLayer.find('.navImg img').removeClass('on');
-//     navLayer.find('.navImg img').eq($(this).index()).addClass('on');
-//     $('html,body').stop().animate({scrollTop:$('#'+$(this).text()).offset().top - (navHeight + topHeight)},800,function(){
-//         panNavInit();
-//     });
-// });
