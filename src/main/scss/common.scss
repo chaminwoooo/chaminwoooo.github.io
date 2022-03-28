@@ -5,8 +5,10 @@ body {
   background-repeat: no-repeat;
   background-size: 100% auto;
   font-family: "Zen Kurenaido", "Roboto", sans-serif;
+  &::-webkit-scrollbar{
+    display: none;
+  }
 }
-
 * {
   box-sizing: border-box;
 }
@@ -20,6 +22,12 @@ body {
 }
 
 // mixin
+@mixin mediaQuery($size){
+  @media screen and (max-width:$size) {
+    @content;
+  }
+}
+
 @mixin title-h2{
   font-size: 3.6em;
   font-weight: 600;
