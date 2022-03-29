@@ -23,11 +23,9 @@ let Playground = document.querySelector('#playGround').offsetTop;
 function navEvent() {
     hightedWords.forEach((hightedWord) => {
         hightedWord.addEventListener("mouseover", function () {
-            // console.log("hello");
             hightedWord.classList.add("hover");
         });
         hightedWord.addEventListener("mouseleave", function () {
-            // console.log("bye");
             hightedWord.classList.remove("hover");
         });
         hightedWord.addEventListener('click', navMoveScroll);
@@ -37,19 +35,17 @@ navEvent();
 
 function navMoveScroll() {
     window.scroll({ top: eval(this.innerText), behavior: 'smooth' });
-    console.log('clickclick');
-    console.log('id값' + this.innerText);
 }
 
 // 스크롤 확인용
-document.addEventListener('scroll', function navScroll() {
-    let scrollY = document.documentElement.scrollTop;
-    console.log('scroll : ' + scrollY);
-    console.log('1 : ' + About);
-    console.log('2 : ' + Works);
-    console.log('3 : ' + Career);
-    console.log('4 : ' + Playground);
-});
+// document.addEventListener('scroll', function navScroll() {
+//     let scrollY = document.documentElement.scrollTop;
+//     console.log('scroll : ' + scrollY);
+//     console.log('1 : ' + About);
+//     console.log('2 : ' + Works);
+//     console.log('3 : ' + Career);
+//     console.log('4 : ' + Playground);
+// });
 
 window.addEventListener('resize',function () {
     About = document.querySelector('#about').offsetTop;
