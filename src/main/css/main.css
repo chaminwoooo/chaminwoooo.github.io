@@ -18,7 +18,7 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 
 table { border-collapse: collapse; border-spacing: 0; }
 
-body { background-color: #e6e2dd; background-image: url(../img/paper-texture-narrow.png); background-repeat: no-repeat; background-size: 100% auto; font-family: "Zen Kurenaido", "Roboto", sans-serif; }
+body { background-color: #e6e2dd; background-image: url(../img/paper-texture-narrow.png); background-repeat: no-repeat; background-size: 100% auto; font-family: 'Zen Kurenaido', 'Roboto', sans-serif; }
 
 body::-webkit-scrollbar { display: none; }
 
@@ -75,7 +75,11 @@ section.main-txt .profile-wrap .profile-picture { width: 50%; text-align: center
 
 section.main-txt .profile-wrap .profile-picture img { width: 50%; }
 
-section.main-txt .profile-wrap .profile-txt { width: 50%; font-size: 1.6em; letter-spacing: -0.05em; word-break: keep-all; }
+section.main-txt .profile-wrap .profile-txt { width: 50%; font-size: 3.6em; letter-spacing: -0.04em; word-break: keep-all; line-height: 2; font-weight: 600; }
+
+section.main-txt .profile-wrap .profile-txt .profile-desc .my-name { position: relative; font-size: 1.6em; margin: 0 2% 0 0; }
+
+section.main-txt .profile-wrap .profile-txt .profile-desc .my-name::before { content: ''; width: 100%; height: 0.4em; position: absolute; bottom: 0; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); background-color: #2f9e44; opacity: 0.5; }
 
 section.main-txt .work-wrap { margin-top: 2.4em; font-size: 1.6em; }
 
@@ -88,6 +92,8 @@ section.main-txt .work-wrap li dd { font-size: 1.4em; }
 section.main-txt .career-wrap { font-size: 1.6em; width: 100%; margin-top: 4em; }
 
 section.main-txt .career-wrap li + li { margin-top: 1.2em; }
+
+section.main-txt .career-wrap li p { font-size: 1.6em; line-height: 1.6; }
 
 section.main-txt .playground-wrap { position: relative; }
 
@@ -121,3 +127,7 @@ section.main-txt .playground-wrap .play-wrap img { width: 100%; }
 
 /*// footer */
 @media screen and (max-width: 321px) { html { font-size: 6px; } }
+
+@media screen and (max-width: 769px) { section.main-txt .profile-wrap { -ms-flex-wrap: wrap; flex-wrap: wrap; }
+  section.main-txt .profile-wrap .profile-picture { width: 100%; }
+  section.main-txt .profile-wrap .profile-txt { font-size: 2.4em; width: 100%; } }
