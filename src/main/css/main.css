@@ -130,4 +130,5 @@ section.main-txt .playground-wrap .play-wrap img { width: 100%; }
 
 @media screen and (max-width: 769px) { section.main-txt .profile-wrap { -ms-flex-wrap: wrap; flex-wrap: wrap; }
   section.main-txt .profile-wrap .profile-picture { width: 100%; }
-  section.main-txt .profile-wrap .profile-txt { font-size: 2.4em; width: 100%; } }
+  section.main-txt .profile-wrap .profile-txt { font-size: 2.4em; width: 100%; }
+  .nav-wrap .nav li.hover .highlighted path { display: none; } }

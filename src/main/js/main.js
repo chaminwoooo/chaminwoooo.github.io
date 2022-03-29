@@ -20,16 +20,20 @@ let Works = document.querySelector('#works').offsetTop;
 let Career = document.querySelector('#career').offsetTop;
 let Playground = document.querySelector('#playGround').offsetTop;
 
-function navEvent() {
+let navEvent = () => {
     hightedWords.forEach((hightedWord) => {
-        hightedWord.addEventListener("mouseover", function () {
+        navAddClass = () => {
             hightedWord.classList.add("hover");
-        });
-        hightedWord.addEventListener("mouseleave", function () {
+        };
+        navRemoveClass = () => {
             hightedWord.classList.remove("hover");
-        });
+        };
+        hightedWord.addEventListener("mouseover", navAddClass);
+        hightedWord.addEventListener("mouseleave", navRemoveClass);
+        hightedWord.addEventListener("touchstart", navAddClass);
+        hightedWord.addEventListener("touchend", navRemoveClass);
         hightedWord.addEventListener('click', navMoveScroll);
-    });    
+    });
 }
 navEvent();
 
@@ -47,11 +51,10 @@ function navMoveScroll() {
 //     console.log('4 : ' + Playground);
 // });
 
-window.addEventListener('resize',function () {
+window.addEventListener('resize', function () {
     About = document.querySelector('#about').offsetTop;
     Works = document.querySelector('#works').offsetTop;
     Career = document.querySelector('#career').offsetTop;
     Playground = document.querySelector('#playGround').offsetTop;
-
     navEvent();
 }) 

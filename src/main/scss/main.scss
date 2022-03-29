@@ -290,4 +290,20 @@ section.main-txt {
       }
     }
   }
+
+  // nav mobile에서 stoke 삭제
+  .nav-wrap {
+    .nav {
+      li {
+        &.hover {
+          .highlighted {
+            path {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
