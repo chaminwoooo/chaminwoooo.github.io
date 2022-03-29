@@ -200,6 +200,15 @@ section.main-txt {
         transition: all ease-in-out 1s;
       }
     }
+    .play-wrap{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 30%;
+      img{
+        width: 100%;
+      }
+    }
   }
 }
 /*// main */
