@@ -65,3 +65,5 @@ header .copy.clock #clock { margin-right: 2%; }
 .nav-wrap .nav li .highlighted { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 
 .nav-wrap .nav li .highlighted path { display: none; stroke-dasharray: 180; stroke-dashoffset: 180; }
+
+.title-main { font-size: 4.8em; font-family: 'Plaak-CondensedBold','sans-serif'; }

@@ -135,6 +135,11 @@ $YELLOW: #ffec99;
   }
 }
 
+@mixin title-main {
+  font-size: 4.8em;
+  font-family: 'Plaak-CondensedBold','sans-serif';
+}
+
 @mixin title-h2 {
   font-size: 3.6em;
   font-weight: 600;

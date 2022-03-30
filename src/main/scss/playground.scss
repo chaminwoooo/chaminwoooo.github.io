@@ -10,3 +10,7 @@ header {
 .nav-wrap {
   @include nav;
 }
+
+.title-main{
+    @include title-main;
+}
