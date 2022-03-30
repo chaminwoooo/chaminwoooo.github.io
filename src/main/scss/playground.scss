@@ -1,0 +1,12 @@
+@import 'reset.scss';
+@import 'common.scss';
+body {
+  background-color: $YELLOW;
+}
+
+header {
+  @include header;
+}
+.nav-wrap {
+  @include nav;
+}
