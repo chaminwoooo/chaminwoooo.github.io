@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Zen+Kurenaido&display=swap");
-body { background-color: #e6e2dd; background-image: url(../img/paper-texture-narrow.png); background-repeat: no-repeat; background-size: 100% auto; font-family: 'Zen Kurenaido', 'Roboto', sans-serif; }
+@import url("../../common/fonts/GTPressuraMono-Light.woff");
+@import url("../../common/fonts/GTPressuraMono-Light.woff2");
+@import url("../../common/fonts/GTPressuraMono.woff");
+@import url("../../common/fonts/GTPressuraMono.woff2");
+@import url("../../common/fonts/Plaak-CondensedBold.woff");
+@import url("../../common/fonts/Plaak-CondensedBold.woff2");
+@import url("../../common/fonts/Plaak-SemicondensedRegular.woff");
+@import url("../../common/fonts/Plaak-SemicondensedRegular.woff2");
+body { background-image: url(../../common/img/paper-texture-narrow.png); background-repeat: no-repeat; background-size: 100% auto; font-family: 'Zen Kurenaido', 'Roboto', sans-serif; }
 
 body::-webkit-scrollbar { display: none; }
 
