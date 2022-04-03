@@ -1,5 +1,8 @@
-@import url(../../main/scss/common.scss);
-@import url(../../main/scss/reset.scss);
+@import url(../../common/scss/reset.scss);
+@import url(../../common/scss/common.scss);
+@import url(../../common/scss/mixins.scss);
+@import url(../../common/scss/variables.scss);
+
 
 body {
   background-color: #e6e2dd;
