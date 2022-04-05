@@ -1,8 +1,139 @@
-@import url(../../common/scss/reset.scss);
-@import url(../../common/scss/common.scss);
-@import url(../../common/scss/mixins.scss);
-@import url(../../common/scss/variables.scss);
+@import url(../../common/css/reset.css);
+@import url(../../common/css/common.css);
+// @import url(../../common/scss/mixins.scss);
+// @import url(../../common/scss/variables.scss);
+//Color
+$BLACK: #000;
+$POINT: #2f9e44;
+$YELLOW: #ffec99;
 
+// mixin
+@mixin mediaQuery($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+
+// header
+@mixin header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding: 2% 4%;
+  font-size: 1.6rem;
+
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 18%;
+    height: auto;
+    a {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      span {
+        width: 100px;
+        height: auto;
+        img {
+          width: 100%;
+          vertical-align: bottom;
+        }
+      }
+    }
+  }
+
+  .copy {
+    display: block;
+    width: 38%;
+    height: 100%;
+    margin-left: 1%;
+    padding: 1% 0;
+    border-top: 1px solid $BLACK;
+    border-bottom: 1px solid $BLACK;
+    &.info {
+      span {
+        margin-left: 2%;
+      }
+    }
+    &.clock {
+      text-align: right;
+      #clock {
+        margin-right: 2%;
+      }
+    }
+  }
+}
+
+// nav
+@mixin nav {
+  width: 90%;
+  margin: 0 auto;
+  .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 16px 0;
+    font-size: 2.4rem;
+    position: relative;
+    z-index: 2;
+    li {
+      position: relative;
+      &.hover {
+        .highlighted {
+          path {
+            display: block;
+            animation: highlightWord 0.5s ease-in-out forwards;
+          }
+        }
+      }
+      .highlighted {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        path {
+          display: none;
+          stroke-dasharray: 180;
+          stroke-dashoffset: 180;
+        }
+      }
+    }
+  }
+}
+
+@mixin title-main {
+  font-size: 4.8em;
+  font-family: 'Plaak-CondensedBold','sans-serif';
+}
+
+@mixin title-h2 {
+  font-size: 3.6em;
+  font-weight: 600;
+}
+
+@mixin title-h3 {
+  font-size: 2.4em;
+  font-weight: 500;
+}
+
+@mixin title-h4 {
+  font-size: 2em;
+  font-weight: 500;
+}
+
+@mixin txt-list {
+  font-size: 1.6em;
+  li + li {
+    margin-top: 1.2em;
+  }
+}
 
 body {
   background-color: #e6e2dd;
