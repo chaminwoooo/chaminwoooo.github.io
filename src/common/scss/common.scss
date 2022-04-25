@@ -7,6 +7,9 @@
 @import url('../../common/fonts/Plaak-CondensedBold.woff2');
 @import url('../../common/fonts/Plaak-SemicondensedRegular.woff');
 @import url('../../common/fonts/Plaak-SemicondensedRegular.woff2');
+@import 'mixins';
+@import 'reset';
+@import 'variables';
 
 body {
   background-image: url(../../common/img/paper-texture-narrow.png);
