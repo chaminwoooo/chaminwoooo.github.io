@@ -1,0 +1,57 @@
+/* header */
+header {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding: 2% 4%;
+  font-size: 1.6rem;
+  z-index: 2;
+
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 18%;
+    height: auto;
+    a {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      span {
+        width: 100px;
+        height: auto;
+        img {
+          width: 100%;
+          vertical-align: bottom;
+        }
+      }
+    }
+  }
+
+  .copy {
+    display: block;
+    width: 38%;
+    height: 100%;
+    margin-left: 1%;
+    padding: 1% 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    &.info {
+      span {
+        margin-left: 2%;
+      }
+    }
+    &.clock {
+      text-align: right;
+      #clock {
+        margin-right: 2%;
+      }
+    }
+  }
+}
+/* // header */
