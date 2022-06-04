@@ -1,5 +1,3 @@
-@import '@/styles/header.scss';
-
 <template>
   <MainHeader/>
 </template>
@@ -15,7 +13,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
-@import url(@/);
+<style lang="scss">
+// @import './styles/common';
 </style>
 
