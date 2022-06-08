@@ -1,0 +1,43 @@
+/* nav */
+#MainNav {
+  width: 90%;
+  margin: 0 auto;
+  .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 16px 0;
+    font-size: 2.4rem;
+    position: relative;
+    z-index: 2;
+    li {
+      position: relative;
+      &.hover {
+        .highlighted {
+          path {
+            display: block;
+            animation: highlightWord 0.5s ease-in-out forwards;
+          }
+        }
+      }
+      .highlighted {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        path {
+          display: none;
+          stroke-dasharray: 180;
+          stroke-dashoffset: 180;
+        }
+      }
+    }
+  }
+}
+// nav animation
+@keyframes highlightWord {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* // nav */

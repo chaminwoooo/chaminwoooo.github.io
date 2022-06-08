@@ -12,7 +12,7 @@
 @import 'variables';
 
 body {
-  background-image: url(../images/paper-texture-narrow.png);
+  background-image: url(@/images/paper-texture-narrow.png);
   background-repeat: no-repeat;
   background-size: 100% auto;
   font-family: 'Zen Kurenaido', 'Roboto', sans-serif;
