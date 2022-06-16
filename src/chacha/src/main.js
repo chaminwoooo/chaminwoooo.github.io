@@ -20,10 +20,6 @@ setInterval(GetClock, 1000);
 
 // nav hover event
 const hightedWords = document.querySelectorAll('.nav li');
-// let About = document.querySelector('#about').offsetTop;
-// let Works = document.querySelector('#works').offsetTop;
-// let Career = document.querySelector('#career').offsetTop;
-// let Playground = document.querySelector('#playGround').offsetTop;
 
 let navEvent = () => {
     hightedWords.forEach((hightedWord) => {
@@ -46,13 +42,4 @@ function navMoveScroll() {
     window.scroll({ top: eval(this.innerText), behavior: 'smooth' });
 }
 
-// 스크롤 확인용
-// document.addEventListener('scroll', function navScroll() {
-//     let scrollY = document.documentElement.scrollTop;
-//     console.log('scroll : ' + scrollY);
-//     console.log('1 : ' + About);
-//     console.log('2 : ' + Works);
-//     console.log('3 : ' + Career);
-//     console.log('4 : ' + Playground);
-// });
 

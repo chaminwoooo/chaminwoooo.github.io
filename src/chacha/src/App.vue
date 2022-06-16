@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import MainHeader from './components/MainHeader.vue'
-import MainNav from './components/MainNav.vue'
-import MainContent from './components/MainContent.vue'
+import MainHeader from './components/main-header.vue'
+import MainNav from './components/main-nav.vue'
+import MainContent from './components/main-content.vue'
 
 export default {
   name: 'App',

@@ -51,6 +51,11 @@
 <script>
 export default {
   name: "MainNav",
+  data() {
+    return {
+        navList : ['About','Works','Career','Playgound'],
+    }
+  },
 };
 </script>
 
