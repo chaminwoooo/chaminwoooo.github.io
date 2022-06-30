@@ -1,21 +1,18 @@
 @import url('//fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Zen+Kurenaido&display=swap');
-// @import url('../fonts/GTPressuraMono-Light.woff');
-// @import url('../fonts/GTPressuraMono-Light.woff2');
-// @import url('../fonts/GTPressuraMono.woff');
-// @import url('../fonts/GTPressuraMono.woff2');
-// @import url('../fonts/Plaak-CondensedBold.woff');
-// @import url('../fonts/Plaak-CondensedBold.woff2');
-// @import url('../fonts/Plaak-SemicondensedRegular.woff');
-// @import url('../fonts/Plaak-SemicondensedRegular.woff2');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
 @import 'mixins';
 @import 'reset';
 @import 'variables';
 
+html {font-size: 10px;}
 body {
   background-image: url(@/images/paper-texture-narrow.png);
   background-repeat: no-repeat;
   background-size: 100% auto;
-  font-family: 'Zen Kurenaido', 'Roboto', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -32,4 +29,38 @@ body {
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
+[class*='-title'] {
+  @include font-title;
+}
+
+.bold {
+  @include bold;
+}
+
+.main-title {
+  position: relative;
+  margin: 0 0 2rem 0.4rem;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $BLACK;
+  }
+}
+
+.list-up {
+  padding: 0.5rem;
+  &__item{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+@include mediaQuery (425px) {
+  html {font-size: 6px;}
+}
 

@@ -1,39 +1,18 @@
-/* header */
 #mainHeader {
   position: relative;
-  padding: 2% 4%;
-  font-size: 1.6rem;
-  z-index: 2;
+  padding: 2rem 4rem 0;
+  text-align: center;
 
   .header {
-
-    &-logo {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-
-      &__icon {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
-        a {
-          width: 80px;
-          img {
-            width: 100%;
-          }
-        }
-      }
-    }
-
+    &-title {font-size: 4.8rem;}
     &-date {
-    display: block;
-    text-align: center;
-    width: 100%;
-    padding: 1% 0;
-    border-top: 1px solid #000;
-    border-bottom: 2px solid #000;
+      @include font-md;
+      display: block;
+      text-align: center;
+      width: 100%;
+      padding: 1rem 0;
+      border-top: 1px solid #000;
+      border-bottom: 2px solid #000;
     }
   }
 }
-/* // header */

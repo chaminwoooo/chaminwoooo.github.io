@@ -1,140 +1,87 @@
-@import 'common';
+@import "common";
 
-/* main */
-section.main-txt {
-  width: 90%;
-  margin: 0 auto;
-  padding: 5% 0;
+#main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  // main 공통
-  .main-title {
-    @include title-h2;
-    letter-spacing: 0.08em;
-    position: relative;
-    margin-bottom: 2%;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      width: 100%;
-      height: 2px;
-      background-color: $BLACK;
-    }
-  }
+// main
+.main-section {
+  width: 100%;
+  padding: 4rem;
 
-  //Profile
-  .profile-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    .profile-picture {
+  &__profile {
+    .profile-img {
       width: 50%;
-      text-align: center;
-      img {
-        width: 50%;
-      }
+      img {width: 100%;}
     }
+
     .profile-txt {
-      width: 50%;
-      font-size: 3.6em;
-      letter-spacing: -0.04em;
-      word-break: keep-all;
-      line-height: 2;
-      font-weight: 600;
-      .profile-desc {
-        .my-name {
-          position: relative;
-          font-size: 1.6em;
-          margin: 0 2% 0 0;
-
-          &::before {
-            content: "";
-            width: 100%;
-            height: 0.4em;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: $POINT;
-            opacity: 0.5;
-          }
+      &__desc {
+        @include font-md;
+        .bold {
+          @include font-lg;
         }
       }
     }
   }
 
-  // Works
-  .work-wrap {
-    margin-top: 2.4em;
-    @include txt-list;
-    li {
-      dt {
-        font-size: 1.6em;
-        font-weight: 500;
-      }
-      dd {
-        font-size: 1.4em;
+  &__works {
+    @include font-md;
+  }
+
+  &__career {
+    @include font-md;
+    .list-up {
+      &__item {
+        justify-content: flex-start;
+        span {
+          width: 20%;
+          margin-right: 4rem;
+        }
       }
     }
   }
 
-  // Career
-  .career-wrap {
-    @include txt-list;
-    width: 100%;
-    margin-top: 4em;
-    li {
-      p {
-        font-size: 1.6em;
-        line-height: 1.6;
-      }
-    }
-  }
-
-  // PlayGround
-  .playground-wrap {
+  &__playground {
     position: relative;
-    .man-wrap {
-      width: 30%;
-      margin: 8% 0 4%;
-      img {
-        width: 100%;
-      }
-    }
+    width: 100%;
+    background: url('../images/playgroud_bg.jpg') no-repeat;
+    background-size: contain;
+
+
     .playground-link {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 2.8em;
-      font-weight: 600;
-      &::before {
-        content: "";
-        width: 0;
-        height: 2px;
-        background-color: $BLACK;
+      @include font-xl;
+      @include bold;
+      padding-top: 50%;
+      a {
         position: absolute;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-      }
-      &:hover::before {
-        width: 100%;
-        transition: all ease-in-out 1s;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color: #087f5b;
       }
     }
-    .play-wrap {
+    .playground-desc{
+      @include font-sm;
       position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 30%;
-      img {
-        width: 100%;
+      &.right {
+        right: 1rem;
+        bottom: 1rem;
+      }
+      &.left {
+        left: 1rem;
+        bottom: 1rem;
       }
     }
+  }
+
+  &.sm {width: 40%;}
+  &.md {width: 60%;}
+
+  @include mediaQuery(425px) {
+    width: 100%;
   }
 }
-/*// main */
