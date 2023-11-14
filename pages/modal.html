@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAYGROUND - MODAL</title>
+    <link rel="stylesheet" href="../asset/css/detail.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="ttl-xl">MODAL</h1>
+    </header>
+
+    <main>
+        <div class="btn-wrap">
+            <button onclick="mdCheck.open()">체크 모달 열기</button>
+            <button onclick="mdTest.open()">테스트 모달 열기</button>
+        </div>
+    </main>
+
+    <article class="modal" id="mdCheck">
+        <header class="md-header">
+            <h2>체크모달</h2>
+            <span class="hidden">닫기</span>
+        </header>
+
+        <article class="md-content">
+            모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들
+        </article>
+
+        <footer class="md-footer">
+            <button class="ok">확인</button>
+            <button class="cancle" onclick="mdCheck.close();">취소</button>
+        </footer>
+    </article>
+
+    <article class="modal" id="mdTest">
+        <header class="md-header">
+            <h2>테스트모달</h2>
+            <span class="hidden">닫기</span>
+        </header>
+
+        <article class="md-content">
+            모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들
+        </article>
+
+        <footer class="md-footer">
+            <button class="ok">확인</button>
+            <button class="cancle" onclick="mdTest.close();">취소</button>
+        </footer>
+    </article>
+</body>
+<script src="../asset/scripts/modal.js"></script>
+<script>
+    const mdCheck = new Modal('#mdCheck');
+    const mdTest = new Modal('#mdTest', 'bottom')
+</script>
+
+</html>
