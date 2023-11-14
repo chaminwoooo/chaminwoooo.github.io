@@ -1,0 +1,61 @@
+@import '_default';
+@import '_variables';
+@import '_class';
+
+body {
+    background: url('../images/paper_bg.png') no-repeat top center $gray2;
+    background-size: cover;
+    padding: 2rem;
+}
+
+header {
+    padding: 2rem;
+}
+
+section {
+    padding: 2rem;
+}
+
+footer {
+    padding: 2rem;
+}
+
+.main-ttl {
+    margin-bottom: 2rem;
+}
+
+
+.flex-box {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .round-box { width: 48%; }
+}
+
+.round-box {
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px $gray8;
+    margin: 1rem 0;
+
+    .page-link {
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    &:hover {
+        background-color: $green5;
+        box-shadow: 2px 2px 8px $gray1;
+        a {color: $gray1;}
+    }
+}
+
+.info-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    .desc-xl {
+        flex: 1;
+    }
+}
