@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAYGROUND - MODAL</title>
-    <link rel="stylesheet" href="../asset/css/detail.css">
+    <link rel="stylesheet" href="../asset/css/modal.css">
 </head>
 
 <body>
@@ -15,14 +15,14 @@
 
     <main>
         <div class="btn-wrap">
-            <button onclick="mdCheck.open()">체크 모달 열기</button>
-            <button onclick="mdTest.open()">테스트 모달 열기</button>
+            <button onclick="mdCenter.open()">센터 모달 열기</button>
+            <button onclick="mdBottom.open()">바텀 모달 열기</button>
         </div>
     </main>
 
-    <article class="modal" id="mdCheck">
+    <article class="modal" id="mdCenter">
         <header class="md-header">
-            <h2>체크모달</h2>
+            <h2>센터 모달</h2>
             <span class="hidden">닫기</span>
         </header>
 
@@ -32,13 +32,13 @@
 
         <footer class="md-footer">
             <button class="ok">확인</button>
-            <button class="cancle" onclick="mdCheck.close();">취소</button>
+            <button class="cancle" onclick="mdCenter.close();">취소</button>
         </footer>
     </article>
 
-    <article class="modal" id="mdTest">
+    <article class="modal" id="mdBottom">
         <header class="md-header">
-            <h2>테스트모달</h2>
+            <h2>바텀 모달</h2>
             <span class="hidden">닫기</span>
         </header>
 
@@ -48,14 +48,14 @@
 
         <footer class="md-footer">
             <button class="ok">확인</button>
-            <button class="cancle" onclick="mdTest.close();">취소</button>
+            <button class="cancle" onclick="mdBottom.close();">취소</button>
         </footer>
     </article>
 </body>
 <script src="../asset/scripts/modal.js"></script>
 <script>
-    const mdCheck = new Modal('#mdCheck');
-    const mdTest = new Modal('#mdTest', 'bottom')
+    const mdCenter = new Modal('#mdCenter', 'center');
+    const mdBottom = new Modal('#mdBottom', 'bottom')
 </script>
 
 </html>

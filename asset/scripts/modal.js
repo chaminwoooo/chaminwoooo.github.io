@@ -1,7 +1,7 @@
 'use strict'
 
 let dimBg = document.createElement('div');
-let wrap = document.querySelector('.wrap');
+let wrap = document.querySelector('main');
 dimBg.setAttribute('class', 'dim');
 
 class Modal {
