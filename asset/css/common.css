@@ -1,0 +1,20 @@
+.flex-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.flex-box.double .round-box {
+  width: 48%;
+}
+.flex-box.triple .round-box {
+  width: 30%;
+}
+.flex-box.quatro .round-box {
+  width: 20%;
+}
+
+.round-box {
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px #343a40;
+  margin: 1rem 0;
+}
