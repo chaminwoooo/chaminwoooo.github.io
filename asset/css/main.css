@@ -352,3 +352,7 @@ footer {
   width: 50%;
   margin: 1rem 0;
 }
+.info-wrap .to-do-list {
+  margin: 2rem 0;
+  font-weight: bold;
+}
