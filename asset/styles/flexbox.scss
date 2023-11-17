@@ -1,10 +1,15 @@
 @import '_default';
 @import 'common';
 @import '_variables';
+@import '_mobile';
 
 body {
     background: url('../images/paper_bg.png') no-repeat top center $green1;
     background-size: cover;
     padding: 2rem;
+}
+
+.ttl-xxl {
+    margin: 2rem 0;
 }
 

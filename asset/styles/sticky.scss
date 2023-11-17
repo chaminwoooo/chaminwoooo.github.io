@@ -1,0 +1,24 @@
+@import '_default';
+@import 'common';
+@import '_variables';
+
+body {
+    background: url('../images/paper_bg.png') no-repeat top center $green1;
+    background-size: cover;
+}
+header {
+    padding: 2rem;
+}
+
+.sticky-tab {
+    position: sticky;
+    background-color: $gray2;
+
+    .flex-box {
+        height: 10vh;
+        align-items: center;
+        li {
+            margin: 1rem;
+        }
+    }
+}
