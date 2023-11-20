@@ -1,7 +1,7 @@
 'use strict'
 
 let dimBg = document.createElement('div');
-let wrap = document.querySelector('main');
+let wrap = document.querySelector('body');
 dimBg.setAttribute('class', 'dim');
 
 class Modal {
@@ -14,6 +14,7 @@ class Modal {
         let okBtn = md.querySelector('.ok');
         
         md.classList.add('on', `${this.type}`);
+        wrap.style.position = 'relative';
         wrap.appendChild(dimBg);
 
         okBtn.addEventListener('click', function () {
