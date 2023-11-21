@@ -319,84 +319,35 @@ h1 {
   color: #ff922b;
 }
 
-main {
-  padding: 2rem;
+.box {
+  width: 100%;
+  height: 100vh;
+  margin: 2rem 0;
+}
+.box:nth-child(1) {
+  background-color: #d3f9d8;
+}
+.box:nth-child(2) {
+  background-color: #e8590c;
+}
+.box:nth-child(3) {
+  background-color: #868e96;
 }
 
-.overflow-x {
-  overflow: scroll;
-}
-
-table {
-  margin: 4rem 0;
-}
-
-.table-default {
+.control-box {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: rgba(33, 37, 41, 0.5);
+  border-radius: 1rem;
   overflow: hidden;
+  padding: 2rem;
+  color: #f1f3f5;
 }
-.table-default th {
-  text-align: center;
-  border: 1px solid #212529;
-  padding: 1rem;
-  background-color: #adb5bd;
+.control-box li {
+  margin: 1rem;
 }
-.table-default th:first-child {
-  border-left: 0;
-}
-.table-default th:last-child {
-  border-right: 0;
-}
-.table-default td {
-  text-align: center;
-  border: 1px solid #212529;
-  padding: 1rem;
-}
-.table-default td:first-child {
-  border-left: 0;
-}
-.table-default td:last-child {
-  border-right: 0;
-}
-.table-default .sub-title {
-  background-color: #dee2e6;
-}
-.table-default.green th {
-  border-color: #fff;
-  background-color: #2b8a3e;
-  color: white;
-}
-.table-default.green td {
-  border-color: #fff;
-}
-.table-default.green .sub-title {
-  background-color: #51cf66;
-}
-.table-default.sticky {
-  width: 100%;
-  position: relative;
-  overflow: scroll;
-}
-.table-default.sticky thead th:first-child {
-  position: sticky;
-  left: 0;
-}
-.table-default.sticky .sub-title {
-  position: sticky;
-  left: 0;
-}
-
-.modal.table-type {
-  margin: 0;
-}
-.modal.table-type table {
-  margin: 0;
-  width: 100%;
-  border-collapse: collapse;
-}
-.modal.table-type .md-content {
-  padding: 0;
-}
-.modal.table-type.sticky .md-content {
-  justify-content: initial;
-  overflow: scroll;
+.control-box li.on {
+  font-weight: bold;
+  color: #e8590c;
 }

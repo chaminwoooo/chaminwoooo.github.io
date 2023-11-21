@@ -195,6 +195,9 @@ textarea[disabled] {
 body {
   background: url("../images/paper_bg.png") no-repeat top center #e9ecef;
   background-size: cover;
+}
+
+header {
   padding: 2rem;
 }
 
@@ -256,9 +259,67 @@ body {
     font-size: 8px;
   }
 }
+[class*=ttl] {
+  font-weight: bold;
+}
+[class*=ttl].ttl-sm {
+  font-size: 0.875rem;
+}
+[class*=ttl].ttl-md {
+  font-size: 1rem;
+}
+[class*=ttl].ttl-lg {
+  font-size: 1.6rem;
+}
+[class*=ttl].ttl-xl {
+  font-size: 2rem;
+}
+[class*=ttl].ttl-xxl {
+  font-size: 3rem;
+}
+[class*=ttl].ttl-xxxl {
+  font-size: 4rem;
+}
+
+[class*=desc].desc-sm {
+  font-size: 0.875rem;
+}
+[class*=desc].desc-md {
+  font-size: 1rem;
+}
+[class*=desc].desc-lg {
+  font-size: 1.6rem;
+}
+[class*=desc].desc-xl {
+  font-size: 2rem;
+}
+
+button[class*=btn] {
+  background-color: transparent;
+  border-radius: 16px;
+  color: #f1f3f5;
+  border: 3px solid #f1f3f5;
+}
+
+.btn-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-box {
+  display: flex;
+}
+
 body {
-  background: url("../images/paper_bg.png") no-repeat top center #d3f9d8;
-  background-size: cover;
+  background-color: #ffe8cc;
+}
+
+h1 {
+  color: #ff922b;
+}
+
+main {
   padding: 2rem;
 }
 

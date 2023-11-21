@@ -1,0 +1,13 @@
+@import '_default';
+@import 'common';
+@import '_variables';
+@import '_mobile';
+@import '_class';
+
+body {
+    background-color: $orange1;
+}
+
+h1 {
+    color: $orange5;
+}

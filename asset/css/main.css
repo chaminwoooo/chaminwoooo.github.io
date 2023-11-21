@@ -247,6 +247,9 @@ button[class*=btn] {
 body {
   background: url("../images/paper_bg.png") no-repeat top center #e9ecef;
   background-size: cover;
+}
+
+header {
   padding: 2rem;
 }
 
@@ -311,7 +314,6 @@ body {
 body {
   background: url("../images/paper_bg.png") no-repeat top center #e9ecef;
   background-size: cover;
-  padding: 2rem;
 }
 
 header {

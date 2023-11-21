@@ -1,0 +1,28 @@
+@import '_page';
+
+.box {
+    width: 100%;
+    height: 100vh;
+    margin: 2rem 0;
+    &:nth-child(1) { background-color: $green1; }
+    &:nth-child(2) { background-color: $orange8; }
+    &:nth-child(3) { background-color: $gray6; }
+}
+
+.control-box {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background-color: rgba($gray9, $alpha: 0.5);
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 2rem;
+    color: $gray1;
+    li {
+        margin: 1rem;
+        &.on {
+            font-weight: bold;
+            color: $orange8;
+        }
+    }
+}

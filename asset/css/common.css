@@ -1,6 +1,9 @@
 body {
   background: url("../images/paper_bg.png") no-repeat top center #e9ecef;
   background-size: cover;
+}
+
+header {
   padding: 2rem;
 }
 

@@ -1,14 +1,8 @@
-@import '_variables';
-body {
-    background-color: $gray5;
-}
-.overflow-x {
-    overflow: scroll; // 임시
-}
+@import '_page';
 
-table {
-    margin: 4rem 0; // 이 페이지 내 간격 임시
-}
+main { padding: 2rem; }
+.overflow-x { overflow: scroll; }// 임시
+table { margin: 4rem 0; } // 이 페이지 내 간격 임시
 
 .table-default {
     overflow: hidden;
