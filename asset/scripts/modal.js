@@ -14,7 +14,7 @@ class Modal {
         let okBtn = md.querySelector('.ok');
         
         md.classList.add('on', `${this.type}`);
-        wrap.style.position = 'relative';
+        // wrap.style.position = 'relative';
         wrap.appendChild(dimBg);
 
         okBtn.addEventListener('click', function () {

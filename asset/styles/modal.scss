@@ -1,13 +1,4 @@
-@import '_default';
-@import '_variables';
-@import '_mobile';
-
-
-body {
-    background: url('../images/paper_bg.png') no-repeat top center $green1;
-    background-size: cover;
-    padding: 2rem;
-}
+@import '_page';
 
 .btn-wrap {
     button {
@@ -93,7 +84,7 @@ body {
 
 .dim {
     background-color: rgba($color: $gray8, $alpha: 0.4);
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
