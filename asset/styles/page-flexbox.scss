@@ -1,0 +1,7 @@
+@import '_flexbox';
+@import '_page';
+
+.flex-box {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

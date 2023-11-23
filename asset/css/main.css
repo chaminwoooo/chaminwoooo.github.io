@@ -233,49 +233,22 @@ button[class*=btn] {
   color: #f1f3f5;
   border: 3px solid #f1f3f5;
 }
+button[class*=btn].btn-md {
+  padding: 1rem 2rem;
+}
+button[class*=btn].btn-lg {
+  font-size: 1.6rem;
+  padding: 2rem 4rem;
+}
+button[class*=btn].main {
+  background-color: #192f6e;
+  border: 2px solid #df0026;
+}
 
 .btn-wrap {
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-.flex-box {
-  display: flex;
-}
-
-body {
-  background: url("../images/paper_bg.png") no-repeat top center #e9ecef;
-  background-size: cover;
-}
-
-header {
-  padding: 2rem;
-}
-
-.flex-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.flex-box.double .round-box {
-  width: 48%;
-}
-.flex-box.triple .round-box {
-  width: 30%;
-}
-.flex-box.quatro .round-box {
-  width: 20%;
-}
-.flex-box.column {
-  flex-direction: column;
-}
-
-.round-box {
-  border-radius: 8px;
-  box-shadow: 2px 2px 8px #343a40;
-  margin: 1rem 0;
-  overflow: hidden;
 }
 
 /* 노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)*/
@@ -311,6 +284,29 @@ header {
     font-size: 8px;
   }
 }
+.flex-box {
+  display: flex;
+}
+.flex-box.double .round-box {
+  width: 48%;
+}
+.flex-box.triple .round-box {
+  width: 30%;
+}
+.flex-box.quatro .round-box {
+  width: 20%;
+}
+.flex-box.column {
+  flex-direction: column;
+}
+
+.round-box {
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px #343a40;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
 body {
   background: url("../images/paper_bg.png") no-repeat top center #e9ecef;
   background-size: cover;
@@ -330,6 +326,11 @@ footer {
 
 .main-ttl {
   margin-bottom: 2rem;
+}
+
+.flex-box {
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .round-box {
@@ -361,4 +362,8 @@ footer {
 .info-wrap .to-do-list {
   margin: 2rem 0;
   font-weight: bold;
+}
+
+.to-do-list {
+  display: none;
 }

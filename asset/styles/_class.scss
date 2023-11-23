@@ -1,5 +1,6 @@
 [class*='ttl'] {
     font-weight: bold;
+
     &.ttl-sm { font-size: 0.875rem; }
     &.ttl-md { font-size: 1rem; }
     &.ttl-lg { font-size: 1.6rem; }
@@ -21,17 +22,21 @@ button[class*='btn'] {
     color: $gray1;
     border: 3px solid $gray1;
 
-    // &.btn-sm {}
-    // &.btn-md {}
-    // &.btn-lg {}
+    &.btn-md { padding: 1rem 2rem; }
+
+    &.btn-lg {
+        font-size: 1.6rem;
+        padding: 2rem 4rem;
+    }
+
+    &.main {
+        background-color: $subColor;
+        border: 2px solid $mainColor;
+    }
 }
 
 .btn-wrap {
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-.flex-box {
-    display: flex;
 }

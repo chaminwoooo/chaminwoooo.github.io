@@ -1,4 +1,5 @@
 @import '_page';
+@import '_flexbox';
 
 header {
     padding: 2rem;
@@ -11,8 +12,6 @@ header {
     .flex-box {
         height: 10vh;
         align-items: center;
-        li {
-            margin: 1rem;
-        }
+        li { margin: 1rem; }
     }
 }

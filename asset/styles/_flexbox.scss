@@ -1,14 +1,7 @@
 @import '_variables';
-body {
-    background: url('../images/paper_bg.png') no-repeat top center $gray2;
-    background-size: cover;
-}
-header { padding: 2rem; }
 
 .flex-box {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     
     &.double {
         .round-box {width: 48%;}
@@ -21,9 +14,7 @@ header { padding: 2rem; }
     &.quatro {
         .round-box {width: 20%;}
     }
-    &.column {
-        flex-direction: column;
-    }
+    &.column { flex-direction: column; }
 }
 
 .round-box {

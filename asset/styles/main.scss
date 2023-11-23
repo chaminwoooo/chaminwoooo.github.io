@@ -1,8 +1,8 @@
 @import '_default';
 @import '_variables';
 @import '_class';
-@import 'common';
 @import '_mobile';
+@import '_flexbox';
 
 body {
     background: url('../images/paper_bg.png') no-repeat top center $gray2;
@@ -13,6 +13,11 @@ header { padding: 2rem; }
 section { padding: 2rem; }
 footer { padding: 2rem; }
 .main-ttl { margin-bottom: 2rem; }
+
+.flex-box {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 .round-box {
     text-align: center;
@@ -44,3 +49,5 @@ footer { padding: 2rem; }
         font-weight: bold;
     }
 }
+
+.to-do-list {display: none;}

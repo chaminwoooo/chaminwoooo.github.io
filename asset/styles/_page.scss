@@ -1,5 +1,4 @@
 @import '_default';
-@import 'common';
 @import '_variables';
 @import '_mobile';
 @import '_class';
@@ -10,4 +9,9 @@ body {
 
 h1 {
     color: $orange5;
+}
+
+.sample {
+    header{padding: 2rem;}
+    main{padding: 2rem;}
 }

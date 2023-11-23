@@ -1,0 +1,15 @@
+@keyframes shake {
+    from {
+        transform: rotate(2deg);
+    }
+
+    to {
+        transform: rotate(-2deg);
+    }
+}
+
+@keyframes rotateY {
+    to {
+        transform: rotate3d(0,1,0, 180deg);
+    }
+}
