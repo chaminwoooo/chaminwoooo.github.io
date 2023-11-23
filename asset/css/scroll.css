@@ -331,3 +331,22 @@ h1 {
   font-weight: bold;
   color: #e8590c;
 }
+
+.x-scroll {
+  position: sticky;
+  top: 0;
+  background-color: salmon;
+  overflow: hidden;
+}
+.x-scroll ul {
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+}
+.x-scroll li {
+  margin: 1rem;
+}
+.x-scroll + .box {
+  margin-top: 0;
+}

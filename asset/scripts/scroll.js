@@ -24,6 +24,7 @@ function scrollListCheck() {
         })
     })
 }
+
 function contentBoxScrollCheck() {
     contentBox.forEach((box, i) => {
         window.addEventListener('scroll', () => {
