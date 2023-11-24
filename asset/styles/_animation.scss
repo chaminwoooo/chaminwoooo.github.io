@@ -1,15 +1,23 @@
 @keyframes shake {
-    from {
-        transform: rotate(2deg);
-    }
-
-    to {
-        transform: rotate(-2deg);
-    }
+    from { transform: rotate(2deg); }
+    to { transform: rotate(-2deg); }
 }
-
 @keyframes rotateY {
-    to {
-        transform: rotate3d(0,1,0, 180deg);
-    }
+    to { transform: rotate3d(0,1,0, 180deg); }
+}
+@keyframes slideUp {
+    from { bottom: -50px; }
+    to { bottom: 0px; opacity: 1; }
+}
+@keyframes slideFromLeft {
+    from { left: -50vw; }
+    to { left: 0px; opacity: 1; }
+}
+@keyframes slideFromRight {
+    from { right: -50vw; }
+    to { right: 0px; opacity: 1; }
+}
+@keyframes arrowDown {
+    from { bottom: 0; }
+    to { bottom: 2vw; }
 }

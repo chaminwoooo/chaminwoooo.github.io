@@ -18,9 +18,9 @@
 
 button[class*='btn'] {
     background-color: transparent;
-    border-radius: 16px;
+    border-radius: 1rem;
     color: $gray1;
-    border: 3px solid $gray1;
+    border: 2px solid $gray1;
 
     &.btn-md { padding: 1rem 2rem; }
 
@@ -29,10 +29,10 @@ button[class*='btn'] {
         padding: 2rem 4rem;
     }
 
-    &.main {
-        background-color: $subColor;
-        border: 2px solid $mainColor;
-    }
+    // &.main {
+    //     background-color: $subColor;
+    //     border: 2px solid $mainColor;
+    // }
 }
 
 .btn-wrap {

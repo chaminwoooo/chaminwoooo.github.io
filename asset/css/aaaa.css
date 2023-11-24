@@ -1,8 +1,10 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@charset "UTF-8";
+@import url("//cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
 /* Reset */
 * {
   outline: 0 !important;
   box-sizing: border-box;
+  word-break: keep-all;
 }
 
 html, body, h1, h2, h3, h4, h5, h6, div, p, blockquote, pre, code, address, ul, ol, li, menu, nav, section, article, aside,
@@ -28,13 +30,12 @@ body {
   -webkit-text-size-adjust: none;
   word-wrap: break-word;
   word-break: break-all;
-  position: relative;
 }
 
 body, input, select, textarea, button {
   border: none;
-  font-size: 16px;
-  font-family: "Noto Sans KR", sans-serif;
+  font-size: 12px;
+  font-family: "Pretendard", sans-serif;
 }
 
 ul, ol, li {
@@ -47,12 +48,12 @@ table {
   border-collapse: collapse;
 }
 
-img, fieldset {
-  border: 0;
-}
-
 img {
   width: 100%;
+}
+
+img, fieldset {
+  border: 0;
 }
 
 address, cite, code, em {
@@ -81,6 +82,10 @@ main, header, section, nav, footer, aside, article, figure {
 a {
   color: #000;
   text-decoration: none;
+}
+
+button {
+  color: #000;
 }
 
 /* Form */
@@ -187,6 +192,23 @@ textarea[disabled] {
   white-space: nowrap !important;
 }
 
+/* 노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)*/
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
+/* 모바일 세로 (해상도 ~ 479px)*/
+@keyframes shake {
+  from {
+    transform: rotate(2deg);
+  }
+  to {
+    transform: rotate(-2deg);
+  }
+}
+@keyframes rotateY {
+  to {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+}
 @keyframes slideUp {
   from {
     bottom: -50px;
@@ -216,10 +238,10 @@ textarea[disabled] {
 }
 @keyframes arrowDown {
   from {
-    bottom: 16px;
+    bottom: 0;
   }
   to {
-    bottom: 48px;
+    bottom: 2vw;
   }
 }
 [class*=ttl] {
@@ -259,9 +281,9 @@ textarea[disabled] {
 
 button[class*=btn] {
   background-color: transparent;
-  border-radius: 16px;
+  border-radius: 1rem;
   color: #f1f3f5;
-  border: 3px solid #f1f3f5;
+  border: 2px solid #f1f3f5;
 }
 button[class*=btn].btn-md {
   padding: 1rem 2rem;
@@ -270,19 +292,11 @@ button[class*=btn].btn-lg {
   font-size: 1.6rem;
   padding: 2rem 4rem;
 }
-button[class*=btn].main {
-  background-color: #192f6e;
-  border: 2px solid #0b1432;
-}
 
 .btn-wrap {
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-.flex-wrap {
-  display: flex;
 }
 
 .main-header {

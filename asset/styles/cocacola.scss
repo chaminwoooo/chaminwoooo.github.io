@@ -24,7 +24,7 @@ header {
     align-items: center;
     justify-content: center;
     box-shadow: 1px 1px 8px $gray9;
-    background-color: $mainColor;
+    background-color: $cocaMain;
 }
 
 .side-nav {
@@ -111,9 +111,9 @@ header {
     background-color : $gray1;
 
     .goods-name {
-        line-height: 1.6rem;
-        min-height: 3.2rem;
-        max-height: 3.2rem;
+        line-height: 1.6em;
+        min-height: 3.2em;
+        max-height: 3.2em;
         text-overflow: clip;
         overflow: hidden;
     }

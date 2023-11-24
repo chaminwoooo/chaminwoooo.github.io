@@ -42,7 +42,7 @@ nav {
         padding: 16px;
         font-size: 1.6rem;
         font-weight: bold;
-        color: $subColor;
+        color: $gilSub;
 
         &::before {
             content: '';
@@ -51,7 +51,7 @@ nav {
             left: 16px;
             width: 0;
             height: 3px;
-            background-color: $subColor;
+            background-color: $gilSub;
         }
     }
 
@@ -189,7 +189,7 @@ nav {
                 transform: scale(1.1);
 
                 span {
-                    color: $subColor;
+                    color: $gilSub;
                 }
             }
         }
@@ -363,7 +363,7 @@ nav {
 }
 
 .footer-wrap {
-    background-color: $mainColor;
+    background-color: $gilMain;
     text-align: center;
     color: $gray1;
     padding: 48px 100px;

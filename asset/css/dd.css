@@ -234,10 +234,10 @@ textarea[disabled] {
 }
 @keyframes arrowDown {
   from {
-    bottom: 0;
+    bottom: 16px;
   }
   to {
-    bottom: 2vw;
+    bottom: 48px;
   }
 }
 [class*=ttl] {
@@ -355,143 +355,271 @@ button[class*=btn].btn-lg {
     font-size: 8px;
   }
 }
-.logo {
-  width: 200px;
-  height: 100px;
-  background: url("../images/cocacola/logo/logo_coke_w.png") center center no-repeat;
-  background-size: contain;
-  overflow: hidden;
-}
-
-.ttl-xl {
-  text-align: center;
-  padding: 1rem 0;
-}
-
 header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 1px 1px 8px #212529;
-  background-color: #df0026;
+  background-color: #f1f3f5;
+  padding: 2rem;
 }
-
-.side-nav {
-  position: fixed;
-  right: 2vw;
-  bottom: 2vw;
-  z-index: 2000;
-}
-
-.side-nav-list {
-  padding: 1rem;
-  background-color: #e9ecef;
-  border-radius: 8px;
-  box-shadow: 2px 2px 4px #ced4da;
-}
-.side-nav-list li {
-  position: relative;
-  font-weight: bold;
-  font-size: 1rem;
-  margin: 0.5rem;
-}
-.side-nav-list li::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  width: 8px;
-  height: 8px;
-  background-color: #212529;
-  border-radius: 4px;
-  margin-right: 0.5rem;
-}
-.side-nav-list a {
-  color: #212529;
-}
-
-.product-container {
-  padding: 2rem 0;
-  background: url("../images/cocacola/bg/top_bg.png") top center no-repeat;
-  background-size: cover;
-}
-.product-container .ttl-xl {
-  color: #f1f3f5;
-}
-
-.prd-list {
-  width: 80%;
+header .logo {
+  width: 20vw;
   margin: 0 auto;
 }
-.prd-list li {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  margin: 8px;
-  box-shadow: 1px 1px 8px #212529;
-  transition: all 1s;
+header .ham-btn {
+  border: 0;
 }
-.prd-list .ttl-md {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.4);
+header .icon-hamburger {
+  display: block;
+  background: url("../images/gillette/icon/hamBtn.svg") no-repeat center center;
+  width: 3rem;
+  height: 3rem;
   color: #f1f3f5;
-  padding: 1rem;
-  word-break: keep-all;
 }
 
-.goods-container {
-  padding: 2rem;
+.main-menu {
+  display: none;
+  position: fixed;
+  top: 82px;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: #ffe8cc;
 }
-
-.goods-list {
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.info-box {
-  padding: 2rem;
-  background-color: #f1f3f5;
-}
-.info-box .goods-name {
-  line-height: 1.6em;
-  min-height: 3.2em;
-  max-height: 3.2em;
-  text-overflow: clip;
-  overflow: hidden;
-}
-.info-box .price-wrap {
+.main-menu .menu-title:hover + .sub-menu-wrap .sub-menu-txt {
   display: flex;
+}
+.main-menu .sub-menu-txt {
+  display: none;
+  flex-direction: column;
+}
+.main-menu .sub-menu-img {
+  display: none;
+}
+
+.video-container {
+  position: relative;
+}
+.video-container video {
+  width: 100%;
+}
+.video-container .btn-arrow-down {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0;
+}
+.video-container .arrow-down {
+  display: block;
+  background: url("../images/gillette/icon/arrow-up.svg") no-repeat center center;
+  transform: rotate(180deg);
+  width: 3rem;
+  height: 3rem;
+}
+
+.category-container {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+.category-container li {
+  margin: 1rem;
+}
+.category-container .ttl-lg {
+  text-align: center;
   margin-top: 1rem;
 }
-.info-box .discount {
-  color: #f03e3e;
-  font-size: 1.2rem;
-  font-weight: bold;
+
+.startkit-container {
+  height: 80vh;
+  background: url("../images/gillette/main/banner.webp") no-repeat center center;
+  background-size: cover;
 }
-.info-box .price {
-  font-size: 1.2rem;
-  margin: 0 0.2rem;
+.startkit-container .ttl-xxl {
+  text-align: left;
+  margin-bottom: 3rem;
+  color: #f1f3f5;
+  text-shadow: 2px 0px 4px;
 }
-.info-box .pre-price {
-  color: #adb5bd;
-  text-decoration: line-through;
+.startkit-container button {
+  margin: 1rem;
 }
 
-.brand-swiper {
-  background: url("../images/cocacola/bg/cokemix_bg.png") top center no-repeat;
-  background-size: cover;
-  margin: 2rem 0;
-  overflow: hidden;
+.advise-container {
+  width: 90%;
+  margin: 4rem auto;
 }
-.brand-swiper li {
-  width: 15vw;
-  border-radius: 8px;
+.advise-container img {
+  width: 30vw;
+}
+.advise-container .column {
+  margin-left: 4rem;
+}
+.advise-container .desc-lg {
+  margin: 1rem 0;
+  line-height: 1.6em;
+}
+.advise-container .blue {
+  border-color: transparent;
+  background-color: #0b1432;
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .box-container {
+    flex-direction: column;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 767px) {
+  .box-container {
+    flex-direction: column;
+  }
+}
+@media all and (max-width: 479px) {
+  .box-container {
+    flex-direction: column;
+  }
+}
+.box-container .ttl-lg {
+  position: absolute;
+  top: -4vw;
+}
+.box-container .btn-wrap {
+  margin: auto 0 2vw 0;
+}
+.box-container .btn-md {
+  margin: 1rem;
+}
+.box-container.product .box-wrap {
+  width: 50vw;
+  height: 50vw;
+}
+.box-container.product .box-wrap:first-child {
+  background: url("../images/gillette/main/heated_razor_bg.webp") no-repeat center center;
+  background-size: cover;
+}
+.box-container.product .box-wrap:last-child {
+  background: url("../images/gillette/main/acc_bg.webp") no-repeat center center;
+  background-size: cover;
+}
+.box-container.product .ttl-lg {
+  left: 1vw;
+}
+.box-container.tip {
+  justify-content: space-around;
+}
+.box-container.tip .box-wrap {
+  width: 40vw;
+  height: 24vw;
+}
+.box-container.tip .box-wrap:first-child {
+  background: url("../images/gillette/main/home_youtube.jpg") no-repeat center center;
+  background-size: cover;
+}
+.box-container.tip .box-wrap:last-child {
+  background: url("../images/gillette/main/home_facial_hair_styles.jpg") no-repeat center center;
+  background-size: cover;
+}
+.box-container.tip .ttl-lg {
+  white-space: nowrap;
+}
+.box-container.flex-box .box-wrap {
+  position: relative;
+}
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .box-container.flex-box .box-wrap {
+    width: 100%;
+    margin-top: 8vw;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 767px) {
+  .box-container.flex-box .box-wrap {
+    width: 100%;
+    margin-top: 8vw;
+  }
+}
+@media all and (max-width: 479px) {
+  .box-container.flex-box .box-wrap {
+    width: 100%;
+    margin-top: 8vw;
+  }
+}
+.box-container + .box-container {
+  margin-top: 8vw;
+}
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .box-container + .box-container {
+    margin-top: 0vw;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 767px) {
+  .box-container + .box-container {
+    margin-top: 0vw;
+  }
+}
+@media all and (max-width: 479px) {
+  .box-container + .box-container {
+    margin-top: 0vw;
+  }
+}
+
+.footer-container {
   overflow: hidden;
-  margin: 2vw;
+  background-color: #0b1432;
+  color: #f1f3f5;
+  padding: 3rem;
+  margin-top: 10vw;
+}
+.footer-container .icon-logo {
+  display: block;
+  width: 25vw;
+  margin: 0 auto;
+}
+.footer-container ul {
+  margin: 0 2rem;
+}
+.footer-container li {
+  margin: 2rem 0;
+}
+.footer-container a {
+  color: #f1f3f5;
+}
+.footer-container .sns li {
+  width: 8vw;
+  margin: 1rem;
+}
+.footer-container address {
+  margin: 2rem 0;
+}
+.footer-container address span {
+  margin: 8px;
+}
+.footer-container address span:first-child {
+  margin-left: 0;
+}
+.footer-container address li {
+  font-size: 1rem;
+  margin: 8px 0;
+}
+.footer-container address p {
+  margin-top: 2rem;
+}
+
+.arrow-up {
+  position: fixed;
+  right: 3vw;
+  bottom: 3vw;
+}
+.arrow-up .page-top {
+  width: 8vw;
+  height: 8vw;
+  background-color: #212529;
+  opacity: 0.8;
+  color: #f1f3f5;
+  padding: 1vw;
+}
+.arrow-up .page-top img {
+  width: 3vw;
+}
+.arrow-up .page-top span {
+  display: block;
+  margin-top: 0.4rem;
 }

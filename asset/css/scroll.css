@@ -262,9 +262,9 @@ textarea[disabled] {
 
 button[class*=btn] {
   background-color: transparent;
-  border-radius: 16px;
+  border-radius: 1rem;
   color: #f1f3f5;
-  border: 3px solid #f1f3f5;
+  border: 2px solid #f1f3f5;
 }
 button[class*=btn].btn-md {
   padding: 1rem 2rem;
@@ -272,10 +272,6 @@ button[class*=btn].btn-md {
 button[class*=btn].btn-lg {
   font-size: 1.6rem;
   padding: 2rem 4rem;
-}
-button[class*=btn].main {
-  background-color: #192f6e;
-  border: 2px solid #df0026;
 }
 
 .btn-wrap {

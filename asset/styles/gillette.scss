@@ -1,0 +1,280 @@
+@import '_default';
+@import '_animation';
+@import '_variables';
+@import '_class';
+@import '_flexbox';
+@import '_mobile';
+
+#mainHeader {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    display: flex;
+    padding: 0 1rem;
+    align-items: center;
+    background-color: $gray2;
+    transition: all 0.5s ease-out;
+    .logo {
+        width: 20vw;
+        margin: 0 auto;
+    }
+    .ham-btn { border: 0; }
+    .search-btn { border: 0; }
+    .icon-hamburger {
+        display: block;
+        background: url('../images/gillette/icon/hamBtn.svg') no-repeat center center;
+        width: 3rem;
+        height: 3rem;
+        color: $gray1;
+    }
+    .icon-search {
+        display: block;
+        background: url('../images/gillette/icon/search.svg') no-repeat center center;
+        width: 3rem;
+        height: 3rem;
+        color: $gray1;
+    }
+}
+
+#mainMenu {
+    position: fixed;
+    left: -10vw;
+    opacity: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: $orange1;
+    transition: all 0.5s;
+    .sub-menu-txt {
+        display: none;
+        flex-direction: column;
+    }
+    .sub-menu-img {display: none;}
+
+    &.active {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.video-container {
+    position: relative;
+    video { width: 100%; }
+    .btn-arrow-down {
+        position: absolute;
+        bottom: 2vw;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 0;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        animation: arrowDown alternate infinite 1s ;
+    }
+    .arrow-down {
+        display: block;
+        background: url('../images/gillette/icon/arrow-up.svg') no-repeat center center;
+        transform: rotate(180deg);
+        width: 4vw;
+        height: 4vw;
+    }
+}
+
+.category-container {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    li { 
+        margin: 1rem; 
+    }
+
+    .ttl-lg {
+        text-align: center; 
+        margin-top: 1rem;
+    }
+}
+
+.startkit-container {
+    height: 80vh;
+    background: url('../images/gillette/main/banner.webp') no-repeat center center;
+    background-size: cover;
+    .ttl-xxl {
+        text-align: left;
+        margin-bottom: 3rem;
+        color: $gray1;
+        text-shadow: 2px 0px 4px;
+    }
+    button {margin: 1rem;}
+
+    @include w480 {
+        background-image: url('../images/gillette/main/m_startkit.jpg');
+        .ttl-xxl {
+            color: $gilMain;
+            text-shadow: none;
+        }
+        button {
+            border-color: $gilMain;
+            color: $gilMain;
+        }
+    }
+    @include mobile {
+        background-image: url('../images/gillette/main/m_startkit.jpg');
+        .ttl-xxl {
+            color: $gilMain;
+            text-shadow: none;
+        }
+        button {
+            border-color: $gilMain;
+            color: $gilMain;
+        }
+    }
+}
+
+.advise-container {
+    width: 90%;
+    margin: 4rem auto;
+    img { width: 30vw; }
+    .column { margin-left: 4rem; }
+    .desc-lg {
+        margin: 1rem 0;
+        line-height: 1.6em;
+    }
+    .blue { 
+        border-color: transparent;
+        background-color: $gilMain; 
+    }
+}
+
+.box-container {
+    @include w768 {flex-direction: column;}
+    @include w480 {flex-direction: column;}
+    @include mobile {flex-direction: column;}
+
+    .ttl-lg {
+        position: absolute;
+        top: -4vw;
+    }
+
+    .btn-wrap { margin: auto 0 2vw 0; }
+    .btn-md { margin: 1rem; }
+
+    &.product {
+        .box-wrap{
+            width: 50vw;
+            height: 50vw;
+            &:first-child { 
+                background: url("../images/gillette/main/heated_razor_bg.webp") no-repeat center center; 
+                background-size: cover;
+    
+            }
+            &:last-child { 
+                background: url("../images/gillette/main/acc_bg.webp") no-repeat center center; 
+                background-size: cover;
+            }    
+        }
+        .ttl-lg {
+            left: 1vw;
+        }
+    }
+
+    &.tip {
+        justify-content: space-around;
+        .box-wrap {
+            width: 40vw;
+            height: 24vw;
+            &:first-child { 
+                background: url("../images/gillette/main/home_youtube.jpg") no-repeat center center; 
+                background-size: cover;
+    
+            }
+            &:last-child { 
+                background: url("../images/gillette/main/home_facial_hair_styles.jpg") no-repeat center center; 
+                background-size: cover;
+            }    
+        }
+        .ttl-lg { white-space: nowrap; }
+    }
+
+    // 반응형 스타일 우선순위로 한번 더 상속
+    &.flex-box {
+        .box-wrap{
+            position: relative;
+            @include w768 {
+                width: 100%;
+                margin-top: 8vw;
+            }
+            @include w480 {
+                width: 100%;
+                margin-top: 8vw;
+            }
+            @include mobile {
+                width: 100%;
+                margin-top: 8vw;
+            }
+        }
+    }
+
+    & + .box-container {
+        margin-top: 8vw;
+
+        @include w768 { margin-top: 0vw; }
+        @include w480 { margin-top: 0vw; }
+        @include mobile { margin-top: 0vw; }
+    }
+}
+
+#mainFooter {
+    overflow: hidden;
+    background-color: $gilMain;
+    color: $gray1;
+    padding: 3rem;
+    margin-top: 10vw;
+    .icon-logo {
+        display: block;
+        width: 25vw;
+        margin: 0 auto;
+    }
+    ul { margin: 0 2rem; }
+    li {margin: 2rem 0;}
+    a {color: $gray1}
+
+    .sns {
+        li {
+            width: 5vw; 
+            margin: 1rem;
+        }
+    }
+
+    address {
+        margin: 2rem 0;
+        span { 
+            margin: 8px; 
+            &:first-child{margin-left: 0;}
+        }
+        li {
+            font-size: 1rem;
+            margin: 8px 0;
+        }
+        p { margin-top: 2rem; }
+    }
+}
+
+.arrow-up {
+    position: fixed;
+    right: 3vw;
+    bottom: 3vw;
+    .page-top {
+        width: 8vw;
+        height: 8vw;
+        background-color: $gray9;
+        opacity: 0.8;
+        color: $gray1;
+        padding: 1vw;
+        img { width: 3vw; }
+        span {
+            display: block;
+            margin-top: 0.4rem;
+        }
+    }
+}

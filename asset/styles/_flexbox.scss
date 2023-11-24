@@ -15,6 +15,10 @@
         .round-box {width: 20%;}
     }
     &.column { flex-direction: column; }
+    &.center {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .round-box {
