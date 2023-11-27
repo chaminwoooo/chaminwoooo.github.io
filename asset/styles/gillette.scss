@@ -11,16 +11,34 @@
     left: 0;
     z-index: 200;
     display: flex;
+    width: 100%;
     padding: 0 1rem;
     align-items: center;
-    background-color: $gray2;
+    background-color: #fff;
     transition: all 0.5s ease-out;
+    box-shadow: 2px 2px 4px $gray1;
+    overflow: hidden;
+
     .logo {
-        width: 20vw;
-        margin: 0 auto;
+        // margin: 0 auto 0 0;
+        @include allMobile {
+            width: 20vw;
+            margin: 0 auto;
+        }
     }
-    .ham-btn { border: 0; }
-    .search-btn { border: 0; }
+
+    .ham-btn {
+        display: none;
+        border: 0;
+        @include allMobile { display: block; }
+    }
+
+    .search-btn {
+        display: none;
+        border: 0;
+        @include allMobile { display: block; }
+    }
+
     .icon-hamburger {
         display: block;
         background: url('../images/gillette/icon/hamBtn.svg') no-repeat center center;
@@ -28,6 +46,7 @@
         height: 3rem;
         color: $gray1;
     }
+
     .icon-search {
         display: block;
         background: url('../images/gillette/icon/search.svg') no-repeat center center;
@@ -35,31 +54,140 @@
         height: 3rem;
         color: $gray1;
     }
+
+    @include allMobile {
+        height: 10vw;
+    }
 }
 
 #mainMenu {
-    position: fixed;
-    left: -10vw;
-    opacity: 0;
-    bottom: 0;
-    z-index: 100;
-    background-color: $orange1;
-    transition: all 0.5s;
-    .sub-menu-txt {
-        display: none;
+
+    &>.flex-box {
+        @include w1024 {
+            margin: 0 0 0 auto;
+            align-items: center;
+        }
+        @include allMobile {
+            flex-direction: column;
+        }
+    }
+
+    @include w1024 {
+        margin: 0 0 0 auto;
+    }
+
+    @include allMobile {
+        position: fixed;
+        width: 50vw;
+        left: -10vw;
+        opacity: 0;
+        bottom: 0;
+        background-color: #fff;
+        transition: all 0.5s;
+        z-index: -100;
+        box-shadow: 2px 2px 4px $gray1;
+        &.active {
+            left: 0;
+            opacity: 1;
+            z-index: 100;
+        }
+    }
+}
+
+.sub-menu-wrap { 
+    display: flex;
+    @include w1024 {
+        // padding: 2rem;
+    }
+    @include allMobile {
+        position: relative;
+        margin: 2rem 1rem; 
+    }
+}
+
+.menu-list {
+    font-size: 1rem;
+    color: $gilSub;
+    &.on {
+        .menu-title { color: $gilMain; }
+
+        @include w1024 {
+            .sub-menu-wrap {
+            position: fixed;
+            width: 100%;
+            top: 10vw;
+            left: 0;
+            z-index: 100;
+            background-color: $gray1;
+            }
+            .sub-menu-txt {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        @include allMobile {
+            .sub-menu-txt { height: 100%; }
+        }
+    }
+    @include w1024 {
+        padding: 1rem;
+    }
+    @include allMobile {
+        width: auto;
+        padding: 0;
+    }
+}
+
+.menu-title {
+    &.on { color: $gilSub; }
+    @include allMobile { margin: 2rem; }
+}
+
+.sub-menu-txt {
+    @include w1024 { 
+        display: none; 
+    }
+
+    @include allMobile {
+        height: 0;
+        overflow: hidden;
+        color: $gilSub;
         flex-direction: column;
     }
-    .sub-menu-img {display: none;}
 
-    &.active {
-        left: 0;
-        opacity: 1;
+    li { margin: 1rem; }
+    a {
+        color: $gilSub;
+        padding: 1rem;
     }
+}
+
+.sub-menu-img {
+    display: none;
+    align-items: center;
+    li {
+        width: 25%;
+        margin: 1rem;
+        text-align: center;
+    }
+    span {
+        margin-top: 1rem;
+        color: $gilMain;
+    }
+    &.on {
+        display: flex;
+        width: 70%;
+        padding: 2rem;
+    }
+    @include w768 { display: none; }
+    @include w480 { display: none; }
+    @include mobile { display: none; }
 }
 
 .video-container {
     position: relative;
     video { width: 100%; }
+
     .btn-arrow-down {
         position: absolute;
         bottom: 2vw;
@@ -69,8 +197,9 @@
         font-size: 1rem;
         font-weight: bold;
         text-align: center;
-        animation: arrowDown alternate infinite 1s ;
+        animation: arrowDown alternate infinite 1s;
     }
+
     .arrow-down {
         display: block;
         background: url('../images/gillette/icon/arrow-up.svg') no-repeat center center;
@@ -78,52 +207,70 @@
         width: 4vw;
         height: 4vw;
     }
+
+    @include allMobile {display: none;}
 }
 
 .category-container {
+    position: relative;
     width: 80vw;
     margin: 0 auto;
     padding: 2rem 0;
+    .flex-box {
+        @include allMobile {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
 
     li { 
         margin: 1rem; 
+        @include allMobile { width: 40%; }
     }
 
     .ttl-lg {
-        text-align: center; 
+        text-align: center;
         margin-top: 1rem;
     }
+
 }
 
 .startkit-container {
     height: 80vh;
     background: url('../images/gillette/main/banner.webp') no-repeat center center;
     background-size: cover;
+
     .ttl-xxl {
         text-align: left;
         margin-bottom: 3rem;
         color: $gray1;
         text-shadow: 2px 0px 4px;
     }
-    button {margin: 1rem;}
+
+    button { margin: 1rem; }
 
     @include w480 {
         background-image: url('../images/gillette/main/m_startkit.jpg');
+
         .ttl-xxl {
             color: $gilMain;
             text-shadow: none;
         }
+
         button {
             border-color: $gilMain;
             color: $gilMain;
         }
     }
+
     @include mobile {
         background-image: url('../images/gillette/main/m_startkit.jpg');
+
         .ttl-xxl {
             color: $gilMain;
             text-shadow: none;
         }
+
         button {
             border-color: $gilMain;
             color: $gilMain;
@@ -134,93 +281,96 @@
 .advise-container {
     width: 90%;
     margin: 4rem auto;
+
     img { width: 30vw; }
     .column { margin-left: 4rem; }
+
     .desc-lg {
         margin: 1rem 0;
         line-height: 1.6em;
     }
-    .blue { 
+
+    .blue {
         border-color: transparent;
-        background-color: $gilMain; 
+        background-color: $gilMain;
     }
 }
 
 .box-container {
-    @include w768 {flex-direction: column;}
-    @include w480 {flex-direction: column;}
-    @include mobile {flex-direction: column;}
-
-    .ttl-lg {
-        position: absolute;
-        top: -4vw;
-    }
-
+    @include w768 { flex-direction: column; }
+    @include w480 { flex-direction: column; }
+    @include mobile { flex-direction: column; }
+    .ttl-lg { margin: 2rem 0 0.4rem 0.4rem; }
     .btn-wrap { margin: auto 0 2vw 0; }
     .btn-md { margin: 1rem; }
 
     &.product {
-        .box-wrap{
+        .main-box {
+            &:first-child {
+                .box-wrap {
+                    background: url("../images/gillette/main/heated_razor_bg.webp") no-repeat center center;
+                    background-size: cover;
+                }
+            }
+
+            &:last-child {
+                .box-wrap {
+                    background: url("../images/gillette/main/acc_bg.webp") no-repeat center center;
+                    background-size: cover;
+                }
+            }
+        }
+
+        .box-wrap {
             width: 50vw;
             height: 50vw;
-            &:first-child { 
-                background: url("../images/gillette/main/heated_razor_bg.webp") no-repeat center center; 
-                background-size: cover;
-    
-            }
-            &:last-child { 
-                background: url("../images/gillette/main/acc_bg.webp") no-repeat center center; 
-                background-size: cover;
-            }    
-        }
-        .ttl-lg {
-            left: 1vw;
         }
     }
 
     &.tip {
         justify-content: space-around;
+
+        .main-box {
+            &:first-child {
+                .box-wrap {
+                    background: url("../images/gillette/main/home_youtube.jpg") no-repeat center center;
+                    background-size: cover;
+                }
+            }
+
+            &:last-child {
+                .box-wrap {
+                    background: url("../images/gillette/main/home_facial_hair_styles.jpg") no-repeat center center;
+                    background-size: cover;
+                }
+            }
+        }
+
         .box-wrap {
             width: 40vw;
             height: 24vw;
-            &:first-child { 
-                background: url("../images/gillette/main/home_youtube.jpg") no-repeat center center; 
-                background-size: cover;
-    
-            }
-            &:last-child { 
-                background: url("../images/gillette/main/home_facial_hair_styles.jpg") no-repeat center center; 
-                background-size: cover;
-            }    
         }
-        .ttl-lg { white-space: nowrap; }
+
+        .ttl-lg {
+            white-space: nowrap;
+        }
     }
 
     // 반응형 스타일 우선순위로 한번 더 상속
     &.flex-box {
-        .box-wrap{
+        .box-wrap {
             position: relative;
-            @include w768 {
-                width: 100%;
-                margin-top: 8vw;
-            }
-            @include w480 {
-                width: 100%;
-                margin-top: 8vw;
-            }
-            @include mobile {
-                width: 100%;
-                margin-top: 8vw;
-            }
+
+            @include w768 { width: 100%; }
+            @include w480 { width: 100%; }
+            @include mobile { width: 100%; }
         }
     }
 
-    & + .box-container {
-        margin-top: 8vw;
-
-        @include w768 { margin-top: 0vw; }
-        @include w480 { margin-top: 0vw; }
-        @include mobile { margin-top: 0vw; }
+    &+.box-container {
+        // @include w768 { margin-top: 0vw; }
+        // @include w480 { margin-top: 0vw; }
+        // @include mobile { margin-top: 0vw; }
     }
 }
 
@@ -230,33 +380,36 @@
     color: $gray1;
     padding: 3rem;
     margin-top: 10vw;
+
     .icon-logo {
         display: block;
         width: 25vw;
         margin: 0 auto;
     }
+
     ul { margin: 0 2rem; }
-    li {margin: 2rem 0;}
-    a {color: $gray1}
+    li { margin: 2rem 0; }
+    a { color: $gray1 }
 
     .sns {
         li {
-            width: 5vw; 
+            width: 5vw;
             margin: 1rem;
         }
     }
 
     address {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         margin: 2rem 0;
-        span { 
-            margin: 8px; 
-            &:first-child{margin-left: 0;}
-        }
+
+        span { margin: 1rem; }
+
         li {
             font-size: 1rem;
             margin: 8px 0;
         }
-        p { margin-top: 2rem; }
     }
 }
 
@@ -264,6 +417,7 @@
     position: fixed;
     right: 3vw;
     bottom: 3vw;
+
     .page-top {
         width: 8vw;
         height: 8vw;
@@ -271,7 +425,11 @@
         opacity: 0.8;
         color: $gray1;
         padding: 1vw;
-        img { width: 3vw; }
+
+        img {
+            width: 3vw;
+        }
+
         span {
             display: block;
             margin-top: 0.4rem;

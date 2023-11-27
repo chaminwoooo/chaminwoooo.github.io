@@ -361,20 +361,37 @@ button[class*=btn].btn-lg {
   left: 0;
   z-index: 200;
   display: flex;
+  width: 100%;
   padding: 0 1rem;
   align-items: center;
-  background-color: #e9ecef;
+  background-color: #fff;
   transition: all 0.5s ease-out;
+  box-shadow: 2px 2px 4px #f1f3f5;
+  overflow: hidden;
 }
-#mainHeader .logo {
-  width: 20vw;
-  margin: 0 auto;
+@media all and (min-width: 320px) and (max-width: 768px) {
+  #mainHeader .logo {
+    width: 20vw;
+    margin: 0 auto;
+  }
 }
 #mainHeader .ham-btn {
+  display: none;
   border: 0;
 }
+@media all and (min-width: 320px) and (max-width: 768px) {
+  #mainHeader .ham-btn {
+    display: block;
+  }
+}
 #mainHeader .search-btn {
+  display: none;
   border: 0;
+}
+@media all and (min-width: 320px) and (max-width: 768px) {
+  #mainHeader .search-btn {
+    display: block;
+  }
 }
 #mainHeader .icon-hamburger {
   display: block;
@@ -390,26 +407,157 @@ button[class*=btn].btn-lg {
   height: 3rem;
   color: #f1f3f5;
 }
+@media all and (min-width: 320px) and (max-width: 768px) {
+  #mainHeader {
+    height: 10vw;
+  }
+}
 
-#mainMenu {
-  position: fixed;
-  left: -10vw;
-  opacity: 0;
-  bottom: 0;
-  z-index: 100;
-  background-color: #ffe8cc;
-  transition: all 0.5s;
+@media all and (min-width: 1024px) {
+  #mainMenu > .flex-box {
+    margin: 0 0 0 auto;
+    align-items: center;
+  }
 }
-#mainMenu .sub-menu-txt {
+@media all and (min-width: 320px) and (max-width: 768px) {
+  #mainMenu > .flex-box {
+    flex-direction: column;
+  }
+}
+@media all and (min-width: 1024px) {
+  #mainMenu {
+    margin: 0 0 0 auto;
+  }
+}
+@media all and (min-width: 320px) and (max-width: 768px) {
+  #mainMenu {
+    position: fixed;
+    width: 50vw;
+    left: -10vw;
+    opacity: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: all 0.5s;
+    z-index: -100;
+    box-shadow: 2px 2px 4px #f1f3f5;
+  }
+  #mainMenu.active {
+    left: 0;
+    opacity: 1;
+    z-index: 100;
+  }
+}
+
+.sub-menu-wrap {
+  display: flex;
+}
+@media all and (min-width: 320px) and (max-width: 768px) {
+  .sub-menu-wrap {
+    position: relative;
+    margin: 2rem 1rem;
+  }
+}
+
+.menu-list {
+  font-size: 1rem;
+  color: #192f6e;
+}
+.menu-list.on .menu-title {
+  color: #0b1432;
+}
+@media all and (min-width: 1024px) {
+  .menu-list.on .sub-menu-wrap {
+    position: fixed;
+    width: 100%;
+    top: 10vw;
+    left: 0;
+    z-index: 100;
+    background-color: #f1f3f5;
+  }
+  .menu-list.on .sub-menu-txt {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media all and (min-width: 320px) and (max-width: 768px) {
+  .menu-list.on .sub-menu-txt {
+    height: 100%;
+  }
+}
+@media all and (min-width: 1024px) {
+  .menu-list {
+    padding: 1rem;
+  }
+}
+@media all and (min-width: 320px) and (max-width: 768px) {
+  .menu-list {
+    width: auto;
+    padding: 0;
+  }
+}
+
+.menu-title.on {
+  color: #192f6e;
+}
+@media all and (min-width: 320px) and (max-width: 768px) {
+  .menu-title {
+    margin: 2rem;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .sub-menu-txt {
+    display: none;
+  }
+}
+@media all and (min-width: 320px) and (max-width: 768px) {
+  .sub-menu-txt {
+    height: 0;
+    overflow: hidden;
+    color: #192f6e;
+    flex-direction: column;
+  }
+}
+.sub-menu-txt li {
+  margin: 1rem;
+}
+.sub-menu-txt a {
+  color: #192f6e;
+  padding: 1rem;
+}
+
+.sub-menu-img {
   display: none;
-  flex-direction: column;
+  align-items: center;
 }
-#mainMenu .sub-menu-img {
-  display: none;
+.sub-menu-img li {
+  width: 25%;
+  margin: 1rem;
+  text-align: center;
 }
-#mainMenu.active {
-  left: 0;
-  opacity: 1;
+.sub-menu-img span {
+  margin-top: 1rem;
+  color: #0b1432;
+}
+.sub-menu-img.on {
+  display: flex;
+  width: 70%;
+  padding: 2rem;
+}
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .sub-menu-img {
+    display: none;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 767px) {
+  .sub-menu-img {
+    display: none;
+  }
+}
+@media all and (max-width: 479px) {
+  .sub-menu-img {
+    display: none;
+  }
 }
 
 .video-container {
@@ -436,14 +584,31 @@ button[class*=btn].btn-lg {
   width: 4vw;
   height: 4vw;
 }
+@media all and (min-width: 320px) and (max-width: 768px) {
+  .video-container {
+    display: none;
+  }
+}
 
 .category-container {
+  position: relative;
   width: 80vw;
   margin: 0 auto;
   padding: 2rem 0;
 }
+@media all and (min-width: 320px) and (max-width: 768px) {
+  .category-container .flex-box {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 .category-container li {
   margin: 1rem;
+}
+@media all and (min-width: 320px) and (max-width: 768px) {
+  .category-container li {
+    width: 40%;
+  }
 }
 .category-container .ttl-lg {
   text-align: center;
@@ -526,8 +691,7 @@ button[class*=btn].btn-lg {
   }
 }
 .box-container .ttl-lg {
-  position: absolute;
-  top: -4vw;
+  margin: 2rem 0 0.4rem 0.4rem;
 }
 .box-container .btn-wrap {
   margin: auto 0 2vw 0;
@@ -535,35 +699,32 @@ button[class*=btn].btn-lg {
 .box-container .btn-md {
   margin: 1rem;
 }
+.box-container.product .main-box:first-child .box-wrap {
+  background: url("../images/gillette/main/heated_razor_bg.webp") no-repeat center center;
+  background-size: cover;
+}
+.box-container.product .main-box:last-child .box-wrap {
+  background: url("../images/gillette/main/acc_bg.webp") no-repeat center center;
+  background-size: cover;
+}
 .box-container.product .box-wrap {
   width: 50vw;
   height: 50vw;
 }
-.box-container.product .box-wrap:first-child {
-  background: url("../images/gillette/main/heated_razor_bg.webp") no-repeat center center;
-  background-size: cover;
-}
-.box-container.product .box-wrap:last-child {
-  background: url("../images/gillette/main/acc_bg.webp") no-repeat center center;
-  background-size: cover;
-}
-.box-container.product .ttl-lg {
-  left: 1vw;
-}
 .box-container.tip {
   justify-content: space-around;
+}
+.box-container.tip .main-box:first-child .box-wrap {
+  background: url("../images/gillette/main/home_youtube.jpg") no-repeat center center;
+  background-size: cover;
+}
+.box-container.tip .main-box:last-child .box-wrap {
+  background: url("../images/gillette/main/home_facial_hair_styles.jpg") no-repeat center center;
+  background-size: cover;
 }
 .box-container.tip .box-wrap {
   width: 40vw;
   height: 24vw;
-}
-.box-container.tip .box-wrap:first-child {
-  background: url("../images/gillette/main/home_youtube.jpg") no-repeat center center;
-  background-size: cover;
-}
-.box-container.tip .box-wrap:last-child {
-  background: url("../images/gillette/main/home_facial_hair_styles.jpg") no-repeat center center;
-  background-size: cover;
 }
 .box-container.tip .ttl-lg {
   white-space: nowrap;
@@ -574,40 +735,18 @@ button[class*=btn].btn-lg {
 @media all and (min-width: 768px) and (max-width: 1023px) {
   .box-container.flex-box .box-wrap {
     width: 100%;
-    margin-top: 8vw;
   }
 }
 @media all and (min-width: 480px) and (max-width: 767px) {
   .box-container.flex-box .box-wrap {
     width: 100%;
-    margin-top: 8vw;
   }
 }
 @media all and (max-width: 479px) {
   .box-container.flex-box .box-wrap {
     width: 100%;
-    margin-top: 8vw;
   }
 }
-.box-container + .box-container {
-  margin-top: 8vw;
-}
-@media all and (min-width: 768px) and (max-width: 1023px) {
-  .box-container + .box-container {
-    margin-top: 0vw;
-  }
-}
-@media all and (min-width: 480px) and (max-width: 767px) {
-  .box-container + .box-container {
-    margin-top: 0vw;
-  }
-}
-@media all and (max-width: 479px) {
-  .box-container + .box-container {
-    margin-top: 0vw;
-  }
-}
-
 #mainFooter {
   overflow: hidden;
   background-color: #0b1432;
@@ -634,20 +773,17 @@ button[class*=btn].btn-lg {
   margin: 1rem;
 }
 #mainFooter address {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin: 2rem 0;
 }
 #mainFooter address span {
-  margin: 8px;
-}
-#mainFooter address span:first-child {
-  margin-left: 0;
+  margin: 1rem;
 }
 #mainFooter address li {
   font-size: 1rem;
   margin: 8px 0;
-}
-#mainFooter address p {
-  margin-top: 2rem;
 }
 
 .arrow-up {
