@@ -295,6 +295,16 @@ h1 {
   padding: 2rem;
 }
 
+#flexBox .txt-wrap {
+  background-color: #f8f9fa;
+  padding: 1rem;
+}
+#flexBox .ttl-md {
+  line-height: 1.6em;
+  height: 2em;
+  margin-bottom: 1rem;
+}
+
 main {
   padding: 2rem;
 }
