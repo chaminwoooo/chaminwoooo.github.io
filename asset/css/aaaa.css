@@ -211,7 +211,7 @@ textarea[disabled] {
 }
 @keyframes slideUp {
   from {
-    bottom: -50px;
+    bottom: -2rem;
   }
   to {
     bottom: 0px;
@@ -220,7 +220,7 @@ textarea[disabled] {
 }
 @keyframes slideFromLeft {
   from {
-    left: -50vw;
+    left: -20vw;
   }
   to {
     left: 0px;
@@ -229,7 +229,7 @@ textarea[disabled] {
 }
 @keyframes slideFromRight {
   from {
-    right: -50vw;
+    right: -20vw;
   }
   to {
     right: 0px;

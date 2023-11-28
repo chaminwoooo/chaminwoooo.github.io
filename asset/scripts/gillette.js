@@ -1,7 +1,6 @@
 'use strict'
 const isMobile = /Mobi/i.test(window.navigator.userAgent);
 const CheckOs = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
 let header = document.querySelector('#mainHeader');
 let menu = document.querySelector('#mainMenu');
 
@@ -106,7 +105,20 @@ function headerSlide() {
         if (window.scrollY < 1) {
             header.style.height = '0px';
         } else {
-            header.style.height ='10vw';
+            header.style.height = '10vw';
+        }
+    })
+}
+
+function scrollEvent(el) {
+    let thisContent = document.querySelector(`.${el}`);
+
+    window.addEventListener('scroll', () => {
+        let headerHeight = header.offsetHeight;
+        if (window.scrollY > thisContent.offsetTop - (headerHeight * 3)) {
+            thisContent.classList.add('on');
+        } else if (window.scrollY == 0) {
+            thisContent.classList.remove('on');
         }
     })
 }
@@ -115,3 +127,4 @@ showMenuImg();
 showSubTitle();
 menuSlide();
 headerSlide();
+scrollEvent('product');

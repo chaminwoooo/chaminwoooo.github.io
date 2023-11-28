@@ -9,6 +9,7 @@
     position: sticky;
     top: 0;
     left: 0;
+    height: 0;
     z-index: 200;
     display: flex;
     width: 100%;
@@ -97,7 +98,6 @@
 .sub-menu-wrap { 
     display: flex;
     @include w1024 {
-        // padding: 2rem;
     }
     @include allMobile {
         position: relative;
@@ -109,7 +109,7 @@
     font-size: 1rem;
     color: $gilSub;
     &.on {
-        .menu-title { color: $gilMain; }
+        .menu-title { color: $orange9; }
 
         @include w1024 {
             .sub-menu-wrap {
@@ -139,11 +139,21 @@
 }
 
 .menu-title {
+    font-size: 1.6rem;
     &.on { color: $gilSub; }
     @include allMobile { margin: 2rem; }
 }
 
 .sub-menu-txt {
+    padding: 2rem 1rem;
+
+    li { margin: 1rem; }
+    a {
+        font-size: 1.6rem;
+        color: $gilSub;
+        padding: 1rem;
+        &:hover { color: $orange9; }
+    }
     @include w1024 { 
         display: none; 
     }
@@ -154,30 +164,39 @@
         color: $gilSub;
         flex-direction: column;
     }
-
-    li { margin: 1rem; }
-    a {
-        color: $gilSub;
-        padding: 1rem;
-    }
 }
 
 .sub-menu-img {
     display: none;
     align-items: center;
     li {
+        position: relative;
         width: 25%;
         margin: 1rem;
         text-align: center;
+        bottom: -2rem;
+        opacity: 0;
     }
     span {
+        display: inline-block;
         margin-top: 1rem;
         color: $gilMain;
+        height: 2em;
     }
     &.on {
+        flex: 1;
         display: flex;
-        width: 70%;
         padding: 2rem;
+        li {
+            animation-name: slideUp;
+            animation-fill-mode: forwards;
+
+            @for $i from 1 through 4 {
+                &:nth-of-type(#{$i}) {
+                    animation-duration: 0.5s * $i;
+                }
+            }
+        }
     }
     @include w768 { display: none; }
     @include w480 { display: none; }
@@ -226,6 +245,11 @@
     li { 
         margin: 1rem; 
         @include allMobile { width: 40%; }
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+            .ttl-lg { color: $gilSub; }
+        }
     }
 
     .ttl-lg {
@@ -307,6 +331,8 @@
     &.product {
         .main-box {
             &:first-child {
+                transition: all 1s ease-in-out;
+                position: relative;
                 .box-wrap {
                     background: url("../images/gillette/main/heated_razor_bg.webp") no-repeat center center;
                     background-size: cover;
@@ -314,16 +340,35 @@
             }
 
             &:last-child {
+                position: relative;
+                transition: all 1s ease-in-out;
                 .box-wrap {
                     background: url("../images/gillette/main/acc_bg.webp") no-repeat center center;
                     background-size: cover;
                 }
+            }
+            @include w1024 {
+                opacity: 0;
             }
         }
 
         .box-wrap {
             width: 50vw;
             height: 50vw;
+        }
+
+        @include w1024 {
+            &.on {
+                .main-box {
+                    &:first-child {
+                        animation: slideFromLeft forwards 1s alternate;
+                    }
+                    &:last-child {
+                        animation: slideFromRight forwards 1s alternate;
+                    }
+                }
+                
+            }
         }
     }
 
