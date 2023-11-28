@@ -29,6 +29,7 @@ header {
 
 .side-nav {
     position: fixed;
+    width: 15vw;
     right: 2vw;
     bottom: 2vw;
     z-index: 2000;
@@ -61,7 +62,7 @@ header {
     a { color: $gray9; }
 }
 
-.product-container {
+.intro-container {
     padding: 2rem 0;
     background: url('../images/cocacola/bg/top_bg.png') top center no-repeat;
     background-size: cover;
@@ -69,7 +70,7 @@ header {
     .ttl-xl { color: $gray1; }
 }
 
-.prd-list {
+.intro-list {
     width: 80%;
     margin: 0 auto;
 
