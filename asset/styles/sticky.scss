@@ -1,10 +1,5 @@
 @import '_page';
 @import '_flexbox';
-
-header {
-    padding: 2rem;
-}
-
 .sticky-tab {
     position: sticky;
     background-color: $gray2;
@@ -14,4 +9,8 @@ header {
         align-items: center;
         li { margin: 1rem; }
     }
+}
+.sample-box {
+    background-color: $gray4;
+    height: 100vh;
 }

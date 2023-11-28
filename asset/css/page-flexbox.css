@@ -309,6 +309,7 @@ button[class*=btn].btn-lg {
 
 body {
   background: url("../images/paper_bg.png") no-repeat top center #ffe8cc;
+  background-size: cover;
 }
 
 h1 {

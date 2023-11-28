@@ -3,7 +3,10 @@
 @import '_mobile';
 @import '_class';
 
-body { background: url('../images/paper_bg.png') no-repeat top center $orange1}
+body { 
+    background: url('../images/paper_bg.png') no-repeat top center $orange1;
+    background-size: cover;
+}
 h1 { color: $orange5; }
 .sample {
     header { padding: 2rem; }

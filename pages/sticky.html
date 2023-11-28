@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAYGROUND - STICKY</title>
     <link rel="icon" href="../asset/images/favicon.ico">
     <link rel="stylesheet" href="../asset/css/sticky.css">
+    <link rel="stylesheet" href="../asset/css/scroll.css">
 </head>
-<body>
+
+<body id="sticky" class="sample">
     <header>
         <h1 class="ttl-xl">Sticky</h1>
     </header>
 
-    <nav class="sticky-tab">
-        <ul class="flex-box">
-            <li>HOME</li>
-            <li>CONTENTS</li>
-            <li>FOOTER</li>
+    <nav class="sticky-tab x-scroll">
+        <ul>
+            <li class="on">CONTENTS 1</li>
+            <li>CONTENTS 2</li>
+            <li>CONTENTS 3</li>
+            <li>CONTENTS 4</li>
+            <li>CONTENTS 5</li>
+            <li>CONTENTS 6</li>
+            <li>CONTENTS 7</li>
+            <li>CONTENTS 8</li>
+            <li>CONTENTS 9</li>
+            <li>CONTENTS 10</li>
+            <li>CONTENTS 11</li>
+            <li>CONTENTS 12</li>
+            <li>CONTENTS 13</li>
+            <li>CONTENTS 14</li>
+            <li>CONTENTS 15</li>
+            <li>CONTENTS 16</li>
+            <li>CONTENTS 17</li>
+            <li>CONTENTS 18</li>
+            <li>CONTENTS 19</li>
+            <li>CONTENTS 20</li>
         </ul>
     </nav>
-    <main style="display: block; padding: 10vh; background-color: beige; height: 100vh; text-align: center;">
-        <p class="ttl-xxxl">컨텐츠 내용입니다</p>
-    </main>
-    <nav class="sticky-tab gg">
-        <ul class="flex-box">
-            <li>HOME</li>
-            <li>CONTENTS</li>
-            <li>FOOTER</li>
-        </ul>
-    </nav>
-    <main style="display: block; padding: 10vh; background-color: beige; height: 100vh; text-align: center;">
-        <p class="ttl-xxxl">무엇을 넣을가</p>
-    </main>
-    <nav class="sticky-tab gg">
-        <ul class="flex-box">
-            <li>HOME</li>
-            <li>CONTENTS</li>
-            <li>FOOTER</li>
-        </ul>
-    </nav>
-    <main style="display: block; padding: 10vh; background-color: beige; height: 100vh; text-align: center;">
-        <p class="ttl-xxxl">컴포넌트 잘 합쳐보자잉</p>
-    </main>
+    <article class="sample-box">
+        컨텐츠 1
+    </article>
+
 </body>
 <script src="../asset/scripts/sticky.js"></script>
+
 </html>

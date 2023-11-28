@@ -282,6 +282,7 @@ button[class*=btn].btn-lg {
 
 body {
   background: url("../images/paper_bg.png") no-repeat top center #ffe8cc;
+  background-size: cover;
 }
 
 h1 {
@@ -339,9 +340,6 @@ h1 {
 }
 
 .x-scroll {
-  position: sticky;
-  top: 0;
-  background-color: salmon;
   overflow: hidden;
 }
 .x-scroll ul {
@@ -352,6 +350,12 @@ h1 {
 }
 .x-scroll li {
   margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+.x-scroll li.on {
+  font-weight: bold;
+  color: #d9480f;
 }
 .x-scroll + .box {
   margin-top: 0;

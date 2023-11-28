@@ -32,9 +32,6 @@
 
 
 .x-scroll {
-    position: sticky;
-    top: 0;
-    background-color: salmon;
     overflow: hidden;
     ul {
         display: flex;
@@ -42,6 +39,14 @@
         padding-bottom: 20px;
         margin-bottom: -20px;
     }
-    li { margin: 1rem; }
+    li { 
+        margin: 1rem; 
+        padding: 1rem;
+        text-align: center;
+        &.on { 
+            font-weight: bold;
+            color: $orange9; 
+        }
+    }
     + .box { margin-top: 0; }
 }

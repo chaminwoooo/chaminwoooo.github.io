@@ -282,6 +282,7 @@ button[class*=btn].btn-lg {
 
 body {
   background: url("../images/paper_bg.png") no-repeat top center #ffe8cc;
+  background-size: cover;
 }
 
 h1 {
@@ -332,10 +333,6 @@ h1 {
   overflow: hidden;
 }
 
-header {
-  padding: 2rem;
-}
-
 .sticky-tab {
   position: sticky;
   background-color: #e9ecef;
@@ -346,4 +343,9 @@ header {
 }
 .sticky-tab .flex-box li {
   margin: 1rem;
+}
+
+.sample-box {
+  background-color: #ced4da;
+  height: 100vh;
 }
