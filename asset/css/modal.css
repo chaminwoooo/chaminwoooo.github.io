@@ -281,7 +281,7 @@ button[class*=btn].btn-lg {
 }
 
 body {
-  background-color: #ffe8cc;
+  background: url("../images/paper_bg.png") no-repeat top center #ffe8cc;
 }
 
 h1 {
@@ -295,6 +295,33 @@ h1 {
   padding: 2rem;
 }
 
+.flex-box {
+  display: flex;
+}
+.flex-box.double .round-box {
+  width: 48%;
+}
+.flex-box.triple .round-box {
+  width: 30%;
+}
+.flex-box.quatro .round-box {
+  width: 20%;
+}
+.flex-box.column {
+  flex-direction: column;
+}
+.flex-box.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.round-box {
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px #343a40;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
 .btn-wrap button {
   margin: 8px 0;
   padding: 8px 12px;
@@ -304,9 +331,6 @@ h1 {
 
 .modal {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 70%;
   border: 1px solid #ced4da;
   border-radius: 16px;
@@ -314,6 +338,11 @@ h1 {
   overflow: hidden;
   display: none;
   z-index: 1000;
+}
+.modal.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .modal.center .md-content {
   min-height: 20vh;
@@ -324,9 +353,25 @@ h1 {
 .modal.bottom {
   width: 100%;
   border-radius: 16px 16px 0 0;
-  top: auto;
   bottom: 0;
-  transform: translate(-50%, 0);
+}
+.modal.box-top {
+  width: 90%;
+  top: 10vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.modal.box-top .md-footer {
+  display: none;
+}
+.modal.box-bottom {
+  width: 90%;
+  bottom: 10vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.modal.box-bottom .md-footer {
+  display: none;
 }
 .modal.on {
   display: block;

@@ -308,7 +308,7 @@ button[class*=btn].btn-lg {
 }
 
 body {
-  background-color: #ffe8cc;
+  background: url("../images/paper_bg.png") no-repeat top center #ffe8cc;
 }
 
 h1 {

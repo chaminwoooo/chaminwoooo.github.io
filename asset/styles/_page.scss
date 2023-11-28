@@ -4,7 +4,7 @@
 @import '_class';
 
 body {
-    background-color: $orange1;
+    background: url('../images/paper_bg.png') no-repeat top center $orange1
 }
 
 h1 {
@@ -12,6 +12,6 @@ h1 {
 }
 
 .sample {
-    header{padding: 2rem;}
-    main{padding: 2rem;}
+    header { padding: 2rem; }
+    main { padding: 2rem; }
 }

@@ -9,42 +9,29 @@
     <link rel="stylesheet" href="../asset/css/modal.css">
 </head>
 
-<body>
+<body class="sample">
     <header>
         <h1 class="ttl-xl">MODAL</h1>
     </header>
 
     <main>
         <div class="btn-wrap">
-            <button onclick="mdCenter.open()">센터 모달 열기</button>
-            <button onclick="mdBottom.open()">바텀 모달 열기</button>
+            <button onclick="mdSample.open()">모달 열기</button>
         </div>
     </main>
 
-    <article class="modal" id="mdCenter">
+    <article class="modal" id="mdSample">
         <header class="md-header">
-            <h2>센터 모달</h2>
-            <span class="hidden">닫기</span>
+            <h2 class="ttl-lg">모달 타이틀</h2>
         </header>
 
         <article class="md-content">
-            모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들
-        </article>
-
-        <footer class="md-footer">
-            <button class="ok">확인</button>
-            <button class="cancle" onclick="mdCenter.close();">취소</button>
-        </footer>
-    </article>
-
-    <article class="modal" id="mdBottom">
-        <header class="md-header">
-            <h2>바텀 모달</h2>
-            <span class="hidden">닫기</span>
-        </header>
-
-        <article class="md-content">
-            모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들모달의 내용들
+            <div class="flex-wrap column">
+                <p class="center-type"><a href="#링크">센터 타입 (Default)</a></p>
+                <p class="bottom-type"><a href="#링크">바텀 타입</a></p>
+                <p class="box-top"><a href="#링크">상단 박스 타입</a></p>
+                <p class="box-bottom"><a href="#링크">하단 박스 타입</a></p>
+            </div>
         </article>
 
         <footer class="md-footer">
@@ -54,9 +41,43 @@
     </article>
 </body>
 <script src="../asset/scripts/modal.js"></script>
+
+<style>
+
+    #mdSample {
+        transition: all 0.4s ease-in-out;
+    }
+    .flex-wrap p{
+        font-size: 1.6rem;
+        margin: 1rem;
+    }
+</style>
 <script>
-    const mdCenter = new Modal('#mdCenter', 'center');
-    const mdBottom = new Modal('#mdBottom', 'bottom')
+    const mdSample = new Modal('#mdSample','center');
+    mdSample.open();
+
+    const mdTest = document.querySelector('.modal');
+
+    document.querySelector('.center-type').addEventListener('click', () => {
+        mdTest.className ='modal on'
+        mdTest.classList.add('center');
+    });
+
+    document.querySelector('.bottom-type').addEventListener('click', () => {
+        mdTest.className ='modal on'
+        mdTest.classList.add('bottom');
+    });
+
+    document.querySelector('.box-top').addEventListener('click', () => {
+        mdTest.className ='modal on'
+        mdTest.classList.add('box-top');
+    });
+
+    document.querySelector('.box-bottom').addEventListener('click', () => {
+        mdTest.className ='modal on'
+        mdTest.classList.add('box-bottom');
+    });
+
 </script>
 
 </html>
