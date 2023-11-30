@@ -289,10 +289,13 @@ h1 {
   color: #ff922b;
 }
 
-.sample header {
+.sample > header {
   padding: 2rem;
 }
 .sample main {
+  padding: 2rem;
+}
+.sample main > header {
   padding: 2rem;
 }
 

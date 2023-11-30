@@ -289,10 +289,13 @@ h1 {
   color: #ff922b;
 }
 
-.sample header {
+.sample > header {
   padding: 2rem;
 }
 .sample main {
+  padding: 2rem;
+}
+.sample main > header {
   padding: 2rem;
 }
 
@@ -361,16 +364,31 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+.modal.center .btn-close {
+  display: none;
+}
 .modal.bottom {
   width: 100%;
   border-radius: 16px 16px 0 0;
   bottom: 0;
+}
+.modal.bottom .btn-close {
+  display: none;
 }
 .modal.box-top {
   width: 90%;
   top: 10vw;
   left: 50%;
   transform: translateX(-50%);
+}
+.modal.box-top .md-header {
+  padding: 0;
+}
+.modal.box-top .md-header .ttl-lg {
+  display: none;
+}
+.modal.box-top .md-header::after {
+  display: none;
 }
 .modal.box-top .md-footer {
   display: none;
@@ -384,6 +402,15 @@ h1 {
 .modal.box-bottom .md-footer {
   display: none;
 }
+.modal.box-bottom .md-header {
+  padding: 0;
+}
+.modal.box-bottom .md-header .ttl-lg {
+  display: none;
+}
+.modal.box-bottom .md-header::after {
+  display: none;
+}
 .modal.on {
   display: block;
 }
@@ -392,6 +419,14 @@ h1 {
   position: relative;
   padding: 1rem 0;
   text-align: center;
+}
+.md-header .btn-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: url(../images/x-btn.png) no-repeat center center;
+  background-size: cover;
+  padding: 1rem;
 }
 .md-header::after {
   content: "";

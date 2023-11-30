@@ -12,10 +12,11 @@ class Modal {
     open() {
         let md = document.querySelector(`${this.name}`);
         let okBtn = md.querySelector('.ok');
-        
+
         md.classList.add('on', `${this.type}`);
         wrap.appendChild(dimBg);
 
+        // 임시 submit 기능 추가해야함
         okBtn.addEventListener('click', function () {
             md.classList.remove('on');
             dimBg.remove();
@@ -27,3 +28,11 @@ class Modal {
         dimBg.remove();
     }
 }
+
+let cancle = document.querySelectorAll('.cancle');
+cancle.forEach((el) => {
+    el.addEventListener('click', () => {
+        el.parentElement.parentElement.classList.remove('on');
+        dimBg.remove();
+    })
+});

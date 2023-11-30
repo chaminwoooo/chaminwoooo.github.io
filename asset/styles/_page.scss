@@ -9,8 +9,11 @@ body {
 }
 h1 { color: $orange5; }
 .sample {
-    header { padding: 2rem; }
-    main { padding: 2rem; }
+    & > header { padding: 2rem; }
+    main { 
+        padding: 2rem; 
+        & > header { padding: 2rem; }
+    }
 } 
 
 #flexBox {
