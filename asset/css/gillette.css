@@ -441,6 +441,7 @@ button[class*=btn].btn-lg {
     transition: all 0.5s;
     z-index: -100;
     box-shadow: 2px 2px 4px #f1f3f5;
+    overflow-y: auto;
   }
   #mainMenu.active {
     left: 0;
@@ -463,10 +464,10 @@ button[class*=btn].btn-lg {
   font-size: 1rem;
   color: #192f6e;
 }
-.menu-list.on .menu-title {
-  color: #d9480f;
-}
 @media all and (min-width: 1024px) {
+  .menu-list.on .menu-title {
+    color: #d9480f;
+  }
   .menu-list.on .sub-menu-wrap {
     position: fixed;
     width: 100%;
@@ -530,7 +531,7 @@ button[class*=btn].btn-lg {
 }
 @media all and (min-width: 320px) and (max-width: 768px) {
   .sub-menu-txt {
-    height: 0;
+    padding: 0;
     overflow: hidden;
     color: #192f6e;
     flex-direction: column;
@@ -555,26 +556,28 @@ button[class*=btn].btn-lg {
   color: #0b1432;
   height: 2em;
 }
-.sub-menu-img.on {
-  flex: 1;
-  display: flex;
-  padding: 2rem;
-}
-.sub-menu-img.on li {
-  animation-name: slideUp;
-  animation-fill-mode: forwards;
-}
-.sub-menu-img.on li:nth-of-type(1) {
-  animation-duration: 0.5s;
-}
-.sub-menu-img.on li:nth-of-type(2) {
-  animation-duration: 1s;
-}
-.sub-menu-img.on li:nth-of-type(3) {
-  animation-duration: 1.5s;
-}
-.sub-menu-img.on li:nth-of-type(4) {
-  animation-duration: 2s;
+@media all and (min-width: 1024px) {
+  .sub-menu-img.on {
+    flex: 1;
+    display: flex;
+    padding: 2rem;
+  }
+  .sub-menu-img.on li {
+    animation-name: slideUp;
+    animation-fill-mode: forwards;
+  }
+  .sub-menu-img.on li:nth-of-type(1) {
+    animation-duration: 0.5s;
+  }
+  .sub-menu-img.on li:nth-of-type(2) {
+    animation-duration: 1s;
+  }
+  .sub-menu-img.on li:nth-of-type(3) {
+    animation-duration: 1.5s;
+  }
+  .sub-menu-img.on li:nth-of-type(4) {
+    animation-duration: 2s;
+  }
 }
 @media all and (min-width: 768px) and (max-width: 1023px) {
   .sub-menu-img {

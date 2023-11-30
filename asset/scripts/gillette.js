@@ -101,11 +101,15 @@ function menuInit() {
 }
 
 function headerSlide() {
-    addEventListener('scroll', () => {
-        if (window.scrollY < 1) {
-            header.style.height = '0px';
-        } else {
-            header.style.height = '10vw';
+    addEventListener('resize',()=>{
+        if (window.innerWidth >= 1024){
+            addEventListener('scroll', () => {
+                if (window.scrollY < 1) {
+                    header.style.height = '0px';
+                } else {
+                    header.style.height = '10vw';
+                }
+            })
         }
     })
 }
