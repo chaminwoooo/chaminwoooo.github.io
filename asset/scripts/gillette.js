@@ -101,17 +101,15 @@ function menuInit() {
 }
 
 function headerSlide() {
-    addEventListener('resize',()=>{
-        if (window.innerWidth >= 1024){
-            addEventListener('scroll', () => {
-                if (window.scrollY < 1) {
-                    header.style.height = '0px';
-                } else {
-                    header.style.height = '10vw';
-                }
-            })
-        }
-    })
+    if (window.innerWidth >= 1024) {
+        addEventListener('scroll', () => {
+            if (window.scrollY < 1) {
+                header.style.height = '0px';
+            } else {
+                header.style.height = '10vw';
+            }
+        })
+    }
 }
 
 function scrollEvent(el) {
@@ -126,6 +124,11 @@ function scrollEvent(el) {
         }
     })
 }
+
+
+addEventListener('resize', () => {
+    headerSlide();
+})
 
 showMenuImg();
 showSubTitle();
