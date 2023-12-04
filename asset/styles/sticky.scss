@@ -1,7 +1,10 @@
 @import '_page';
 @import '_flexbox';
-.sticky-tab {
+.sticky {
     position: sticky;
+}
+
+.x-scroll {
     background-color: $gray2;
 
     .flex-box {

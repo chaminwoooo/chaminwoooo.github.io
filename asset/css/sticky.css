@@ -336,15 +336,18 @@ h1 {
   overflow: hidden;
 }
 
-.sticky-tab {
+.sticky {
   position: sticky;
+}
+
+.x-scroll {
   background-color: #e9ecef;
 }
-.sticky-tab .flex-box {
+.x-scroll .flex-box {
   height: 10vh;
   align-items: center;
 }
-.sticky-tab .flex-box li {
+.x-scroll .flex-box li {
   margin: 1rem;
 }
 
