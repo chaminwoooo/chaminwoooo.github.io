@@ -330,6 +330,7 @@ h1 {
 }
 
 .round-box {
+  width: 100%;
   border-radius: 8px;
   box-shadow: 2px 2px 8px #343a40;
   margin: 1rem 0;

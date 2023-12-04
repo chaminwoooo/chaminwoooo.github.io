@@ -1,7 +1,10 @@
 @import '_page';
 
 main { padding: 2rem; }
-.overflow-x { overflow: scroll; }// 임시
+.x-scroll{ 
+    overflow: hidden;
+    overflow-x: auto; 
+}
 table { margin: 4rem 0; } // 이 페이지 내 간격 임시
 
 .table-default {
@@ -38,9 +41,8 @@ table { margin: 4rem 0; } // 이 페이지 내 간격 임시
     }
 
     &.sticky {
-        width: 100%;
         position: relative;
-        overflow: scroll;
+        width: 100%;
         thead {
             th:first-child {
                 position: sticky;

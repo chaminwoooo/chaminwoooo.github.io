@@ -313,8 +313,9 @@ main {
   padding: 2rem;
 }
 
-.overflow-x {
-  overflow: scroll;
+.x-scroll {
+  overflow: hidden;
+  overflow-x: auto;
 }
 
 table {
@@ -362,9 +363,8 @@ table {
   background-color: #51cf66;
 }
 .table-default.sticky {
-  width: 100%;
   position: relative;
-  overflow: scroll;
+  width: 100%;
 }
 .table-default.sticky thead th:first-child {
   position: sticky;
