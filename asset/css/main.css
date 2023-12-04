@@ -345,7 +345,7 @@ footer {
   padding: 1rem;
 }
 .round-box:hover {
-  background-color: #51cf66;
+  background-color: #343a40;
   box-shadow: 2px 2px 8px #f1f3f5;
 }
 .round-box:hover a {
