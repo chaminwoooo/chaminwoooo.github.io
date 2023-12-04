@@ -27,41 +27,6 @@ header {
     background-color: $cocaMain;
 }
 
-.side-nav {
-    position: fixed;
-    width: 15vw;
-    right: 2vw;
-    bottom: 2vw;
-    z-index: 2000;
-}
-
-.side-nav-list {
-    padding: 1rem;
-    background-color: $gray2;
-    border-radius: 8px;
-    box-shadow: 2px 2px 4px $gray4;
-
-    li {
-        position: relative;
-        font-weight: bold;
-        font-size: 1rem;
-        margin: 0.5rem;
-
-        &::before {
-            content: '';
-            display: inline-block;
-            vertical-align: middle;
-            width: 8px;
-            height: 8px;
-            background-color: $gray9;
-            border-radius: 4px;
-            margin-right: 0.5rem;
-        }
-    }
-
-    a { color: $gray9; }
-}
-
 .intro-container {
     padding: 2rem 0;
     background: url('../images/cocacola/bg/top_bg.png') top center no-repeat;
@@ -82,7 +47,7 @@ header {
         box-shadow: 1px 1px 8px $gray9;
         transition: all 1s;
 
-        // &:hover { animation: shake infinite 0.1s alternate; }
+        &:hover { animation: shake infinite 0.1s alternate; }
     }
 
     .ttl-md {
@@ -103,8 +68,13 @@ header {
 
 .goods-list {
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+}
+.goods-wrap { 
+    margin: 2vw 1.5vw; 
+    box-shadow: none;
+    border: 2px solid $gray2;
 }
 
 .info-box {
@@ -120,7 +90,10 @@ header {
     }
     .price-wrap { 
         display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         margin-top: 1rem; 
+        min-height: 3.2em;
     }
     .discount {
         color: $red7;
@@ -134,6 +107,10 @@ header {
     .pre-price {
         color: $gray5;
         text-decoration: line-through;
+        font-size: 1rem;
+    }
+    @include allMobile {
+        padding: 1rem;
     }
 }
 

@@ -377,40 +377,6 @@ header {
   background-color: #df0026;
 }
 
-.side-nav {
-  position: fixed;
-  width: 15vw;
-  right: 2vw;
-  bottom: 2vw;
-  z-index: 2000;
-}
-
-.side-nav-list {
-  padding: 1rem;
-  background-color: #e9ecef;
-  border-radius: 8px;
-  box-shadow: 2px 2px 4px #ced4da;
-}
-.side-nav-list li {
-  position: relative;
-  font-weight: bold;
-  font-size: 1rem;
-  margin: 0.5rem;
-}
-.side-nav-list li::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  width: 8px;
-  height: 8px;
-  background-color: #212529;
-  border-radius: 4px;
-  margin-right: 0.5rem;
-}
-.side-nav-list a {
-  color: #212529;
-}
-
 .intro-container {
   padding: 2rem 0;
   background: url("../images/cocacola/bg/top_bg.png") top center no-repeat;
@@ -432,6 +398,9 @@ header {
   box-shadow: 1px 1px 8px #212529;
   transition: all 1s;
 }
+.intro-list li:hover {
+  animation: shake infinite 0.1s alternate;
+}
 .intro-list .ttl-md {
   position: absolute;
   left: 0;
@@ -451,8 +420,14 @@ header {
 
 .goods-list {
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.goods-wrap {
+  margin: 2vw 1.5vw;
+  box-shadow: none;
+  border: 2px solid #e9ecef;
 }
 
 .info-box {
@@ -468,7 +443,10 @@ header {
 }
 .info-box .price-wrap {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin-top: 1rem;
+  min-height: 3.2em;
 }
 .info-box .discount {
   color: #f03e3e;
@@ -482,6 +460,12 @@ header {
 .info-box .pre-price {
   color: #adb5bd;
   text-decoration: line-through;
+  font-size: 1rem;
+}
+@media all and (min-width: 320px) and (max-width: 768px) {
+  .info-box {
+    padding: 1rem;
+  }
 }
 
 .brand-swiper {
