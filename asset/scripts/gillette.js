@@ -7,6 +7,7 @@ let menu = document.querySelector('#mainMenu');
 function moveToScroll(el) {
     let headerHeight = header.offsetHeight;
     window.scrollTo({ top: document.querySelector(`${el}`).offsetTop - headerHeight, behavior: 'smooth' });
+    console.log('??')
 }
 
 function videoBtnPageDown() {
@@ -125,10 +126,14 @@ function scrollEvent(el) {
     })
 }
 
-
 addEventListener('resize', () => {
     headerSlide();
 })
+
+document.querySelector('.page-top').addEventListener('click', () => {
+    moveToScroll('main');
+})
+
 
 showMenuImg();
 showSubTitle();
