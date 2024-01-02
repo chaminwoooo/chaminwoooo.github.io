@@ -1,9 +1,10 @@
-@import '_default';
-@import '_animation';
-@import '_variables';
-@import '_class';
-@import '_flexbox';
-@import '_mobile';
+@import '../base/reset';
+@import '../helper/animation';
+@import '../helper/variables';
+@import '../helper/class';
+@import '../helper/mobile';
+@import '../layout/flexbox';
+
 
 .logo {
     width: 200px;

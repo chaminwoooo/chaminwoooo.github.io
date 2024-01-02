@@ -1,5 +1,5 @@
-@import '_flexbox';
-@import '_page';
+@import '../helper/page';
+@import '../layout/flexbox';
 
 .flex-box {
     flex-wrap: wrap;

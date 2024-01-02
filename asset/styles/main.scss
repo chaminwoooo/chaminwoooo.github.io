@@ -1,8 +1,8 @@
-@import '_default';
-@import '_variables';
-@import '_class';
-@import '_mobile';
-@import '_flexbox';
+@import './base/reset';
+@import './helper/variables';
+@import './helper/class';
+@import './helper/mobile';
+@import './layout/flexbox';
 
 body {
     background: url('../images/paper_bg.png') no-repeat top center $gray2;

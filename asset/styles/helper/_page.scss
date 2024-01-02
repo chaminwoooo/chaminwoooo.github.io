@@ -1,7 +1,7 @@
-@import '_default';
-@import '_variables';
-@import '_mobile';
-@import '_class';
+@import '../base/reset';
+@import '../helper/variables';
+@import '../helper/mobile';
+@import '../helper/class';
 
 body { 
     background: url('../images/paper_bg.png') no-repeat top center $orange1;
