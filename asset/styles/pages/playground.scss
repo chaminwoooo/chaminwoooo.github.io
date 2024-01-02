@@ -1,0 +1,14 @@
+/*
+* PLAYGROUND 각각 페이지에서 공통으로 사용하려고 따로 땜
+- 기존에 페이지 마다 되어 있던 스타일들 import 필요
+- 올해에 scss 도입 하려면 충분한 연습이 필요함 
+    --Update 2024-01-02
+*/
+
+
+@import '../base/reset';
+@import '../helper/variables';
+@import '../helper/class';
+@import '../component/_button';
+
+.playground { padding: 2rem; }

@@ -21,6 +21,7 @@ html {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-size: 10px;
 }
 
 body {
@@ -34,7 +35,6 @@ body {
 
 body, input, select, textarea, button {
   border: none;
-  font-size: 12px;
   font-family: "Pretendard", sans-serif;
 }
 
@@ -192,54 +192,6 @@ textarea[disabled] {
   white-space: nowrap !important;
 }
 
-@keyframes shake {
-  from {
-    transform: rotate(2deg);
-  }
-  to {
-    transform: rotate(-2deg);
-  }
-}
-@keyframes rotateY {
-  to {
-    transform: rotate3d(0, 1, 0, 180deg);
-  }
-}
-@keyframes slideUp {
-  from {
-    bottom: -2rem;
-  }
-  to {
-    bottom: 0px;
-    opacity: 1;
-  }
-}
-@keyframes slideFromLeft {
-  from {
-    left: -20vw;
-  }
-  to {
-    left: 0px;
-    opacity: 1;
-  }
-}
-@keyframes slideFromRight {
-  from {
-    right: -20vw;
-  }
-  to {
-    right: 0px;
-    opacity: 1;
-  }
-}
-@keyframes arrowDown {
-  from {
-    bottom: 0;
-  }
-  to {
-    bottom: 2vw;
-  }
-}
 [class*=ttl] {
   font-weight: bold;
 }
@@ -275,24 +227,14 @@ textarea[disabled] {
   font-size: 2rem;
 }
 
-button[class*=btn] {
-  background-color: transparent;
-  border-radius: 1rem;
-  color: #f1f3f5;
-  border: 2px solid #f1f3f5;
-}
-button[class*=btn].btn-md {
-  padding: 1rem 2rem;
-}
-button[class*=btn].btn-lg {
-  font-size: 1.6rem;
-  padding: 2rem 4rem;
-}
-
 .btn-wrap {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.mgt-md {
+  margin-top: 1.6rem;
 }
 
 /* 노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)*/
@@ -356,128 +298,63 @@ button[class*=btn].btn-lg {
   overflow: hidden;
 }
 
-.logo {
-  width: 200px;
-  height: 100px;
-  background: url("../images/cocacola/logo/logo_coke_w.png") center center no-repeat;
-  background-size: contain;
-  overflow: hidden;
-}
-
-.ttl-xl {
-  text-align: center;
-  padding: 1rem 0;
+body {
+  background: url("../images/paper_bg.png") no-repeat top center #e9ecef;
+  background-size: cover;
 }
 
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 1px 1px 8px #212529;
-  background-color: #df0026;
+  padding: 2rem;
 }
 
-.intro-container {
-  padding: 2rem 0;
-  background: url("../images/cocacola/bg/top_bg.png") top center no-repeat;
-  background-size: cover;
-}
-.intro-container .ttl-xl {
-  color: #f1f3f5;
+section {
+  padding: 2rem;
 }
 
-.intro-list {
-  width: 80%;
-  margin: 0 auto;
+footer {
+  padding: 2rem;
 }
-.intro-list li {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  margin: 8px;
-  box-shadow: 1px 1px 8px #212529;
-  transition: all 1s;
+
+.main-ttl {
+  margin-bottom: 2rem;
 }
-.intro-list li:hover {
-  animation: shake infinite 0.1s alternate;
+
+.flex-box {
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.intro-list .ttl-md {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  width: 100%;
+
+.round-box {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #f1f3f5;
-  padding: 1rem;
-  word-break: keep-all;
 }
-
-.goods-container {
-  padding: 2rem;
-}
-
-.goods-list {
-  flex-wrap: wrap;
-  justify-content: flex-start;
+.round-box .page-link {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  padding: 1rem;
+}
+.round-box:hover {
+  background-color: #343a40;
+  box-shadow: 2px 2px 8px #f1f3f5;
+}
+.round-box:hover a {
+  color: #f1f3f5;
 }
 
-.goods-wrap {
-  margin: 2vw 1.5vw;
-  box-shadow: none;
-  border: 2px solid #e9ecef;
-}
-
-.info-box {
-  padding: 2rem;
-  background-color: #f1f3f5;
-}
-.info-box .goods-name {
-  line-height: 1.6em;
-  min-height: 3.2em;
-  max-height: 3.2em;
-  text-overflow: clip;
-  overflow: hidden;
-}
-.info-box .price-wrap {
+.info-wrap {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  margin-top: 1rem;
-  min-height: 3.2em;
 }
-.info-box .discount {
-  color: #f03e3e;
-  font-size: 1.2rem;
+.info-wrap .desc-lg {
+  width: 50%;
+  margin: 1rem 0;
+}
+.info-wrap .to-do-list {
+  margin: 2rem 0;
   font-weight: bold;
 }
-.info-box .price {
-  font-size: 1.2rem;
-  margin: 0 0.2rem;
-}
-.info-box .pre-price {
-  color: #adb5bd;
-  text-decoration: line-through;
-  font-size: 1rem;
-}
-@media all and (min-width: 320px) and (max-width: 768px) {
-  .info-box {
-    padding: 1rem;
-  }
-}
 
-.brand-swiper {
-  background: url("../images/cocacola/bg/cokemix_bg.png") top center no-repeat;
-  background-size: cover;
-  margin: 2rem 0;
-  overflow: hidden;
-}
-.brand-swiper li {
-  width: 15vw;
-  border-radius: 8px;
-  overflow: hidden;
-  margin: 2vw;
+.to-do-list {
+  display: none;
 }

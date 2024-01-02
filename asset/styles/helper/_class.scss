@@ -16,27 +16,10 @@
     &.desc-xl { font-size: 2rem; }
 }
 
-button[class*='btn'] {
-    background-color: transparent;
-    border-radius: 1rem;
-    color: $gray1;
-    border: 2px solid $gray1;
-
-    &.btn-md { padding: 1rem 2rem; }
-
-    &.btn-lg {
-        font-size: 1.6rem;
-        padding: 2rem 4rem;
-    }
-
-    // &.main {
-    //     background-color: $subColor;
-    //     border: 2px solid $mainColor;
-    // }
-}
-
 .btn-wrap {
     width: 100%;
     display: flex;
     justify-content: center;
 }
+
+.mgt-md {margin-top: 1.6rem;}

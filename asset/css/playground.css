@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/*
+* PLAYGROUND 각각 페이지에서 공통으로 사용하려고 따로 땜
+- 기존에 페이지 마다 되어 있던 스타일들 import 필요
+- 올해에 scss 도입 하려면 충분한 연습이 필요함 
+    --Update 2024-01-02
+*/
 @import url("//cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
 /* Reset */
 * {
@@ -21,6 +27,7 @@ html {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-size: 10px;
 }
 
 body {
@@ -34,7 +41,6 @@ body {
 
 body, input, select, textarea, button {
   border: none;
-  font-size: 12px;
   font-family: "Pretendard", sans-serif;
 }
 
@@ -192,39 +198,6 @@ textarea[disabled] {
   white-space: nowrap !important;
 }
 
-/* 노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)*/
-/* 테블릿 가로 (해상도 768px ~ 1023px)*/
-/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
-/* 모바일 세로 (해상도 ~ 479px)*/
-/*  분기점  */
-/*
-노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)
-@mixin w1024 {}
-
-테블릿 가로 (해상도 768px ~ 1023px)
-@mixin w768 {}
-
-모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)
-@mixin w480 {}
-
-모바일 세로 (해상도 ~ 479px)
-@mixin mobile {}
-*/
-@media all and (min-width: 768px) and (max-width: 1023px) {
-  html {
-    font-size: 12px;
-  }
-}
-@media all and (min-width: 480px) and (max-width: 767px) {
-  html {
-    font-size: 10px;
-  }
-}
-@media all and (max-width: 479px) {
-  html {
-    font-size: 8px;
-  }
-}
 [class*=ttl] {
   font-weight: bold;
 }
@@ -260,106 +233,82 @@ textarea[disabled] {
   font-size: 2rem;
 }
 
-button[class*=btn] {
-  background-color: transparent;
-  border-radius: 1rem;
-  color: #f1f3f5;
-  border: 2px solid #f1f3f5;
-}
-button[class*=btn].btn-md {
-  padding: 1rem 2rem;
-}
-button[class*=btn].btn-lg {
-  font-size: 1.6rem;
-  padding: 2rem 4rem;
-}
-
 .btn-wrap {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-body {
-  background: url("../images/paper_bg.png") no-repeat top center #ffe8cc;
-  background-size: cover;
+.mgt-md {
+  margin-top: 1.6rem;
 }
 
-h1 {
-  color: #ff922b;
+/*
+-   Button! 
+-   버튼 타입 2가지 (솔리드, 아웃라인)
+-   클릭할 때 애니메이션 효과 주기
+*/
+button[class^=btn-] {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  padding: 1rem 1.6rem;
+  background-color: #e9ecef;
+  border-radius: 3rem;
+  white-space: nowrap;
+  overflow: hidden;
 }
-
-.sample > header {
-  padding: 2rem;
+button[class^=btn-] span {
+  position: relative;
+  z-index: 2;
 }
-.sample main {
-  padding: 2rem;
+button[class^=btn-]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 3rem;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
 }
-.sample main > header {
-  padding: 2rem;
+button[class^=btn-].outline {
+  background-color: transparent;
+  border: 1px solid #ced4da;
 }
-
-#flexBox .txt-wrap {
-  background-color: #f8f9fa;
-  padding: 1rem;
+button[class^=btn-].on {
+  color: #fff;
 }
-#flexBox .ttl-md {
-  line-height: 1.6em;
-  height: 2em;
-  margin-bottom: 1rem;
-}
-
-.box {
+button[class^=btn-].on::before {
+  background-color: #212529;
   width: 100%;
-  height: 100vh;
-  margin: 2rem 0;
-}
-.box:nth-child(1) {
-  background-color: #d3f9d8;
-}
-.box:nth-child(2) {
-  background-color: #e8590c;
-}
-.box:nth-child(3) {
-  background-color: #868e96;
+  height: 100%;
 }
 
-.control-box {
-  position: fixed;
-  bottom: 3rem;
-  right: 3rem;
-  background-color: rgba(33, 37, 41, 0.5);
-  border-radius: 1rem;
-  overflow: hidden;
+.btn-xs {
+  font-size: 1rem;
+}
+
+.btn-sm {
+  font-size: 1.2rem;
+}
+
+.btn-md {
+  font-size: 1.6rem;
+}
+
+.btn-lg {
+  font-size: 2.1rem;
+}
+
+.btn-xl {
+  font-size: 2.4rem;
+}
+
+.playground {
   padding: 2rem;
-  color: #f1f3f5;
-}
-.control-box li {
-  margin: 1rem;
-}
-.control-box li.on {
-  font-weight: bold;
-  color: #e8590c;
-}
-
-.x-scroll {
-  overflow: hidden;
-}
-.x-scroll ul {
-  display: flex;
-  overflow-x: scroll;
-  padding-bottom: 20px;
-  margin-bottom: -20px;
-}
-.x-scroll li {
-  margin: 1rem;
-  padding: 1rem;
-  text-align: center;
-}
-.x-scroll li.on {
-  font-weight: bold;
-  color: #d9480f;
-}
-.x-scroll + .box {
-  margin-top: 0;
 }
