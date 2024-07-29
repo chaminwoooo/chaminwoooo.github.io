@@ -243,6 +243,14 @@ textarea[disabled] {
   margin-top: 1.6rem;
 }
 
+.x-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
 /*
 -   Button! 
 -   버튼 타입 2가지 (솔리드, 아웃라인)

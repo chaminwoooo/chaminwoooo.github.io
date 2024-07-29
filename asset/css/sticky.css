@@ -270,6 +270,14 @@ textarea[disabled] {
   margin-top: 1.6rem;
 }
 
+.x-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
 body {
   background: url("../images/paper_bg.png") no-repeat top center #ffe8cc;
   background-size: cover;
