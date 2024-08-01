@@ -1,4 +1,16 @@
 @charset "UTF-8";
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    @ 경럭 페이지 SCSS
+    - 경력 보여주기 레이아웃 구상 필요
+    - 
+
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    @ INDEX SCSS
+
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 @import url("//cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
 /* Reset */
 * {
@@ -201,112 +213,6 @@ textarea[disabled] {
 /* 테블릿 가로 (해상도 768px ~ 1023px)*/
 /* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
 /* 모바일 세로 (해상도 ~ 479px)*/
-.main-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  background-color: #4c4c4c;
-}
-.main-header .text-alpha {
-  display: inline-block;
-  width: 5rem;
-  height: 10rem;
-  background-size: cover;
-}
-.main-header .c {
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='200' font-weight='bold' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='70' font-family='Pretendard' font-size='80px'%3EC%3C/text%3E%3CclipPath id='clipC'%3E%3Crect x='10' y='95' width='80' height='40'/%3E%3C/clipPath%3E%3Ctext x='10' y='154' font-family='Pretendard' font-size='80px' fill='%23fff' clip-path='url(%23clipC)'%3EC%3C/text%3E%3C/svg%3E%0A");
-}
-.main-header .h {
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='200' font-weight='bold' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='70' font-family='Pretendard' font-size='80px'%3EH%3C/text%3E%3CclipPath id='clipH'%3E%3Crect x='10' y='95' width='80' height='40'/%3E%3C/clipPath%3E%3Ctext x='10' y='154' font-family='Pretendard' font-size='80px' fill='%23fff' clip-path='url(%23clipH)'%3EH%3C/text%3E%3C/svg%3E%0A");
-}
-.main-header .a {
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='200' font-weight='bold' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='70' font-family='Pretendard' font-size='80px'%3EA%3C/text%3E%3CclipPath id='clipA'%3E%3Crect x='10' y='95' width='80' height='40'/%3E%3C/clipPath%3E%3Ctext x='10' y='154' font-family='Pretendard' font-size='80px' fill='%23fff' clip-path='url(%23clipA)'%3EA%3C/text%3E%3C/svg%3E%0A");
-}
-
-.main-section {
-  height: 200vh;
-  padding: 8rem 2rem 2rem;
-  background-color: #4c4c4c;
-}
-
-.main-layout {
-  display: flex;
-  width: 100%;
-}
-.main-layout .content-box-wrap {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.main-layout .content-box {
-  margin-top: 100vh;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center calc(100% + 12rem);
-}
-.main-layout .content-box.first {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 50rem;
-  background-color: #8d2ec7;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100"><text x="10" y="40" font-family="Pretendard" font-size="30" fill="yellow">Hello World</text></svg>');
-  animation: bottomToTop 0.5s 0.8s forwards ease-in-out;
-}
-.main-layout .content-box.second {
-  padding: 2rem;
-  height: 20rem;
-  background-color: #007dad;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100"><text x="10" y="40" font-family="Pretendard" font-size="30" fill="beige">Hello World</text></svg>');
-  animation: bottomToTopForSecond 0.8s 0.8s forwards ease-in-out;
-}
-.main-layout .content-box.third {
-  height: 30rem;
-  background-color: #0b3308;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100"><text x="10" y="40" font-family="Pretendard" font-size="30" fill="orange">Hello World</text></svg>');
-  animation: bottomToTop 1s 0.8s forwards ease-in-out;
-}
-.main-layout .intro-txt {
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 4rem;
-  line-height: 2em;
-  color: #fff;
-}
-
-.sub-layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.content-box {
-  width: 100%;
-  height: 40rem;
-  border-radius: 1.6rem;
-}
-.content-box .link-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-.content-box .link-box:hover {
-  transform: scale(1.1);
-  transition: transform 0.4s ease-in;
-}
-.content-box .box-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 3.2rem;
-  color: #fff;
-}
-.content-box.career {
-  background-color: orange;
-}
-
 @keyframes bottomToTop {
   0% {
     margin-top: 100%;
@@ -322,4 +228,64 @@ textarea[disabled] {
   100% {
     margin-top: -8rem;
   }
+}
+@keyframes shake {
+  from {
+    transform: rotate(2deg);
+  }
+  to {
+    transform: rotate(-2deg);
+  }
+}
+@keyframes rotateY {
+  to {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+}
+@keyframes slideUp {
+  from {
+    bottom: -2rem;
+  }
+  to {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+@keyframes slideFromLeft {
+  from {
+    left: -20vw;
+  }
+  to {
+    left: 0px;
+    opacity: 1;
+  }
+}
+@keyframes slideFromRight {
+  from {
+    right: -20vw;
+  }
+  to {
+    right: 0px;
+    opacity: 1;
+  }
+}
+@keyframes arrowDown {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 2vw;
+  }
+}
+.career-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.career-section .co-name {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+.career-section .co-period {
+  font-size: 1.6rem;
 }

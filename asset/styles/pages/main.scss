@@ -1,13 +1,18 @@
-@import '../styles/base/reset';
-@import '../styles/helper/mixin';
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
+    @ 메인 페이지 SCSS
+    - 도시락 Layout 
+    - 페이지 열리면 올라오는 애니메이션
 
-// 메인 나중에 소스 다 정리 ㄱㄱㄱㄱㄱㄱㄱㄱ
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@import '../index';
+
 .main-header{
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
-    background-color: #4c4c4c;
+    background-color: transparent;
     .text-alpha {
         display: inline-block;
         width: 5rem;
@@ -21,8 +26,8 @@
 
 .main-section {
     height: 200vh; // 임시
-    padding: 8rem 2rem 2rem;
-    background-color: #4c4c4c;
+    padding: 12rem 2rem 2rem;
+    background-color: $gray-9;
 }
 
 .main-layout {
@@ -44,23 +49,23 @@
         &.first { 
             @include flexBox($jc:flex-start,);
             height: 50rem;
-            background-color: #8d2ec7; 
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100"><text x="10" y="40" font-family="Pretendard" font-size="30" fill="yellow">Hello World</text></svg>');
+            background-color: $orange-8; 
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100"><text x="10" y="40" font-family="Pretendard" font-size="30" fill="%232f9e44">Hello World</text></svg>');
             animation: bottomToTop 0.5s 0.8s forwards ease-in-out;
         }
 
         &.second { 
             padding: 2rem;
             height: 20rem;
-            background-color: #007dad; 
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100"><text x="10" y="40" font-family="Pretendard" font-size="30" fill="beige">Hello World</text></svg>');
+            background-color: $green-8; 
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100"><text x="10" y="40" font-family="Pretendard" font-size="30" fill="%23f08c00">Hello World</text></svg>');
             animation: bottomToTopForSecond 0.8s 0.8s forwards ease-in-out;
         }
         
         &.third { 
             height: 30rem;
-            background-color: #0b3308 ; 
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100"><text x="10" y="40" font-family="Pretendard" font-size="30" fill="orange">Hello World</text></svg>');
+            background-color: $red-8; 
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100"><text x="10" y="40" font-family="Pretendard" font-size="30" fill="%23ffa94d">Hello World</text></svg>');
             animation: bottomToTop 1s 0.8s forwards ease-in-out;
         }
     }
@@ -97,19 +102,6 @@
     }
 
     &.career {
-        background-color: orange;
+        background-color: $orange-5;
     }
-}
-
-
-
-// 여기부터 애니메이션 애니메이션 사스로 분리해야함
-
-@keyframes bottomToTop {
-    0% { margin-top: 100%; }
-    100% { margin-top: 0; }
-}
-@keyframes bottomToTopForSecond {
-    0% { margin-top: 100%; }
-    100% { margin-top: -8rem; }
 }

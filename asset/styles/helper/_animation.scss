@@ -1,15 +1,11 @@
-
-
-
-
-
-
-
-
-
-
-
-
+@keyframes bottomToTop {
+    0% { margin-top: 100%; }
+    100% { margin-top: 0; }
+}
+@keyframes bottomToTopForSecond {
+    0% { margin-top: 100%; }
+    100% { margin-top: -8rem; }
+}
 
 // 하단 구소스
 @keyframes shake {
