@@ -1,0 +1,53 @@
+// @import './base/reset';
+// @import './helper/variables';
+// @import './helper/class';
+// @import './helper/mobile';
+// @import './layout/flexbox';
+
+// body {
+//     background: url('../images/paper_bg.png') no-repeat top center $gray2;
+//     background-size: cover;
+// }
+
+// header { padding: 2rem; }
+// section { padding: 2rem; }
+// footer { padding: 2rem; }
+// .main-ttl { margin-bottom: 2rem; }
+
+// .flex-box {
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+// }
+
+// .round-box {
+//     text-align: center;
+//     .page-link {
+//         height: 20vh;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         padding: 1rem;
+//     }
+
+//     &:hover {
+//         background-color: $gray8;
+//         box-shadow: 2px 2px 8px $gray1;
+//         a {color: $gray1;}
+//     }
+// }
+
+// .info-wrap {
+//     display: flex;
+//     flex-wrap: wrap;
+//     .desc-lg {
+//         width: 50%;
+//         margin: 1rem 0;
+//     }
+
+//     .to-do-list {
+//         margin: 2rem 0;
+//         font-weight: bold;
+//     }
+// }
+
+// .to-do-list {display: none;}
