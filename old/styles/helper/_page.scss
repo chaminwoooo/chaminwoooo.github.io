@@ -1,0 +1,29 @@
+@import '../base/reset';
+@import '../helper/variables';
+@import '../helper/mobile';
+@import '../helper/class';
+
+body { 
+    background: url('../images/paper_bg.png') no-repeat top center $orange1;
+    background-size: cover;
+}
+h1 { color: $orange5; }
+.sample {
+    & > header { padding: 2rem; }
+    main { 
+        padding: 2rem; 
+        & > header { padding: 2rem; }
+    }
+} 
+
+#flexBox {
+    .txt-wrap {
+        background-color: $gray0;
+        padding: 1rem;
+    }
+    .ttl-md {
+        line-height: 1.6em;
+        height: 2em;
+        margin-bottom: 1rem;
+    }
+}
