@@ -1,0 +1,36 @@
+@keyframes bottomToTop {
+    0% { margin-top: 100%; }
+    100% { margin-top: 0; }
+}
+@keyframes bottomToTopForSecond {
+    0% { margin-top: 100%; }
+    100% { margin-top: -8rem; }
+}
+
+// 하단 구소스
+@keyframes shake {
+    from { transform: rotate(2deg); }
+    to { transform: rotate(-2deg); }
+}
+@keyframes rotateY {
+    to { transform: rotate3d(0,1,0, 180deg); }
+}
+@keyframes slideUp {
+    from { bottom: -2rem; }
+    to { bottom: 0px; opacity: 1; }
+}
+@keyframes slideFromLeft {
+    from { left: -20vw; }
+    to { left: 0px; opacity: 1; }
+}
+@keyframes slideFromRight {
+    from { right: -20vw; }
+    to { right: 0px; opacity: 1; }
+}
+@keyframes arrowDown {
+    from { bottom: 0; }
+    to { bottom: 2vw; }
+}
+
+
+
