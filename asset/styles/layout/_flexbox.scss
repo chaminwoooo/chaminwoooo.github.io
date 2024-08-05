@@ -1,0 +1,30 @@
+@import '../helper/variables';
+
+.flex-box {
+    display: flex;
+    
+    &.double {
+        .round-box {width: 48%;}
+    }
+    
+    &.triple {
+        .round-box {width: 30%;}
+    }
+
+    &.quatro {
+        .round-box {width: 20%;}
+    }
+    &.column { flex-direction: column; }
+    &.center {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.round-box {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px $gray8;
+    margin: 1rem 0;
+    overflow: hidden;
+}
