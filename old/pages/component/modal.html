@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAYGROUND - MODAL</title>
+    <link rel="icon" href="../asset/images/favicon.ico">
+    <link rel="stylesheet" href="../asset/css/modal.css">
+</head>
+
+<body class="sample">
+    <header>
+        <h1 class="ttl-xl">MODAL</h1>
+    </header>
+
+    <main>
+        <p class="desc-lg">
+            스크립트로 모달의 열기/닫기, DIM 추가/제거 구현 <br>
+            각 타입들은 기본 모달에 클래스를 추가하고 스타일을 달리하여 <br>
+            UI가 변형되게 작업하였습니다.
+        </p>
+        <div class="btn-wrap">
+            <button class="sample-open">모달 열기</button>
+        </div>
+    </main>
+
+    <article class="modal" id="mdSample">
+        <header class="md-header">
+            <h2 class="ttl-lg">모달 타이틀</h2>
+            <button class="btn-close cancle"><span class="hidden">닫기</span></button>
+        </header>
+
+        <article class="md-content">
+            <div class="flex-wrap column">
+                <p class="center-type"><a href="#링크">센터 타입 (Default)</a></p>
+                <p class="bottom-type"><a href="#링크">바텀 타입</a></p>
+                <p class="box-top"><a href="#링크">상단 박스 타입</a></p>
+                <p class="box-bottom"><a href="#링크">하단 박스 타입</a></p>
+            </div>
+        </article>
+
+        <footer class="md-footer">
+            <button class="ok">확인</button>
+            <button class="cancle">취소</button>
+        </footer>
+    </article>
+
+
+    <style>
+        #mdSample {
+            transition: all 0.4s ease-in-out;
+        }
+
+        .flex-wrap p {
+            font-size: 1.6rem;
+            margin: 1rem;
+        }
+    </style>
+    
+    <script src="../asset/scripts/modal.js"></script>
+
+    <script>
+        const mdSample = new Modal('#mdSample', 'center');
+        const mdTest = document.querySelector('.modal');
+
+        document.querySelector('.center-type').addEventListener('click', () => {
+            mdTest.className = 'modal on'
+            mdTest.classList.add('center');
+        });
+
+        document.querySelector('.bottom-type').addEventListener('click', () => {
+            mdTest.className = 'modal on'
+            mdTest.classList.add('bottom');
+        });
+
+        document.querySelector('.box-top').addEventListener('click', () => {
+            mdTest.className = 'modal on'
+            mdTest.classList.add('box-top');
+        });
+
+        document.querySelector('.box-bottom').addEventListener('click', () => {
+            mdTest.className = 'modal on'
+            mdTest.classList.add('box-bottom');
+        });
+
+        // 모달 기본값으로 열기
+        document.querySelector('.sample-open').addEventListener('click', () => {
+            mdSample.open();
+            mdTest.className = 'modal center on'
+        })
+    </script>
+
+</body>
+
+
+</html>
