@@ -8,28 +8,69 @@
 
 @import '../index';
 
+body { background-color: $gray-4; }
+
+.main-header {
+    padding: 1.2rem 2rem;
+    .main-title { font-size: 4.8rem; }
+}
+
 .career-container {
     display: flex;
     flex-direction: column;
+    row-gap: 4rem;
+    margin-top: 4rem;
+    padding: 2rem;
 }
 
 .career-section {
-
     .co-name {
-        font-size: 3.2rem;
-        font-weight: 700;
+        margin-bottom: 0.8rem;
+        @include font-32(700);
     }
 
     .co-period {
-        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+        @include font-28(600);
+    }
+
+    .co-desc {
+        @include font-16();
     }
 
     // html ,css , js, jquery, git ,svn 아이콘 다운받아서 가상선택자로 넣기
     .skill-list {
-
+        @include flexBox($jc:flex-start);
+        column-gap: 1.6rem;
     }
+
 }
 
-.carrer-item {
+// 아이이에이 프로젝트 리스트
+.career-item {
+    margin-left: 1.6rem;
+    
+    .pro-period {
+        @include font-18(600);
+        letter-spacing: normal;
+    }
 
+    .pro-name {
+        @include font-24(600);
+        margin-bottom: 0.4rem;
+        &::before {
+            content: '✔️';
+            margin-right: 0.8rem;
+        }
+    }
+
+    .pro-work {
+        @include font-16(600);
+    }
+
+    .pro-detail {
+        @include font-16(400)
+    }
+
+    &:not(:first-of-type) { margin-top: 3.2rem; }
 }

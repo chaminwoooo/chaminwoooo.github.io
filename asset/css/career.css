@@ -292,15 +292,80 @@ textarea[disabled] {
     font-size: 6px;
   }
 }
+body {
+  background-color: #ced4da;
+}
+
+.main-header {
+  padding: 1.2rem 2rem;
+}
+.main-header .main-title {
+  font-size: 4.8rem;
+}
+
 .career-container {
   display: flex;
   flex-direction: column;
+  row-gap: 4rem;
+  margin-top: 4rem;
+  padding: 2rem;
 }
 
 .career-section .co-name {
+  margin-bottom: 0.8rem;
   font-size: 3.2rem;
   font-weight: 700;
+  line-height: 4rem;
 }
 .career-section .co-period {
+  margin-bottom: 0.8rem;
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 3.8rem;
+}
+.career-section .co-desc {
   font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+}
+.career-section .skill-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  -moz-column-gap: 1.6rem;
+       column-gap: 1.6rem;
+}
+
+.career-item {
+  margin-left: 1.6rem;
+}
+.career-item .pro-period {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.8rem;
+  letter-spacing: -0.072rem;
+  letter-spacing: normal;
+}
+.career-item .pro-name {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  margin-bottom: 0.4rem;
+}
+.career-item .pro-name::before {
+  content: "✔️";
+  margin-right: 0.8rem;
+}
+.career-item .pro-work {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+}
+.career-item .pro-detail {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+}
+.career-item:not(:first-of-type) {
+  margin-top: 3.2rem;
 }
