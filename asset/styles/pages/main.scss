@@ -15,18 +15,6 @@ body { background-color: $yellow-0; }
     .logo {
         font-size: 4.8rem;
         line-height: 1.6em;
-
-        // &:not(.done) {
-        //     &::after {
-        //         content: '';
-        //         display: inline-block;
-        //         margin-left: 4px;
-        //         width: 2px;
-        //         height: 4.8rem;
-        //         background-color: #000;
-        //         vertical-align: middle;
-        //     }
-        // }
     }
 }
 
@@ -35,6 +23,16 @@ body { background-color: $yellow-0; }
     flex-wrap: wrap;
     gap: 1.2rem;
     padding: 0 1.6rem 10rem;
+
+    &.play {
+        transition: opacity 0.5s 0.5s ease-in-out;
+        .content-box {
+            animation-name: bottomToTop;
+            animation-fill-mode: forwards;
+            animation-delay: 0.5s;
+            opacity: 1;
+        }
+    }
 }
 
 .main-section {
@@ -42,11 +40,6 @@ body { background-color: $yellow-0; }
     gap: 1.2rem;
     width: 100%;
 
-    .content-box {
-        animation-name: bottomToTop;
-        animation-fill-mode: forwards;
-        animation-delay: 0.5s;
-    }
     &:first-of-type {
         .content-box {
             &:nth-child(1) { animation-duration: 0.5s; }
@@ -75,7 +68,9 @@ body { background-color: $yellow-0; }
 .content-box {
     @include flexBox();
     height: 20rem;
+    margin-top: 200%;
     border-radius: 0.8rem;
+    opacity: 0;
     .box-txt { 
         @include inlineFlex();
         flex-direction: column;

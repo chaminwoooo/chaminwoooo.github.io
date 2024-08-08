@@ -13,5 +13,11 @@ window.onload = function () {
     //         this.classList.add('done');
     //     });    
     // }, 2000);
+
+    const mainSection = document.querySelector('.main-layout');
+
+    setTimeout(() => {
+        mainSection.classList.add('play');
+    }, 100);
 }
 
