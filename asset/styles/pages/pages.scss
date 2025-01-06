@@ -11,6 +11,10 @@
 body {background-color: $blue-1;}
 
 header { padding: 2rem; }
+.main-header {
+    padding: 2rem;
+    @include flexBox($jc:space-between);
+}
 h1 { font-size: 4.8rem; }
 
 
