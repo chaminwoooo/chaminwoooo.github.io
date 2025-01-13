@@ -283,6 +283,10 @@ textarea[disabled] {
   margin-bottom: 2rem;
 }
 
+.d-none {
+  display: none !important;
+}
+
 /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
     *   font size 별 정리
@@ -325,6 +329,11 @@ textarea[disabled] {
     font-size: 8px;
   }
 }
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@   Header
+
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .main-header {
   position: sticky;
   top: 0;
@@ -346,6 +355,12 @@ textarea[disabled] {
 }
 .main-header .btn-back .material-symbols-outlined {
   font-size: 3.2rem;
+}
+@media all and (min-width: 320px) and (max-width: 1024px) {
+  .main-header {
+    top: env(safe-area-inset-top);
+    top: constant(safe-area-inset-top);
+  }
 }
 
 /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -524,6 +539,10 @@ textarea[disabled] {
   }
 }
 body {
+  background-color: #fff9db;
+}
+
+.main-header {
   background-color: #fff9db;
 }
 

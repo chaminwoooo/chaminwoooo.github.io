@@ -10,6 +10,10 @@
 
 body { background-color: $yellow-0; }
 
+.main-header {
+    background-color: $yellow-0;
+}
+
 .main-layout {
     @include flexBox($jc:flex-start,$ai:flex-start);
     flex-wrap: wrap;

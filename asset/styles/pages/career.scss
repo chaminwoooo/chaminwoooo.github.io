@@ -10,11 +10,20 @@
 
 body { background-color: $gray-4; }
 
+.main-header {
+    background-color : $gray-4;
+}
+
 .career-container {
     display: flex;
     flex-direction: column;
     row-gap: 4rem;
     padding: 2rem;
+    @include scrollBar;
+
+    @include allMobile {
+        @include scrollSimple;
+    }
 }
 
 .career-section {

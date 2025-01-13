@@ -79,3 +79,9 @@ $yellow-6: #fab005;
 $yellow-7: #f59f00;
 $yellow-8: #f08c00;
 $yellow-9: #e67700;
+
+
+$constant-top : constant(safe-area-inset-top);
+$constant-bottom : constant(safe-area-inset-bottom);
+$env-top : env(safe-area-inset-top);
+$env-bottom: env(safe-area-inset-bottom);
