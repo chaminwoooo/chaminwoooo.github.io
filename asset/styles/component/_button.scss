@@ -1,78 +1,155 @@
-/*
--   Button! 
--   버튼 타입 2가지 (솔리드, 아웃라인)
--   클릭할 때 애니메이션 효과 주기
-*/
-// 정리 대상
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@ Button 
 
-// @import '../helper/variables';
+** SIZE **
+- xxs   : 28px
+- xs    : 36px  
+- sm    : 40px
+- md    : 48px
+- lg    : 52px
+- xl    : 60px 
 
-.btn-icon {
-    background: transparent;
+** Color **
+- primary
+- secondary
+    > 페이지별 컬러에 맞춰서 변수로 선언해서 사용 
+
+** TYPE **
+- solid (default)
+- outline
+- icon
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+.cha-btn {
+
+    // 임시 컬러
+    // Blue
+    $primary-0 : #e7f5ff;
+    $primary-1 : #d0ebff;
+    $primary-2 : #a5d8ff;
+    $primary-3 : #74c0fc;
+    $primary-4 : #4dabf7;
+    $primary-5 : #339af0;
+    $primary-6 : #228be6;
+    $primary-7 : #1c7ed6;
+    $primary-8 : #1971c2;
+    $primary-9 : #1864ab;
+    
+    // Yellow
+    
+    $secondary-0: #fff9db;
+    $secondary-1: #fff3bf;
+    $secondary-2: #ffec99;
+    $secondary-3: #ffe066;
+    $secondary-4: #ffd43b;
+    $secondary-5: #fcc419;
+    $secondary-6: #fab005;
+    $secondary-7: #f59f00;
+    $secondary-8: #f08c00;
+    $secondary-9: #e67700;
+    @include inlineFlex;
+    padding: 0 0.8rem;
+    border-radius: 0.8rem;
+    
+    .btn-txt { 
+        @include font-14(700); 
+        .cha-icon { margin-top: -2px; }
+    }
+    .white { color: #fff; }
+    
+    // size
+    &.xxs { 
+        min-width: 6rem;
+        height: 2.8rem; 
+    }
+    &.xs {
+        min-width: 6.8rem;
+        height: 3.6rem;
+    }
+    &.sm {
+        min-width: 8rem;
+        height: 4rem;
+    }
+    &.md {
+        min-width: 9.6rem;
+        height: 4.8rem;
+    }
+    &.lg {
+        min-width: 10rem;
+        height: 5.2rem;
+    }
+    &.xl {
+        min-width: 11.2rem;
+        height: 6rem;
+    }
+    
+    // size (width)
+    &.w-100 { width: 100%; }
+    
+    // type
+    &.primary {
+        background-color: $primary-5;
+        .btn-txt { color: #fff; }
+        &.outline {
+            background-color: #fff;
+            border: 1px solid $primary-5;
+            .btn-txt { color: $primary-5; }
+            .mint-icon { color: $primary-5; }
+            
+            &:hover { 
+                background-color: $primary-1; 
+                border-color: $primary-5;
+            }
+            &:active { 
+                background-color: $primary-8;
+                border-color: $primary-9; 
+            }
+        }
+        &:hover { background-color: $primary-6; }
+        &:active { background-color: $primary-7; }
+        &:disabled { 
+            pointer-events: none;
+            background-color: $primary-2; 
+            border: 0;
+            .btn-txt { color: #fff; }
+            .mint-icon { color: #fff; }
+        }
+    }
+    
+    &.secondary {
+        background-color: $secondary-8;
+        .btn-txt { color: #fff; }
+        .mint-icon { color: #fff; }
+        &.outline {
+            border: 1px solid $secondary-3;
+            background-color: #fff;
+            .btn-txt { color: $secondary-8; }
+        
+            
+            &:hover { 
+                background-color: $secondary-5;
+                border-color: $secondary-3; 
+            }
+            &:active { 
+                background-color: $secondary-1;
+                border-color: $secondary-8; 
+            }
+        }
+        
+        
+        &:hover { background-color: $secondary-9; }
+        &:active { background-color: $secondary-9; }
+        &:disabled { 
+            pointer-events: none;
+            opacity: 0.4;
+        }
+    }
+    
+    
+    // 큰 사이즈 예외처리 
+    &:is(.md, .lg, .xl) {
+        .btn-txt { @include font-16(700); }
+    }
 }
-
-
-// button[class^="btn-"] {
-//     position: relative;
-//     display: inline-block;
-//     align-items: center;
-//     padding: 1rem 1.6rem;
-//     background-color: $gray2;
-//     border-radius: 3rem;
-//     white-space: nowrap;
-//     overflow: hidden;
-
-//     span {
-//         position: relative;
-//         z-index: 2;
-//     }
-
-//     &::before {
-//         content: '';
-//         position: absolute;
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%,-50%);
-//         display: block;
-//         width: 0;
-//         height: 0;
-//         border-radius: 3rem;
-//         background-color: transparent;
-//         transition: all 0.3s ease-in-out;
-//         z-index: 1;
-//     }
-
-//     &.outline {
-//         background-color: transparent;
-//         border: 1px solid $gray4;
-//     }
-
-//     &.on {
-//         color: #fff;
-//         &::before {
-//             background-color: $gray9;
-//             width: 100%;
-//             height: 100%;
-//         }
-//     }
-// }
-
-// .btn-xs {
-//     font-size: 1rem;
-// }
-
-// .btn-sm {
-//     font-size: 1.2rem;
-// }
-
-// .btn-md {
-//     font-size: 1.6rem;
-// }
-
-// .btn-lg {
-//     font-size: 2.1rem;
-// }
-
-// .btn-xl {
-//     font-size: 2.4rem;
-// }

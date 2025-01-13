@@ -4,18 +4,24 @@
 
 
 .main-header{
-    @include flexBox($jc:flex-start);
+    position: sticky;
+    top: 0;
     padding: 1.6rem;
-    .logo {
-        font-size: 4.8rem;
-        line-height: 1.6em;
+    text-align: center;
+    z-index: 50;
+    
+    .main-title {
+        @include font-48(700);
     }
-    .btn-icon {
+    .btn-back {
+        position: absolute;
+        top: 2.4rem;
+        left: 1.6rem;
         background: transparent;
         margin-left: auto;
-    }
-}
 
-.main-title {
-    @include font-32(700);
+        .material-symbols-outlined {
+            font-size: 3.2rem;
+        }
+    }
 }

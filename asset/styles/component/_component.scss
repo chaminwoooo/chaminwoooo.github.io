@@ -1,0 +1,15 @@
+
+
+
+
+@import './button';
+@import './modal';
+@import './tab';
+
+
+.component-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.6rem;
+}

@@ -34,6 +34,7 @@ html {
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   font-size: 10px;
+  letter-spacing: -0.07em;
 }
 
 body {
@@ -204,15 +205,6 @@ textarea[disabled] {
   white-space: nowrap !important;
 }
 
-/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-    *   font size 별 정리
-
-–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* 노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)*/
-/* 테블릿 가로 (해상도 768px ~ 1023px)*/
-/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
-/* 모바일 세로 (해상도 ~ 479px)*/
 @keyframes bottomToTop {
   0% {
     margin-top: 100%;
@@ -277,25 +269,243 @@ textarea[disabled] {
     bottom: 2vw;
   }
 }
-.main-header {
+.btn-wrap {
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+}
+
+.x-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    *   font size 별 정리
+
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)*/
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
+/* 모바일 세로 (해상도 ~ 479px)*/
+/* 노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)*/
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
+/* 모바일 세로 (해상도 ~ 479px)*/
+/*  분기점  */
+/*
+노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)
+@mixin w1024 {}
+
+테블릿 가로 (해상도 768px ~ 1023px)
+@mixin w768 {}
+
+모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)
+@mixin w480 {}
+
+모바일 세로 (해상도 ~ 479px)
+@mixin mobile {}
+*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 767px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media all and (max-width: 479px) {
+  html {
+    font-size: 8px;
+  }
+}
+.main-header {
+  position: sticky;
+  top: 0;
   padding: 1.6rem;
+  text-align: center;
+  z-index: 50;
 }
-.main-header .logo {
+.main-header .main-title {
   font-size: 4.8rem;
-  line-height: 1.6em;
+  font-weight: 700;
+  line-height: 6.4rem;
 }
-.main-header .btn-icon {
+.main-header .btn-back {
+  position: absolute;
+  top: 2.4rem;
+  left: 1.6rem;
   background: transparent;
   margin-left: auto;
 }
-
-.main-title {
+.main-header .btn-back .material-symbols-outlined {
   font-size: 3.2rem;
+}
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@ Button 
+
+** SIZE **
+- xxs   : 28px
+- xs    : 36px  
+- sm    : 40px
+- md    : 48px
+- lg    : 52px
+- xl    : 60px 
+
+** Color **
+- primary
+- secondary
+    > 페이지별 컬러에 맞춰서 변수로 선언해서 사용 
+
+** TYPE **
+- solid (default)
+- outline
+- icon
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.cha-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.8rem;
+  border-radius: 0.8rem;
+}
+.cha-btn .btn-txt {
+  font-size: 1.4rem;
   font-weight: 700;
-  line-height: 4rem;
+  line-height: 2rem;
+}
+.cha-btn .btn-txt .cha-icon {
+  margin-top: -2px;
+}
+.cha-btn .white {
+  color: #fff;
+}
+.cha-btn.xxs {
+  min-width: 6rem;
+  height: 2.8rem;
+}
+.cha-btn.xs {
+  min-width: 6.8rem;
+  height: 3.6rem;
+}
+.cha-btn.sm {
+  min-width: 8rem;
+  height: 4rem;
+}
+.cha-btn.md {
+  min-width: 9.6rem;
+  height: 4.8rem;
+}
+.cha-btn.lg {
+  min-width: 10rem;
+  height: 5.2rem;
+}
+.cha-btn.xl {
+  min-width: 11.2rem;
+  height: 6rem;
+}
+.cha-btn.w-100 {
+  width: 100%;
+}
+.cha-btn.primary {
+  background-color: #339af0;
+}
+.cha-btn.primary .btn-txt {
+  color: #fff;
+}
+.cha-btn.primary.outline {
+  background-color: #fff;
+  border: 1px solid #339af0;
+}
+.cha-btn.primary.outline .btn-txt {
+  color: #339af0;
+}
+.cha-btn.primary.outline .mint-icon {
+  color: #339af0;
+}
+.cha-btn.primary.outline:hover {
+  background-color: #d0ebff;
+  border-color: #339af0;
+}
+.cha-btn.primary.outline:active {
+  background-color: #1971c2;
+  border-color: #1864ab;
+}
+.cha-btn.primary:hover {
+  background-color: #228be6;
+}
+.cha-btn.primary:active {
+  background-color: #1c7ed6;
+}
+.cha-btn.primary:disabled {
+  pointer-events: none;
+  background-color: #a5d8ff;
+  border: 0;
+}
+.cha-btn.primary:disabled .btn-txt {
+  color: #fff;
+}
+.cha-btn.primary:disabled .mint-icon {
+  color: #fff;
+}
+.cha-btn.secondary {
+  background-color: #f08c00;
+}
+.cha-btn.secondary .btn-txt {
+  color: #fff;
+}
+.cha-btn.secondary .mint-icon {
+  color: #fff;
+}
+.cha-btn.secondary.outline {
+  border: 1px solid #ffe066;
+  background-color: #fff;
+}
+.cha-btn.secondary.outline .btn-txt {
+  color: #f08c00;
+}
+.cha-btn.secondary.outline:hover {
+  background-color: #fcc419;
+  border-color: #ffe066;
+}
+.cha-btn.secondary.outline:active {
+  background-color: #fff3bf;
+  border-color: #f08c00;
+}
+.cha-btn.secondary:hover {
+  background-color: #e67700;
+}
+.cha-btn.secondary:active {
+  background-color: #e67700;
+}
+.cha-btn.secondary:disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+.cha-btn:is(.md, .lg, .xl) .btn-txt {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+
+/*
+-   Tab! 
+-   탭 타입 2가지 (언더라인, 버튼)
+-   클릭할 때 애니메이션 효과 주기
+// 정리대상
+*/
+.component-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.6rem;
 }
 
 @media all and (min-width: 768px) and (max-width: 1023px) {
@@ -305,7 +515,7 @@ textarea[disabled] {
 }
 @media all and (min-width: 480px) and (max-width: 767px) {
   html {
-    font-size: 8xp;
+    font-size: 8px;
   }
 }
 @media all and (max-width: 479px) {
