@@ -1,12 +1,9 @@
 @charset "UTF-8";
 /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-    @ Page 허브 페이지
-    - 메인이랑 비슷하지만 2개씩 노출하는걸로
-    - 아티클은 이미지로 갈거임
+    @ Gilette 
 
-    >> 메인이랑 비슷하지만 스타일 두개 사용할 필요없음 
-    >>> 전체 페이지레이아웃 스타일로 수정예정
+    -   이전 포트폴리오 활용해서 다시 리뉴얼 
 
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -527,56 +524,4 @@ textarea[disabled] {
   align-items: center;
   flex-direction: column;
   padding: 1.6rem;
-}
-
-body {
-  background-color: #d0ebff;
-}
-
-.main-layout {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2.4rem;
-  padding: 0 2rem;
-}
-
-.page-box {
-  position: relative;
-  width: calc(50% - 1.2rem);
-  overflow: hidden;
-}
-.page-box .a-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.page-box .name {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 4rem;
-  color: #fff;
-}
-.page-box figure {
-  border-radius: 1.6rem;
-  overflow: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.component-container .sub-title {
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 4rem;
-}
-.component-container.button {
-  background-color: #d0ebff;
 }

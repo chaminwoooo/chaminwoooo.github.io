@@ -58,11 +58,12 @@ body { background-color: $yellow-0; }
     gap: 1.2rem;
     width: 100%;
     height: 100%;
-    .content-box { width: calc(50% - 0.6rem); }
+    
 }
 
 .content-box {
     @include flexBox();
+    width: calc(50% - 0.6rem);
     height: 20rem;
     margin-top: 200%;
     border-radius: 0.8rem;

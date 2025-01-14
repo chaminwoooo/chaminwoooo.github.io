@@ -504,6 +504,9 @@ textarea[disabled] {
   pointer-events: none;
   opacity: 0.4;
 }
+.cha-btn.round {
+  border-radius: 5rem;
+}
 .cha-btn:is(.md, .lg, .xl) .btn-txt {
   font-size: 1.6rem;
   font-weight: 700;
@@ -523,21 +526,6 @@ textarea[disabled] {
   padding: 1.6rem;
 }
 
-@media all and (min-width: 768px) and (max-width: 1023px) {
-  html {
-    font-size: 9px;
-  }
-}
-@media all and (min-width: 480px) and (max-width: 767px) {
-  html {
-    font-size: 8px;
-  }
-}
-@media all and (max-width: 479px) {
-  html {
-    font-size: 6px;
-  }
-}
 body {
   background-color: #fff9db;
 }
@@ -596,14 +584,12 @@ body {
   width: 100%;
   height: 100%;
 }
-.content-box-wrap .content-box {
-  width: calc(50% - 0.6rem);
-}
 
 .content-box {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: calc(50% - 0.6rem);
   height: 20rem;
   margin-top: 200%;
   border-radius: 0.8rem;
