@@ -525,3 +525,61 @@ textarea[disabled] {
   flex-direction: column;
   padding: 1.6rem;
 }
+
+.gt-header {
+  position: sticky;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4rem;
+  border: 1px solid #adb5bd;
+  z-index: 100;
+}
+.gt-header .logo {
+  position: relative;
+}
+.gt-header .gt-nav {
+  display: flex;
+}
+.gt-header .nav-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  -moz-column-gap: 3.2rem;
+       column-gap: 3.2rem;
+}
+.gt-header .nav-item .category-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+}
+
+.category-list-wrap {
+  position: absolute;
+  top: 7.4rem;
+  left: 0;
+  width: 100%;
+  padding: 1.6rem 2.4rem;
+  background-color: #fff;
+  border-bottom: 1px solid #adb5bd;
+}
+.category-list-wrap .category-list {
+  display: flex;
+  flex-direction: column;
+}
+.category-list-wrap .category-item {
+  position: relative;
+  display: flex;
+}
+.category-list-wrap.active {
+  display: block;
+}
+
+.a-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
