@@ -101,7 +101,8 @@ a {
 }
 
 button {
-  color: #000;
+  background: none;
+  cursor: pointer;
 }
 
 /* Form */
@@ -272,12 +273,6 @@ textarea[disabled] {
     bottom: 2vw;
   }
 }
-.btn-wrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 .x-scroll {
   display: flex;
   flex-wrap: nowrap;
@@ -317,21 +312,6 @@ textarea[disabled] {
 모바일 세로 (해상도 ~ 479px)
 @mixin mobile {}
 */
-@media all and (min-width: 768px) and (max-width: 1023px) {
-  html {
-    font-size: 12px;
-  }
-}
-@media all and (min-width: 480px) and (max-width: 767px) {
-  html {
-    font-size: 10px;
-  }
-}
-@media all and (max-width: 479px) {
-  html {
-    font-size: 8px;
-  }
-}
 /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @   Header
@@ -484,7 +464,6 @@ textarea[disabled] {
 }
 .cha-btn.secondary.outline {
   border: 1px solid #ffe066;
-  background-color: #fff;
 }
 .cha-btn.secondary.outline .btn-txt {
   color: #f08c00;
@@ -579,4 +558,4 @@ body {
 }
 .component-container.button {
   background-color: #d0ebff;
-}
+}/*# sourceMappingURL=pages.css.map */

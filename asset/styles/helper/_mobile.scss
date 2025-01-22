@@ -15,16 +15,16 @@
 @mixin mobile {}
 */
 
-@include w768{
-    html { font-size: 12px; }
-}
+// @include w768{
+//     html { font-size: 12px; }
+// }
 
-@include w480 {
-    html { font-size: 10px; }
-}
+// @include w480 {
+//     html { font-size: 10px; }
+// }
 
-@include mobile {
-    html { font-size: 8px; }
-}
+// @include mobile {
+//     html { font-size: 8px; }
+// }
 
 

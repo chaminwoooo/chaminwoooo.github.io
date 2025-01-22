@@ -1,0 +1,197 @@
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    @ Gilette 
+
+    -   이전 포트폴리오 활용해서 다시 리뉴얼 
+
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import '../../component/gillette_color';
+@import '../../index';
+
+// 메인 헤더
+.gt-header {
+    position: sticky;
+    width: 100%;
+    @include flexBox($jc:space-between);
+    padding: 2.4rem;
+    border: 1px solid $gray-5;
+    z-index: 100;
+
+    .logo {
+        position: relative;
+    }
+    .gt-nav {
+        display: flex;
+    }
+    .nav-list {
+        @include flexBox($jc:flex-start);
+        column-gap: 3.2rem;
+    }
+    .nav-item {
+        .category-title { @include font-16(600); }
+    }
+}
+
+// 메인 헤더 > 카테고리
+.category-list-wrap {
+    // display: none; // none 은 아니고 나중에 opactity랑 위치값 세팅 필요
+    position: absolute;
+    top: 7.4rem;
+    left: 0;
+    @include flexBox($jc:flex-start, $ai:flex-top);
+    width: 100%;
+    padding: 3.2rem 2.4rem;
+    background-color: #fff;
+    border-bottom: 1px solid $gray-5;
+
+    .category-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.4rem;
+    }
+    .category-item {
+        position: relative;
+        width: 100%;
+        @include flexBox($jc:space-between, $ai:flex-start);
+    }
+
+    .category-sub-title {
+        @include font-18(700);
+    }
+    &.active { display: flex; }
+}
+
+.product-list {
+    flex: 1;
+    @include flexBox($jc:flex-start);
+    column-gap: 3.6rem;
+    margin-left: 4.8rem;
+}
+
+.product-item {
+    position: relative;
+} 
+
+.product-img {
+    text-align: center;
+    .name {
+        margin-top: 0.8rem;
+        @include font-16(600);
+    }
+}
+
+.a-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.gillette-container {
+    .cha-btn {
+        &.outline {
+            background-color: transparent;
+            .btn-txt { color: #fff; }
+        }
+    }
+}
+
+// 비디오 섹션
+.main-video-section {
+    width: 100%;
+    video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// 베스트셀러 섹션
+.best-section {
+    margin-top: 10rem;
+
+    .product-list {
+        width: 100%;
+        padding: 0 3.6rem;
+        margin-left: 0;
+        justify-content: space-around;
+        .name {
+            margin-top: 1.6rem;
+            @include font-24(600);
+        }
+    }
+}
+
+// 경험 섹션
+.kit-exp-section {
+    position: relative;
+    margin-top: 10rem;
+    .img-wrap { width: 100%; }
+
+    .content-wrap { @include absCenter; }
+    .txt-wrap {
+        text-align: center;
+        .title {
+            @include font-48(700);
+            color:#fff;
+            text-shadow: 3px 4px 5px $gray-9;
+        }
+    }
+    .btn-wrap {
+        width: 100%;
+        @include inlineFlex($jc:space-around);
+        margin-top: 3.2rem;
+        .cha-btn { @include shadow4; }
+    }
+}
+
+// 추천 섹션
+.recommend-section {
+    margin-top: 10rem;
+    @include flexBox;
+    column-gap: 10rem;
+    .img-wrap {
+
+    }
+    .txt-wrap {
+        .title {
+            @include font-32(700);
+        }
+        .desc {
+            margin-top: 2.4rem;
+            @include font-24(500);
+        }
+        .cha-btn {
+            margin-top: 2.4rem;
+        }
+    }
+}
+
+// 샵 섹션
+.shop-section {
+    display: flex;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    .banner-wrap {
+        flex: 0.5;
+        .title {
+            @include font-24(700);
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    .content-wrap {
+        position: relative;
+        height: 40rem;
+        overflow: hidden;
+        .img-wrap { width: 100%; }
+        .btn-wrap {
+            @include absCenterX;
+            bottom: 3.2rem;
+            @include inlineFlex;
+            column-gap: 3.2rem;
+            button { padding: 0 3.2rem; }
+        }
+    }
+
+}

@@ -98,7 +98,8 @@ a {
 }
 
 button {
-  color: #000;
+  background: none;
+  cursor: pointer;
 }
 
 /* Form */
@@ -314,21 +315,6 @@ textarea[disabled] {
 모바일 세로 (해상도 ~ 479px)
 @mixin mobile {}
 */
-@media all and (min-width: 768px) and (max-width: 1023px) {
-  html {
-    font-size: 12px;
-  }
-}
-@media all and (min-width: 480px) and (max-width: 767px) {
-  html {
-    font-size: 10px;
-  }
-}
-@media all and (max-width: 479px) {
-  html {
-    font-size: 8px;
-  }
-}
 /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @   Header
@@ -559,21 +545,57 @@ textarea[disabled] {
   position: absolute;
   top: 7.4rem;
   left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-top;
   width: 100%;
-  padding: 1.6rem 2.4rem;
+  padding: 3.2rem 2.4rem;
   background-color: #fff;
   border-bottom: 1px solid #adb5bd;
 }
 .category-list-wrap .category-list {
   display: flex;
   flex-direction: column;
+  row-gap: 2.4rem;
 }
 .category-list-wrap .category-item {
   position: relative;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.category-list-wrap .category-sub-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.8rem;
 }
 .category-list-wrap.active {
-  display: block;
+  display: flex;
+}
+
+.product-list {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  -moz-column-gap: 3.6rem;
+       column-gap: 3.6rem;
+  margin-left: 4.8rem;
+}
+
+.product-item {
+  position: relative;
+}
+
+.product-img {
+  text-align: center;
+}
+.product-img .name {
+  margin-top: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.4rem;
 }
 
 .a-link {
@@ -582,4 +604,60 @@ textarea[disabled] {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.best-section .product-list {
+  margin-left: 0;
+  justify-content: center;
+}
+.best-section {
+  margin-top: 10rem;
+}
+.best-section .product-list {
+  width: 100%;
+  padding: 0 3.6rem;
+  justify-content: space-around;
+}
+
+.kit-exp-section {
+  position: relative;
+  margin-top: 10rem;
+}
+.kit-exp-section .img-wrap {
+  width: 100%;
+}
+.kit-exp-section .btn-wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 6.4rem;
+  display: inline-flex;
+  -moz-column-gap: 1.6rem;
+       column-gap: 1.6rem;
+}
+.kit-exp-section .btn-wrap .cha-btn {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 0 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.recommend-section {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 10rem;
+       column-gap: 10rem;
+}
+.recommend-section .txt-wrap .title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 4rem;
+}
+.recommend-section .txt-wrap .desc {
+  margin-top: 2.4rem;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 3.2rem;
+}
+.recommend-section .txt-wrap .cha-btn {
+  margin-top: 2.4rem;
 }
