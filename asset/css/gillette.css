@@ -600,6 +600,7 @@ textarea[disabled] {
 }
 
 .gillette-container .cha-btn.outline {
+  border-width: 2px;
   background-color: transparent;
 }
 .gillette-container .cha-btn.outline .btn-txt {
@@ -703,11 +704,15 @@ textarea[disabled] {
 }
 .shop-section .content-wrap {
   position: relative;
-  height: 40rem;
   overflow: hidden;
 }
 .shop-section .content-wrap .img-wrap {
   width: 100%;
+}
+.shop-section .content-wrap .img-wrap img {
+  height: 40rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .shop-section .content-wrap .btn-wrap {
   position: absolute;
@@ -722,4 +727,5 @@ textarea[disabled] {
 }
 .shop-section .content-wrap .btn-wrap button {
   padding: 0 3.2rem;
+  white-space: nowrap;
 }/*# sourceMappingURL=gillette.css.map */
