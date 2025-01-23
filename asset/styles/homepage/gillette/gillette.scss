@@ -8,6 +8,8 @@
 @import '../../component/gillette_color';
 @import '../../index';
 
+$gt-priamry : #0B1432;
+
 // 메인 헤더
 .gt-header {
     position: sticky;
@@ -94,6 +96,17 @@
             border-width: 2px;
             background-color: transparent;
             .btn-txt { color: #fff; }
+
+
+            // 생각좀 
+            &:hover {
+                background-color: transparent;
+                border-color: $gt-priamry;
+                .btn-txt { color: $gt-priamry; }
+            }
+            &:active {
+                background-color: transparent;
+            }
         }
     }
 }
@@ -172,7 +185,6 @@
 .shop-section {
     display: flex;
     margin-top: 10rem;
-    margin-bottom: 10rem;
     .banner-wrap {
         flex: 0.5;
         .title {
@@ -203,4 +215,97 @@
         }
     }
 
+}
+
+// 팁 섹션
+.tip-section {
+    display: flex;
+    column-gap: 2.4rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    padding: 0 2.4rem;
+    .tip-box { position: relative; }
+    .img-wrap { 
+        width: 100%; 
+        img {
+            height: 30rem;
+            object-fit: cover;
+        }
+    }
+
+    .txt-wrap {
+        width: 100%;
+        @include absCenterX;
+        bottom: 2.4rem;
+        text-align: center;
+
+        .tip-title {
+            @include font-18(500);
+            color: #fff;
+        }
+        .cha-btn { margin-top: 2.4rem; }
+    }
+
+}
+
+// 푸터
+.gt-footer {
+    padding: 4.8rem 4.8rem 2.4rem;
+    background-color: $gt-priamry;
+
+    .footer-logo {
+        width: 100%;
+        figure { 
+            width: 15rem; 
+            margin: 0 auto;
+        }
+        img { width: 100%; }
+    }
+    
+    .top-wrap {
+        @include flexBox($jc:space-between,$ai:flex-start);
+        margin-top: 4.8rem;
+        color: #fff;
+    }
+    .link-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.6rem;
+        color: #fff;
+    }
+    .link-item {
+        a { 
+            @include font-24(600);
+            color: #fff; 
+        }
+    }
+    .sns-list {
+        @include flexBox($jc:flex-start);
+        column-gap: 1.6rem;
+    }
+    .sns-item {
+        a {
+            display: inline-block;
+            width: 6.4rem;
+            height: 6.4rem;
+        }
+        .img-wrap {
+            width: 100%;
+        }
+    }
+
+    address {
+        @include flexBox;
+        flex-wrap: wrap;
+        gap: 2.4rem;
+        margin-top: 4rem;
+        @include font-16(600);
+        color: #fff;
+
+        .copyright {
+            width: 100%;
+            @include font-14(600);
+            text-align: center;
+        }
+    }
 }

@@ -606,6 +606,16 @@ textarea[disabled] {
 .gillette-container .cha-btn.outline .btn-txt {
   color: #fff;
 }
+.gillette-container .cha-btn.outline:hover {
+  background-color: transparent;
+  border-color: #0B1432;
+}
+.gillette-container .cha-btn.outline:hover .btn-txt {
+  color: #0B1432;
+}
+.gillette-container .cha-btn.outline:active {
+  background-color: transparent;
+}
 
 .main-video-section {
   width: 100%;
@@ -691,7 +701,6 @@ textarea[disabled] {
 .shop-section {
   display: flex;
   margin-top: 10rem;
-  margin-bottom: 10rem;
 }
 .shop-section .banner-wrap {
   flex: 0.5;
@@ -728,4 +737,109 @@ textarea[disabled] {
 .shop-section .content-wrap .btn-wrap button {
   padding: 0 3.2rem;
   white-space: nowrap;
+}
+
+.tip-section {
+  display: flex;
+  -moz-column-gap: 2.4rem;
+       column-gap: 2.4rem;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  padding: 0 2.4rem;
+}
+.tip-section .tip-box {
+  position: relative;
+}
+.tip-section .img-wrap {
+  width: 100%;
+}
+.tip-section .img-wrap img {
+  height: 30rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.tip-section .txt-wrap {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2.4rem;
+  text-align: center;
+}
+.tip-section .txt-wrap .tip-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+  color: #fff;
+}
+.tip-section .txt-wrap .cha-btn {
+  margin-top: 2.4rem;
+}
+
+.gt-footer {
+  padding: 4.8rem 4.8rem 2.4rem;
+  background-color: #0B1432;
+}
+.gt-footer .footer-logo {
+  width: 100%;
+}
+.gt-footer .footer-logo figure {
+  width: 15rem;
+  margin: 0 auto;
+}
+.gt-footer .footer-logo img {
+  width: 100%;
+}
+.gt-footer .top-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 4.8rem;
+  color: #fff;
+}
+.gt-footer .link-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+  color: #fff;
+}
+.gt-footer .link-item a {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  color: #fff;
+}
+.gt-footer .sns-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  -moz-column-gap: 1.6rem;
+       column-gap: 1.6rem;
+}
+.gt-footer .sns-item a {
+  display: inline-block;
+  width: 6.4rem;
+  height: 6.4rem;
+}
+.gt-footer .sns-item .img-wrap {
+  width: 100%;
+}
+.gt-footer address {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+  margin-top: 4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  color: #fff;
+}
+.gt-footer address .copyright {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2rem;
+  text-align: center;
 }/*# sourceMappingURL=gillette.css.map */
