@@ -8,7 +8,9 @@
 @import '../../component/gillette_color';
 @import '../../index';
 
-$gt-priamry : #0B1432;
+$gt-priamry : #192F6E;
+$gt-secondary: #0B1432;
+
 
 // 메인 헤더
 .gt-header {
@@ -21,6 +23,14 @@ $gt-priamry : #0B1432;
 
     .logo {
         position: relative;
+        figure {
+            width: 100%;
+            height: 5rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
     .gt-nav {
         display: flex;
@@ -30,7 +40,10 @@ $gt-priamry : #0B1432;
         column-gap: 3.2rem;
     }
     .nav-item {
-        .category-title { @include font-16(600); }
+        .category-title { 
+            @include font-16(600); 
+            color: $gt-priamry;
+        }
     }
 }
 
@@ -40,7 +53,7 @@ $gt-priamry : #0B1432;
     position: absolute;
     top: 7.4rem;
     left: 0;
-    @include flexBox($jc:flex-start, $ai:flex-top);
+    @include flexBox($jc:flex-start, $ai:flex-start);
     width: 100%;
     padding: 3.2rem 2.4rem;
     background-color: #fff;
@@ -67,7 +80,7 @@ $gt-priamry : #0B1432;
     flex: 1;
     @include flexBox($jc:flex-start);
     column-gap: 3.6rem;
-    margin-left: 4.8rem;
+    margin-left: 6.4rem;
 }
 
 .product-item {
@@ -75,6 +88,10 @@ $gt-priamry : #0B1432;
 } 
 
 .product-img {
+    img {
+        width: 15rem;
+        height: 15rem;
+    }
     text-align: center;
     .name {
         margin-top: 0.8rem;
