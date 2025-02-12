@@ -8,22 +8,24 @@
 </head>
 
 <!-- TODO PC/ M 디바이스 체크해서 구분 클래스 추가하기 -->
-<body id="gillette">
+<body class="gillette">
     <!-- TODO PC 일때 노출 -->
     <header class="gt-header">
-        <h1 class="logo">
-            <figure>
-                <img src="../../asset/images/gillette/common/img_main_logo.png" alt="">
-            </figure>
-            <a href="./index.html" class="a-link"></a>
-        </h1>
+        <div class="header-wrap">
+            <h1 class="logo">
+                <figure>
+                    <img src="../../asset/images/gillette/common/img_main_logo.png" alt="">
+                </figure>
+                <a href="./index.html" class="a-link"></a>
+            </h1>
+        </div>
         <nav class="gt-nav">
             <ul class="nav-list">
                 <li class="nav-item">
                     <article class="category-container">
                         <a href="" class=""><h2 class="category-title">PRODUCTS</h2></a>
-                        <!-- TODO 활성화 active 클래스 -->
-                        <div class="category-list-wrap active">
+                        <!--  활성화 active 클래스 -->
+                        <div class="category-list-wrap">
                             <ul class="category-list">
                                 <li class="category-item"><button type="button" class="category-sub-title">면도기 & 트리머</button></li>
                                 <li class="category-item"><button type="button" class="category-sub-title">면도날</button></li>
@@ -33,9 +35,9 @@
                                 <li class="category-item"><button type="button" class="category-sub-title">All Product</button></li>
                             </ul>
                             <div class="product-list-wrap">
-                                <!-- TODO 활성화 active 클래스 -->
+                                <!--  활성화 active 클래스 -->
                                 <!-- 면도기 -->
-                                <ul class="product-list active">
+                                <ul class="product-list">
                                     <li class="product-item">
                                         <figure class="product-img">
                                             <img src="../../asset/images/gillette/product/img_prd_1_1.webp" alt="상품 이미지">
@@ -68,7 +70,7 @@
                                 <!--// 면도기 -->
 
                                 <!-- 면도날 -->
-                                <ul class="product-list active">
+                                <ul class="product-list">
                                     <li class="product-item">
                                         <figure class="product-img">
                                             <img src="../../asset/images/gillette/product/img_prd_2_1.webp" alt="상품 이미지">
@@ -101,7 +103,7 @@
                                 <!--// 면도날 -->
 
                                 <!-- 쉐이빙크림 -->
-                                <ul class="product-list active">
+                                <ul class="product-list">
                                     <li class="product-item">
                                         <figure class="product-img">
                                             <img src="../../asset/images/gillette/product/img_prd_3_1.jpg" alt="상품 이미지">
@@ -134,7 +136,7 @@
                                 <!--// 쉐이빙크림 -->
 
                                 <!-- 스타터키트 -->
-                                <ul class="product-list active">
+                                <ul class="product-list">
                                     <li class="product-item">
                                         <figure class="product-img">
                                             <img src="../../asset/images/gillette/product/img_prd_4_1.webp" alt="상품 이미지">
@@ -160,7 +162,7 @@
                                 <!--// 스타터키트 -->
 
                                 <!-- 히티드레이저 -->
-                                <ul class="product-list active">
+                                <ul class="product-list">
                                     <li class="product-item">
                                         <figure class="product-img">
                                             <img src="../../asset/images/gillette/product/img_prd_5_1.webp" alt="상품 이미지">
@@ -373,6 +375,8 @@
             <p class="copyright">@2025 MINWOO CHA</p>
         </address>
     </footer>
+
+    <script src="../../asset/scripts/gillette.js"></script>
 </body>
 
 </html>

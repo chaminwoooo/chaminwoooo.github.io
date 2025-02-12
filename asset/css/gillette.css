@@ -505,17 +505,27 @@ textarea[disabled] {
   padding: 1.6rem;
 }
 
+.gillette {
+  color: #333;
+}
+.gillette button {
+  color: #333;
+}
+
 .gt-header {
   position: sticky;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2.4rem;
+  padding: 2.4rem 2.4rem 0;
   border: 1px solid #adb5bd;
   z-index: 100;
 }
+.gt-header .header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .gt-header .logo {
+  display: block;
   position: relative;
 }
 .gt-header .logo figure {
@@ -528,6 +538,7 @@ textarea[disabled] {
 }
 .gt-header .gt-nav {
   display: flex;
+  margin-top: 2.4rem;
 }
 .gt-header .nav-list {
   display: flex;
@@ -536,29 +547,51 @@ textarea[disabled] {
   -moz-column-gap: 3.2rem;
        column-gap: 3.2rem;
 }
+.gt-header .nav-item {
+  padding: 2.4rem 0;
+}
 .gt-header .nav-item .category-title {
-  font-size: 1.6rem;
+  position: relative;
+  font-size: 2.4rem;
   font-weight: 600;
-  line-height: 2.4rem;
-  color: #192F6E;
+  line-height: 3.2rem;
+  color: #0B1432;
+}
+.gt-header .nav-item .category-title::after {
+  display: none;
+  content: "";
+  position: absolute;
+  bottom: -2.4rem;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #192F6E;
+}
+.gt-header .nav-item:has(.category-list-wrap.active) .category-title::after {
+  display: block;
+}
+.gt-header .nav-item:has(.category-list-wrap.active) .category-title {
+  font-weight: 700;
 }
 
 .category-list-wrap {
   position: absolute;
-  top: 7.4rem;
+  top: 17.9rem;
   left: 0;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  padding: 3.2rem 2.4rem;
+  padding: 4.8rem 2.4rem;
   background-color: #fff;
   border-bottom: 1px solid #adb5bd;
+  display: none;
 }
 .category-list-wrap .category-list {
   display: flex;
   flex-direction: column;
   row-gap: 2.4rem;
+  min-width: 20rem;
 }
 .category-list-wrap .category-item {
   position: relative;
@@ -567,23 +600,76 @@ textarea[disabled] {
   justify-content: space-between;
   align-items: flex-start;
 }
+.category-list-wrap .category-item.active .category-sub-title {
+  color: #192F6E;
+}
 .category-list-wrap .category-sub-title {
+  width: 100%;
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 2.8rem;
+  text-align: left;
 }
-.category-list-wrap.active {
+.category-list-wrap .product-list {
+  display: none;
+  margin-left: 6.4rem;
+}
+.category-list-wrap .product-list.active {
   display: flex;
-}
-
-.product-list {
   flex: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   -moz-column-gap: 3.6rem;
        column-gap: 3.6rem;
-  margin-left: 6.4rem;
+}
+.category-list-wrap .product-list.active .product-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s ease-out forwards;
+}
+.category-list-wrap .product-list.active .product-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.category-list-wrap .product-list.active .product-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.category-list-wrap .product-list.active .product-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.category-list-wrap .product-list.active .product-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.category-list-wrap .product-list.active .product-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.category-list-wrap .product-list.active .product-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.category-list-wrap .product-list.active .product-item:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.category-list-wrap .product-list.active .product-item:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.category-list-wrap .product-list.active .product-item:nth-child(9) {
+  animation-delay: 0.9s;
+}
+.category-list-wrap .product-list.active .product-item:nth-child(10) {
+  animation-delay: 1s;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.category-list-wrap.active {
+  display: flex;
 }
 
 .product-item {
@@ -643,9 +729,10 @@ textarea[disabled] {
 }
 .best-section .product-list {
   width: 100%;
-  padding: 0 3.6rem;
-  margin-left: 0;
+  display: flex;
   justify-content: space-around;
+  margin-left: 0;
+  padding: 0 3.6rem;
 }
 .best-section .product-list .name {
   margin-top: 1.6rem;
