@@ -2,3 +2,6 @@ asset/.DS_Store
 .DS_Store
 old_asset
 old
+node_modules
+package-lock.json
+vite.config.js

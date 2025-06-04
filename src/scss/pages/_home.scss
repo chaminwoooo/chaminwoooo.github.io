@@ -1,0 +1,5 @@
+@use '../abstracts/index' as *;
+
+.header-title {
+    @include font-48(700);
+}
