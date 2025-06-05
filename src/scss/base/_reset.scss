@@ -20,6 +20,9 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+html {
+  font-size: 10px;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -30,7 +33,7 @@ body {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background-color: #fff;
   letter-spacing: -0.01em;
-  color: #000;
+  color: #333;
 }
 
 ol, ul {
