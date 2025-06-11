@@ -1,1 +1,0 @@
-import '../scss/pages/_home.scss';
