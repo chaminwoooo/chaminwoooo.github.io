@@ -1,30 +1,32 @@
 <!-- src/pages/Home.vue -->
 <template>
-    <main class="main">
-        <section class="section">
-            <h2 class="section-title">브랜드 사이트</h2>
-            <div class="card-grid">
-                <router-link to="/brand-a" class="card">
-                    <div class="card-box">Brand A</div>
-                </router-link>
-                <router-link to="/brand-b" class="card">
-                    <div class="card-box">Brand B</div>
-                </router-link>
-            </div>
-        </section>
+    <v-app>
+        <main class="main">
+            <section class="section">
+                <h2 class="section-title">브랜드 사이트</h2>
+                <div class="card-grid">
+                    <router-link to="/brand-a" class="card">
+                        <div class="card-box">Brand A</div>
+                    </router-link>
+                    <router-link to="/brand-b" class="card">
+                        <div class="card-box">Brand B</div>
+                    </router-link>
+                </div>
+            </section>
 
-        <section class="section">
-            <h2 class="section-title">기타 프로젝트</h2>
-            <div class="card-grid">
-                <router-link to="/tool" class="card">
-                    <div class="card-box">Small Tool</div>
-                </router-link>
-                <router-link to="/js-playground" class="card">
-                    <div class="card-box">JS PlayGround</div>
-                </router-link>
-            </div>
-        </section>
-    </main>
+            <section class="section">
+                <h2 class="section-title">기타 프로젝트</h2>
+                <div class="card-grid">
+                    <router-link to="/tool" class="card">
+                        <div class="card-box">Small Tool</div>
+                    </router-link>
+                    <router-link to="/js-playground" class="card">
+                        <div class="card-box">JS PlayGround</div>
+                    </router-link>
+                </div>
+            </section>
+        </main>
+    </v-app>
 </template>
 
 <script setup>

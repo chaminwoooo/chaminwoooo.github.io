@@ -1,9 +1,11 @@
 // src/main.js
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'  // 라우터 불러오기
+import router from './router'
+import vuetify from './plugins/vuetify' // 경로도 확인 필요 (plugin → plugins?)
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)  // 라우터 사용 등록
-app.mount('#app')  // public/index.html의 #app에 mount
+app.use(router);
+app.use(vuetify);
+app.mount('#app');
