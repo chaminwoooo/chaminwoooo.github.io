@@ -2,7 +2,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import vuetify from './plugins/vuetify' // 경로도 확인 필요 (plugin → plugins?)
+import vuetify from './plugins/vuetify'
+import './assets/styles/reset.scss'
 
 const app = createApp(App);
 

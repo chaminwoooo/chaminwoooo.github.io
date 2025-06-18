@@ -5,8 +5,8 @@
             <section class="section">
                 <h2 class="section-title">브랜드 사이트</h2>
                 <div class="card-grid">
-                    <router-link to="/brand-a" class="card">
-                        <div class="card-box">Brand A</div>
+                    <router-link to="/muji" class="card">
+                        <div class="card-box">MUJI</div>
                     </router-link>
                     <router-link to="/brand-b" class="card">
                         <div class="card-box">Brand B</div>
