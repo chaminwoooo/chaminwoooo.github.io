@@ -1,6 +1,6 @@
 <!-- src/pages/Home.vue -->
 <template>
-    <v-app class="home-layout">
+    <div class="home-layout">
         <header class="home-header">
             <h1 class="home-title">
                 Ciao, mondo! <br>
@@ -41,7 +41,7 @@
         </v-footer>
 
 
-    </v-app>
+    </div>
 </template>
 
 <script setup>
@@ -49,19 +49,22 @@
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/styles/mixins' as *;
+
 .home-layout {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(180deg,#f2eeea 0%,#e9e4e0 50%,#dcd6d1 100%);
+    background: linear-gradient(180deg, #f2eeea 0%, #e9e4e0 50%, #dcd6d1 100%);
 
 }
+
 .home-header {
     padding: 2.4rem;
 }
+
 .home-title {
-    font-size: 3.2rem;
-    font-weight: 700;
+    @include font-32(700);
     font-style: italic;
     background: linear-gradient(90deg, #8a7c74, #d6bfa8);
     -webkit-background-clip: text;
@@ -80,8 +83,7 @@
 
 .section-title {
     margin-bottom: 2.4rem;
-    font-size: 2.4rem;
-    font-weight: 600;
+    @include font-24(600);
     color: #6b645e;
 }
 
@@ -102,8 +104,7 @@
     padding: 2rem 2.4rem;
     border-radius: 8px;
     text-align: center;
-    font-size: 1.6rem;
-    font-weight: 500;
+    @include font-16(500);
     transition: 0.2s;
 }
 
@@ -119,9 +120,9 @@
     align-items: center;
     margin-top: auto;
     background-color: #b8b2ad;
-    
+
     .footer-txt {
-        font-size: 1.6rem;
+        @include font-16;
         color: #fefefe;
     }
 }
