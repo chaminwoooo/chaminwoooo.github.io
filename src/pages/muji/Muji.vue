@@ -21,46 +21,70 @@
     <!-- 메인 배너 -->
     <section class="main-banner">
         <div class="banner-slider">
-            <!-- <div class="slide active"><img src="./assets/images/banner1.jpg" alt="Banner 1" /></div> -->
-            <!-- <div class="slide"><img src="./assets/images/banner2.jpg" alt="Banner 2" /></div> -->
-            <!-- <div class="slide"><img src="./assets/images/banner3.jpg" alt="Banner 3" /></div> -->
+            <div>배너 1</div>
+            <div>배너 2</div>
+            <div>배너 3</div>
         </div>
     </section>
 
-    <!-- 기획전 섹션 -->
-    <section class="promotion">
-        <div class="container">
-            <h2>기획전</h2>
-            <ul class="promotion-list">
-                <!-- <li><img src="./assets/images/promo1.jpg" alt="Promo 1" /></li> -->
-                <!-- <li><img src="./assets/images/promo2.jpg" alt="Promo 2" /></li> -->
-                <!-- <li><img src="./assets/images/promo3.jpg" alt="Promo 3" /></li> -->
-            </ul>
+    <!-- 카테고리 섹션 -->
+    <section class="category-section">
+        <h2>카테고리</h2>
+        <div class="category-list">
+            <a href="" class="item">
+                <figure class="img-wrap"></figure>
+                <h3 class="name">카테고리 이름 1</h3>
+            </a>
         </div>
     </section>
 
-    <!-- 추천 상품 섹션 -->
-    <section class="product-list">
-        <div class="container">
-            <h2>추천 상품</h2>
-            <ul class="products">
-                <li class="product-card">
-                    <!-- <img src="./assets/images/product1.jpg" alt="Product 1" /> -->
-                    <p class="name">무지 코튼 티셔츠</p>
-                    <p class="price">₩19,900</p>
-                </li>
-                <li class="product-card">
-                    <!-- <img src="./assets/images/product2.jpg" alt="Product 2" /> -->
-                    <p class="name">무지 쇼핑백</p>
-                    <p class="price">₩3,000</p>
-                </li>
-                <li class="product-card">
-                    <!-- <img src="./assets/images/product3.jpg" alt="Product 3" /> -->
-                    <p class="name">무지 손수건</p>
-                    <p class="price">₩5,000</p>
+    <!-- 신상품 섹션 -->
+    <section class="product-section">
+        <h2>신상품 상품</h2>
+        <nav>
+            <ul>
+                <li>
+                    <button type="button">신상품이 입고 되었어요</button>
                 </li>
             </ul>
-        </div>
+        </nav>
+        <ul class="products">
+            <li class="">
+                <figure>
+                    <img src="" alt="">
+                </figure>
+                <h3 class="name">상품명</h3>
+                <dl>
+                    <dt>
+                        <span>1234원</span>
+                    </dt>
+                    <dd>
+                        <span>0.0</span>
+                        <span>(0)</span>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 스크롤 영역 -->
+    <div class="scroll-section">
+        <section class="banner-section">
+            <figure class="img-wrap">
+                <img src="" alt="">
+            </figure>
+        </section>
+        <section class="">
+            <article class="">
+                <figure class="img-wrap"></figure>
+            </article>
+        </section>
+    </div>
+
+    <section class="event-section">
+        <article class="event-card">
+
+        </article>
     </section>
 
     <!-- 푸터 -->
