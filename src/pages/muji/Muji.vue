@@ -45,18 +45,22 @@
         <!-- 신상품 섹션 -->
         <section class="product-section">
             <h2 class="section-title">신상품 상품</h2>
+
             <nav class="product-nav">
                 <ul class="nav-list">
                     <li class="item" v-for="(sort, index) in sorts" :key="index">
-                        <button type="button" :class="{ on: activeIndex == index }">{{ sort }}</button>
+                        <button type="button" :class="{ on: activeIndex === index }" @click="activeIndex = index">
+                            {{ sort }}
+                        </button>
                     </li>
                 </ul>
             </nav>
+
             <ul class="product-list">
-                <li class="product-item" v-for="(item, index) in newItem" :key="index">
+                <li class="product-item" v-for="(item, index) in newItems[activeIndex]" :key="index">
                     <a href="">
                         <figure class="img-wrap">
-                            <img :src="`/muji/img/man_${index + 1}.webp`" :alt="item.name">
+                            <img :src="item.img" :alt="item.name" />
                         </figure>
                         <h3 class="name">{{ item.name }}</h3>
                         <dl class="info-wrap">
@@ -71,6 +75,7 @@
                     </a>
                 </li>
             </ul>
+
         </section>
 
         <!-- 스크롤 영역 -->
@@ -130,68 +135,60 @@ const categories = [
 // 신상품 분류
 const sorts = ['남성', '여성', '아동', '패션잡화', '주방용품', '패브릭', '수납/정리', '가구', '생활용품', '가전/디지털', '문구', '뷰티', '간편조리', '스낵', '숏클립', 'N배송'];
 const activeIndex = ref(0)
-const newItem = [
-    {
-        name: '건조가 빠른 이지 턱 와이드 팬츠',
-        price: '39,900',
-        rate: '0.0',
-        review: '0'
-    },
-    {
-        name: '저지 크루넥 반소매 티셔츠',
-        price: '12,900',
-        rate: '4.5',
-        review: '51'
-    },
-    {
-        name: '사이드 심리스 서커 반소매 파자마',
-        price: '49,900',
-        rate: '5.0',
-        review: '14'
-    },
-    {
-        name: '시원한 UV 컷 와이드 반소매 티셔츠',
-        price: '24,900',
-        rate: '5.0',
-        review: '24'
-    },
-    {
-        name: '양면 파일 타월 반소매 파자마',
-        price: '49,900',
-        rate: '5.0',
-        review: '12'
-    },
-    {
-        name: '워싱 브로드 쇼트 팬츠',
-        price: '19,900',
-        rate: '5.0',
-        review: '10'
-    },
-    {
-        name: '면 저지 복서 팬츠',
-        price: '8,900',
-        rate: '0.0',
-        review: '0'
-    },
-    {
-        name: '통기성이 좋은 반소매 우븐 폴로 셔츠',
-        price: '39,900',
-        rate: '5.0',
-        review: '1'
-    },
-    {
-        name: '워싱 피케 반소매 폴로 셔츠',
-        price: '29,900',
-        rate: '5.0',
-        review: '7'
-    },
-    {
-        name: '시원한 UV 컷 5부소매 폴로 셔츠',
-        price: '29,900',
-        rate: '4.5',
-        review: '2'
-    }
+const newItems = [
+    // 남성 탭
+    [
+        {
+            name: '셔츠',
+            price: '29,000',
+            rate: '4.5',
+            review: '10',
+            img: '/muji/img/man_1.webp'
+        },
+        {
+            name: '바지',
+            price: '35,000',
+            rate: '4.7',
+            review: '5',
+            img: '/muji/img/man_2.webp'
+        }
+    ],
+    // 여성 탭
+    [
+        {
+            name: '원피스',
+            price: '49,000',
+            rate: '4.8',
+            review: '12',
+            img: '/muji/img/woman_1.webp'
+        },
+        {
+            name: '블라우스',
+            price: '39,000',
+            rate: '4.3',
+            review: '3',
+            img: '/muji/img/woman_2.webp'
+        }
+    ],
+    // 식품 탭
+    [
+        {
+            name: '쿠키',
+            price: '5,000',
+            rate: '5.0',
+            review: '30',
+            img: '/muji/img/food_1.webp'
+        },
+        {
+            name: '커피',
+            price: '9,900',
+            rate: '4.9',
+            review: '18',
+            img: '/muji/img/food_2.webp'
+        }
+    ]
 ];
+
 
 
 </script>
@@ -305,7 +302,7 @@ const newItem = [
 
     .product-list {
         display: grid;
-        grid-template-columns: repeat(5 ,1fr);
+        grid-template-columns: repeat(5, 1fr);
         column-gap: 2.4rem;
         row-gap: 4rem;
         margin-top: 3.2rem;
