@@ -37,7 +37,7 @@
                     <figure class="img-wrap">
                         <img :src="category.img" :alt="category.name">
                     </figure>
-                    <h3 class="name">{{ category.name }}</h3>
+                    <h3 class=name>{{ category.name }}</h3>
                 </a>
             </div>
         </section>
@@ -57,19 +57,19 @@
             </nav>
 
             <ul class="product-list">
-                <li class="product-item" v-for="(item, index) in newItems[activeIndex]" :key="index">
+                <li class="product-item" v-for="(item, index) in newItems[categories[activeIndex].key]" :key="index">
                     <a href="">
                         <figure class="img-wrap">
                             <img :src="item.img" :alt="item.name" />
                         </figure>
-                        <h3 class="name">{{ item.name }}</h3>
+                        <h3 class=name>{{ item.name }}</h3>
                         <dl class="info-wrap">
-                            <dt class="price">
+                            <dt class=price>
                                 <span>{{ item.price }}원</span>
                             </dt>
                             <dd class="review-wrap">
-                                <span class="rate">{{ item.rate }}</span>
-                                <span class="review">({{ item.review }})</span>
+                                <span class=rate>{{ item.rate }}</span>
+                                <span class=review>({{ item.review }})</span>
                             </dd>
                         </dl>
                     </a>
@@ -80,7 +80,7 @@
 
         <!-- 스크롤 영역 -->
         <!-- 반응형일때는 하나씩 노출시켜야함 -->
-        <div class="scroll-section" v-if="false">
+        <div class="combie-section" v-if="false">
             <section class="banner-section">
                 <figure class="img-wrap">
                     <img src="" alt="">
@@ -110,142 +110,47 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 // 카테고리 배열
 const categories = [
-    { name: '남성', img: '/muji/img/cate_1.png' },
-    { name: '여성', img: '/muji/img/cate_2.png' },
-    { name: '아동', img: '/muji/img/cate_3.png' },
-    { name: '패션잡화', img: '/muji/img/cate_4.png' },
-    { name: '주방용품', img: '/muji/img/cate_5.png' },
-    { name: '패브릭', img: '/muji/img/cate_6.png' },
-    { name: '수납/정리', img: '/muji/img/cate_7.png' },
-    { name: '가구', img: '/muji/img/cate_8.png' },
-    { name: '생활용품', img: '/muji/img/cate_9.png' },
-    { name: '가전/디지털', img: '/muji/img/cate_10.png' },
-    { name: '문구', img: '/muji/img/cate_11.png' },
-    { name: '뷰티', img: '/muji/img/cate_12.png' },
-    { name: '간편조리', img: '/muji/img/cate_13.png' },
-    { name: '스낵', img: '/muji/img/cate_14.png' },
-    { name: '숏클립', img: '/muji/img/cate_15.png' },
-    { name: 'N배송', img: '/muji/img/cate_16.png' },
-];
+    { name: '남성', key: 'man', img: '/muji/img/category/cate_1.png' },
+    { name: '여성', key: 'woman', img: '/muji/img/category/cate_2.png' },
+    { name: '아동', key: 'kids', img: '/muji/img/category/cate_3.png' },
+    { name: '패션잡화', key: 'fashion', img: '/muji/img/category/cate_4.png' },
+    { name: '주방용품', key: 'kitchen', img: '/muji/img/category/cate_5.png' },
+    { name: '패브릭', key: 'fabric', img: '/muji/img/category/cate_6.png' },
+    { name: '수납/정리', key: 'storage', img: '/muji/img/category/cate_7.png' },
+    { name: '가구', key: 'furniture', img: '/muji/img/category/cate_8.png' },
+    { name: '생활용품', key: 'living', img: '/muji/img/category/cate_9.png' },
+    { name: '가전/디지털', key: 'digital', img: '/muji/img/category/cate_10.png' },
+    { name: '문구', key: 'stationery', img: '/muji/img/category/cate_11.png' },
+    { name: '뷰티', key: 'beauty', img: '/muji/img/category/cate_12.png' },
+    { name: '간편조리', key: 'easymeal', img: '/muji/img/category/cate_13.png' },
+    { name: '스낵', key: 'snack', img: '/muji/img/category/cate_14.png' },
+    { name: '숏클립', key: 'shortclip', img: '/muji/img/category/cate_15.png' },
+    { name: 'N배송', key: 'ndelivery', img: '/muji/img/category/cate_16.png' },
+]
+
 
 // 신상품 분류
 const activeIndex = ref(0);
 
-// 신상품 상품 데이터
-const newItems = [
-    // 남성 
-    [
-        {
-            name: '건조가 빠른 이지 턱 와이드 팬츠',
-            price: '39,900',
-            rate: '0.0',
-            review: '0',
-            img: '/muji/img/man_1.webp'
-        },
-        {
-            name: '저지 크루넥 반소매 티셔츠',
-            price: '12,900',
-            rate: '4.5',
-            review: '51',
-            img: '/muji/img/man_2.webp'
-        },
-        {
-            name: '사이드 심리스 서커 반소매 파자마',
-            price: '49,900',
-            rate: '5.0',
-            review: '14',
-            img: '/muji/img/man_3.webp'
-        },
-        {
-            name: '시원한 UV 컷 와이드 반소매 티셔츠',
-            price: '24,900',
-            rate: '5.0',
-            review: '24',
-            img: '/muji/img/man_4.webp'
-        },
-        {
-            name: '양면 파일 타월 반소매 파자마',
-            price: '49,900',
-            rate: '5.0',
-            review: '12',
-            img: '/muji/img/man_5.webp'
-        },
-        {
-            name: '워싱 브로드 쇼트 팬츠',
-            price: '19,900',
-            rate: '5.0',
-            review: '10',
-            img: '/muji/img/man_6.webp'
-        },
-        {
-            name: '면 저지 복서 팬츠',
-            price: '8,900',
-            rate: '0.0',
-            review: '0',
-            img: '/muji/img/man_7.webp'
-        },
-        {
-            name: '통기성이 좋은 반소매 우븐 폴로 셔츠',
-            price: '39,900',
-            rate: '5.0',
-            review: '1',
-            img: '/muji/img/man_8.webp'
-        },
-        {
-            name: '워싱 피케 반소매 폴로 셔츠',
-            price: '29,900',
-            rate: '5.0',
-            review: '7',
-            img: '/muji/img/man_9.webp'
-        },
-        {
-            name: '시원한 UV 컷 5부소매 폴로 셔츠',
-            price: '29,900',
-            rate: '4.5',
-            review: '2',
-            img: '/muji/img/man_10.webp'
-        }
-    ],
-    // 여성 
-    [
-        {
-            name: '원피스',
-            price: '49,000',
-            rate: '4.8',
-            review: '12',
-            img: '/muji/img/woman_1.webp'
-        },
-        {
-            name: '블라우스',
-            price: '39,000',
-            rate: '4.3',
-            review: '3',
-            img: '/muji/img/woman_2.webp'
-        }
-    ],
-    // 식품 
-    [
-        {
-            name: '쿠키',
-            price: '5,000',
-            rate: '5.0',
-            review: '30',
-            img: '/muji/img/food_1.webp'
-        },
-        {
-            name: '커피',
-            price: '9,900',
-            rate: '4.9',
-            review: '18',
-            img: '/muji/img/food_2.webp'
-        }
-    ]
-];
+const newItems = ref({
+    man : [],
+    woman: []
+})
 
+onMounted(async ()=> {
+    try {
+        const response = await fetch('/data/products/new-items.json')
+        if (!response.ok) throw new Error('데이터 불러오기 실패')
+        const data = await response.json()
+        newItems.value = data
+    } catch (error) {
+        console.error('에러데스네: ', error);
+    }
+})
 
 </script>
 
