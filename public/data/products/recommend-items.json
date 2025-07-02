@@ -1,0 +1,35 @@
+
+{
+    "muji365" : [
+        {
+            "banner"    : {
+                "img"   : "/muji/img/recommend/banner_1.jpg",
+                "title" : "시원한 반소매 파자마",
+                "desc"  : "소중한 사람과 함께 입는 파자마"
+            },
+            "recommend" : {
+                "img"   : "/muji/img/recommend/side_banner_1.png",
+                "title" : "MUJI 365",
+                "desc"  : "하루에 하나씩 넘기는 일력처럼, 매일 하나씩 일상 속에 스며있는 무인양품의 물건들을 전해드립니다."
+            },
+            "product"   : [
+                {
+                    "img" : "/muji/img/",
+                    "per" : 0.1,
+                    "price" : 39000
+                },
+                {
+                    "img" : "/muji/img/",
+                    "per" : 0.2,
+                    "price" : 29000
+                },
+                {
+                    "img" : "/muji/img/",
+                    "per" : 1,
+                    "price" : 59000
+                }
+            ]
+        }
+    ]
+        
+}
