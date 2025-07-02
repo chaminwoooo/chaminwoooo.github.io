@@ -48,9 +48,9 @@
 
             <nav class="product-nav">
                 <ul class="nav-list">
-                    <li class="item" v-for="(sort, index) in sorts" :key="index">
+                    <li class="item" v-for="(category, index) in categories" :key="index">
                         <button type="button" :class="{ on: activeIndex === index }" @click="activeIndex = index">
-                            {{ sort }}
+                            {{ category.name }}
                         </button>
                     </li>
                 </ul>
@@ -133,27 +133,84 @@ const categories = [
 ];
 
 // 신상품 분류
-const sorts = ['남성', '여성', '아동', '패션잡화', '주방용품', '패브릭', '수납/정리', '가구', '생활용품', '가전/디지털', '문구', '뷰티', '간편조리', '스낵', '숏클립', 'N배송'];
-const activeIndex = ref(0)
+const activeIndex = ref(0);
+
+// 신상품 상품 데이터
 const newItems = [
-    // 남성 탭
+    // 남성 
     [
         {
-            name: '셔츠',
-            price: '29,000',
-            rate: '4.5',
-            review: '10',
+            name: '건조가 빠른 이지 턱 와이드 팬츠',
+            price: '39,900',
+            rate: '0.0',
+            review: '0',
             img: '/muji/img/man_1.webp'
         },
         {
-            name: '바지',
-            price: '35,000',
-            rate: '4.7',
-            review: '5',
+            name: '저지 크루넥 반소매 티셔츠',
+            price: '12,900',
+            rate: '4.5',
+            review: '51',
             img: '/muji/img/man_2.webp'
+        },
+        {
+            name: '사이드 심리스 서커 반소매 파자마',
+            price: '49,900',
+            rate: '5.0',
+            review: '14',
+            img: '/muji/img/man_3.webp'
+        },
+        {
+            name: '시원한 UV 컷 와이드 반소매 티셔츠',
+            price: '24,900',
+            rate: '5.0',
+            review: '24',
+            img: '/muji/img/man_4.webp'
+        },
+        {
+            name: '양면 파일 타월 반소매 파자마',
+            price: '49,900',
+            rate: '5.0',
+            review: '12',
+            img: '/muji/img/man_5.webp'
+        },
+        {
+            name: '워싱 브로드 쇼트 팬츠',
+            price: '19,900',
+            rate: '5.0',
+            review: '10',
+            img: '/muji/img/man_6.webp'
+        },
+        {
+            name: '면 저지 복서 팬츠',
+            price: '8,900',
+            rate: '0.0',
+            review: '0',
+            img: '/muji/img/man_7.webp'
+        },
+        {
+            name: '통기성이 좋은 반소매 우븐 폴로 셔츠',
+            price: '39,900',
+            rate: '5.0',
+            review: '1',
+            img: '/muji/img/man_8.webp'
+        },
+        {
+            name: '워싱 피케 반소매 폴로 셔츠',
+            price: '29,900',
+            rate: '5.0',
+            review: '7',
+            img: '/muji/img/man_9.webp'
+        },
+        {
+            name: '시원한 UV 컷 5부소매 폴로 셔츠',
+            price: '29,900',
+            rate: '4.5',
+            review: '2',
+            img: '/muji/img/man_10.webp'
         }
     ],
-    // 여성 탭
+    // 여성 
     [
         {
             name: '원피스',
@@ -170,7 +227,7 @@ const newItems = [
             img: '/muji/img/woman_2.webp'
         }
     ],
-    // 식품 탭
+    // 식품 
     [
         {
             name: '쿠키',
@@ -188,7 +245,6 @@ const newItems = [
         }
     ]
 ];
-
 
 
 </script>
