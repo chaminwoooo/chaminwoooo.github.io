@@ -77,64 +77,107 @@
         </section>
 
         <!-- 추천 배너 + 상품 영역 -->
-        <section v-for="(sectionItems, sectionKey) in recommendItems" :key="sectionKey">
-            <div class="combie-section" v-for="(item,i) in recommendItems[sectionKey]" :key="i">
-                <section class="banner-section">
-                    <router-link to="" class="banner-link">
+        <div class="combie-section">
+            <section class="banner-section">
+                <router-link to="" class="banner-link">
+                    <figure class="img-wrap">
+                        <img src="/muji/img/recommend/banner_1.jpg" alt="시원한 반소매 파자마">
+                    </figure>
+                    <div class="txt-wrap">
+                        <p class="sub-title">시원한 반소매 파자마</p>
+                        <h3 class="title">소중한 사람과 함께 입는 파자마</h3>
+                    </div>
+                </router-link>
+            </section>
+            <section class="recommend-section">
+                <article class="recommend-card" v-for ="(item,index) in recommendItemsOne" :key="index">
+                    <router-link to="">
                         <figure class="img-wrap">
-                            <img :src="item.banner.img" :alt="item.banner.title">
+                            <img :src="item.recommend.img" :alt="item.recommend.title">
                         </figure>
-                        <div class="txt-wrap">
-                            <p class="sub-title">{{ item.banner.title }}</p>
-                            <h3 class="title">{{ item.banner.desc }}</h3>
+                        <div class="info-wrap">
+                            <h4 class="title">{{ item.recommend.title }}</h4>
+                            <p class="desc">{{ item.recommend.desc }}</p>
+                            <ul class="product-list">
+                                <li class="item" v-for="prd in item.product" :key="prd.img">
+                                    <figure class="prd-img">
+                                        <img :src="prd.img" :alt="prd.img">
+                                    </figure>
+                                    <p class="prd-name">{{ prd.name }}</p>
+                                    <p class="prd-info">
+                                        <div v-if="prd.per < 1">
+                                            <span class="discount">
+                                                <span class="per">{{ prd.per * 100 }}%</span>
+                                                {{ prd.price.toLocaleString() }} 원
+                                            </span>
+                                            <span class="price">{{ (prd.price - (prd.price * prd.per)).toLocaleString() }} 원</span>
+                                        </div>
+                                        <span class="price" v-if="prd.per === 1">{{ prd.price.toLocaleString() }} 원</span>
+                                    </p>
+                                </li>
+                            </ul>
                         </div>
                     </router-link>
-                </section>
-                <section class="recommend-section">
-                    <article class="recommend-card">
-                        <router-link to="">
-                            <figure class="img-wrap">
-                                <img :src="item.recommend.img" :alt="item.recommend.title">
-                            </figure>
-                            <div class="info-wrap">
-                                <h4 class="title">{{ item.recommend.title }}</h4>
-                                <p class="desc">{{ item.recommend.desc }}</p>
-                                <ul class="product-list">
-                                    <li class="item" v-for="prd in item.product" :key="prd.img">
-                                        <figure class="prd-img">
-                                            <img :src="prd.img" :alt="prd.img">
-                                        </figure>
-                                        <p class="prd-info">
-                                            <div v-if="prd.per < 1">
-                                                <span class="discount">
-                                                    <span class="per">{{ prd.per * 100 }}%</span>
-                                                    {{ prd.price.toLocaleString() }} 원
-                                                </span>
-                                                <span class="price">{{ (prd.price - (prd.price * prd.per)).toLocaleString() }} 원</span>
-                                            </div>
-                                            <span class="price" v-if="prd.per === 1">{{ prd.price.toLocaleString() }} 원</span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </router-link>
-                    </article>
-                </section>
-            </div>
-        </section>
+                </article>
+            </section>
+        </div>
         
+        <div class="combie-section">
+            <section class="recommend-section">
+                <article class="recommend-card" v-for ="(item,index) in recommendItemsTwo" :key="index">
+                    <router-link to="">
+                        <figure class="img-wrap">
+                            <img :src="item.recommend.img" :alt="item.recommend.title">
+                        </figure>
+                        <div class="info-wrap">
+                            <h4 class="title">{{ item.recommend.title }}</h4>
+                            <p class="desc">{{ item.recommend.desc }}</p>
+                            <ul class="product-list">
+                                <li class="item" v-for="prd in item.product" :key="prd.img">
+                                    <figure class="prd-img">
+                                        <img :src="prd.img" :alt="prd.img">
+                                    </figure>
+                                    <p class="prd-name">{{ prd.name }}</p>
+                                    <p class="prd-info">
+                                        <div v-if="prd.per < 1">
+                                            <span class="discount">
+                                                <span class="per">{{ prd.per * 100 }}%</span>
+                                                {{ prd.price.toLocaleString() }} 원
+                                            </span>
+                                            <span class="price">{{ (prd.price - (prd.price * prd.per)).toLocaleString() }} 원</span>
+                                        </div>
+                                        <span class="price" v-if="prd.per === 1">{{ prd.price.toLocaleString() }} 원</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </router-link>
+                </article>
+            </section>
+            <section class="banner-section">
+                <router-link to="" class="banner-link">
+                    <figure class="img-wrap">
+                        <img src="/muji/img/recommend/banner_2.jpg" alt="시원한 반소매 파자마">
+                    </figure>
+                    <div class="txt-wrap">
+                        <p class="sub-title">유닛 선반 시리즈</p>
+                        <h3 class="title">나만의 공간, 나만의 방식으로</h3>
+                    </div>
+                </router-link>
+            </section>
+        </div>
 
         <section class="event-section">
             <h2 class="section-title">From MUJI</h2>
             <div class="event-card-wrap">
-                <article class="event-card">
+                <article class="event-card" v-for="(item, index) in eventInfo" :key="index">
                     <router-link to="">
                         <figure class="img-wrap">
-                            <img src="https://public.mujikorea.co.kr/images/plans/6Ownwana6gBFlL8jRqwR5CDnnnLYVudq6fBRvC8y.jpg" alt="">
+                            <img :src="item.img" :alt="item.title">
                         </figure>
                         <div class="txt-wrap">
-                            <h4 class="title">월간 MUJI 6月</h4>
-                            <p class="desc">청결한 손톱 관리로 미의식 챙기기. 정밀한 절삭력이 돋보이는 스테인리스 손톱깎이입니다.</p>
+                            <h4 class="title">{{ item.title }}</h4>
+                            <p class="desc">{{ item.desc }}</p>
                         </div>
                     </router-link>
                 </article>
@@ -183,19 +226,23 @@ const newItems = ref({
     woman: []
 })
 
-const recommendItems = ref({
-    muji365 : [],
-    newnew : [],
-})
+const recommendItemsOne = ref([]);
+const recommendItemsTwo = ref([]);
+const eventInfo = ref([]);
 
 onMounted(async ()=> {
     try {
-        const [newData, recommendData] = await Promise.all([
+        const [newData, recommendDataOne, recommendDataTwo, eventData] = await Promise.all([
             fetchJson('/data/products/new-items.json'),
-            fetchJson('/data/products/recommend-items.json'),
+            fetchJson('/data/products/recommend-items-one.json'),
+            fetchJson('/data/products/recommend-items-two.json'),
+            fetchJson('/data/products/event.json'),
         ])
         newItems.value = newData
-        recommendItems.value = recommendData
+        recommendItemsOne.value = recommendDataOne.recItem
+        recommendItemsTwo.value = recommendDataTwo.recItem
+        eventInfo.value = eventData
+
     } catch (error) {
         console.error('에러데스네: ', error);
     }
@@ -360,8 +407,9 @@ async function fetchJson(path) {
         position: sticky;
         top: 0;
         left: 0;
-        height: fit-content;
+        height: 100vh;
         flex-shrink: 0;
+        overflow: hidden;
         
         .banner-link { position: relative; }
         
@@ -392,6 +440,7 @@ async function fetchJson(path) {
     .recommend-section {
         display: flex;
         flex-wrap: wrap;
+        gap: 3.6rem;
         padding: 4.2rem 1.6rem;
         background: #e9ecef;
         overflow-y: auto;
@@ -402,6 +451,7 @@ async function fetchJson(path) {
         .desc {
             margin-top: 1.6rem;
             @include font-14(500);
+            color: #555;
         }
         
         .product-list {
@@ -415,9 +465,17 @@ async function fetchJson(path) {
                 flex-direction: column;
             }
         }
+        
+        
         .prd-img {
             
         }
+        
+        .prd-name {
+            @include ellipsis;
+            @include font-16(600);
+        }
+        
         .prd-info { 
             margin-top: 0.8rem; 
             &:not(:has(.discount)) { margin-top: auto; }
