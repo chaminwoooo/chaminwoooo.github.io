@@ -1,0 +1,230 @@
+
+[
+    {
+        "index" : "1",
+        "recommend" : {
+            "img"   : "/muji/img/recommend/side_banner_1.png",
+            "title" : "MUJI 365",
+            "desc"  : "하루에 하나씩 넘기는 일력처럼, 매일 하나씩 일상 속에 스며있는 무인양품의 물건들을 전해드립니다."
+        },
+        "product"   : [
+            {
+                "name" : "주트 마이백·A6",
+                "img" : "/muji/img/recommend/rec_prd_1.jpg",
+                "per" : 1,
+                "price" : 2900
+            },
+            {
+                "name" : "스티롤 칸막이 스탠드・L",
+                "img" : "/muji/img/recommend/rec_prd_2.jpg",
+                "per" : 0.2,
+                "price" : 11900
+            },
+            {
+                "name" : "다다미 슬리퍼 앞트임 그린 XL 26.5~28cm",
+                "img" : "/muji/img/recommend/rec_prd_3.jpg",
+                "per" : 1,
+                "price" : 14900
+            }
+        ]
+    },
+    {
+        "index" : "2",
+        "recommend" : {
+            "img"   : "/muji/img/recommend/side_banner_2.png",
+            "title" : "모두의 생활에 맞춘 수납",
+            "desc"  : "장소나 용도에 맞게 소재와 사이즈를 선택하고, 조합할 수 있는 무인양품 수납 시리즈로 나만의 공간 완성해 보세요."
+        },
+        "product"   : [
+            {
+                "name" : "폴리프로필렌 파일박스 스탠다드타입 화이트 그레이 10cm용",
+                "img" : "/muji/img/recommend/rec_prd_4.jpg",
+                "per" : 1,
+                "price" : 6900
+            },
+            {
+                "name" : "부드러운 폴리에틸렌 케이스 깊은형",
+                "img" : "/muji/img/recommend/rec_prd_5.jpg",
+                "per" : 1,
+                "price" : 14900
+            },
+            {
+                "name" : "스테인리스 와이어 바스켓 4",
+                "img" : "/muji/img/recommend/rec_prd_6.jpg",
+                "per" : 1,
+                "price" : 24900
+            }
+        ]
+    },
+    {
+        "index" : "3",
+        "recommend" : {
+            "img"   : "/muji/img/recommend/side_banner_3.jpg",
+            "title" : "주간 특가",
+            "desc"  : "더욱 합리적인 가격으로 준비한 아이템을 소개합니다. 한정 기간 동안 진행되는 특별한 혜택을 만나보세요!"
+        },
+        "product"   : [
+            {
+                "name" : "고무나무 소품 수납 1단",
+                "img" : "/muji/img/recommend/rec_prd_7.jpg",
+                "per" : 0.1,
+                "price" : 19900
+            },
+            {
+                "name" : "스테인리스 머그컵 · 그린 · 약 380ml",
+                "img" : "/muji/img/recommend/rec_prd_8.jpg",
+                "per" : 0.2,
+                "price" : 11900
+            },
+            {
+                "name" : "시원한 UV 컷 피케 버튼다운 반소매 폴로 셔츠",
+                "img" : "/muji/img/recommend/rec_prd_9.jpg",
+                "per" : 0.17,
+                "price" : 24900
+            }
+        ]
+    },
+    {
+        "index" : "4",
+        "recommend" : {
+            "img"   : "/muji/img/recommend/side_banner_4.jpg",
+            "title" : "올 여름을 더욱 시원하게 해줄 여성 썸머 스타일링",
+            "desc"  : "시원한 소재와 부드러운 촉감의 조화가 일상생활을 더욱 편안하게 도와줍니다."
+        },
+        "product"   : [
+            {
+                "name" : "시원한 UV 컷 크루넥 슬리브리스 원피스",
+                "img" : "/muji/img/recommend/rec_prd_10.jpg",
+                "per" : 0.2,
+                "price" : 49900
+            },
+            {
+                "name" : "헴프 혼방 점프 수트",
+                "img" : "/muji/img/recommend/rec_prd_11.jpg",
+                "per" : 0.25,
+                "price" : 79900
+            },
+            {
+                "name" : "저지 크루넥 반소매 티셔츠",
+                "img" : "/muji/img/recommend/rec_prd_12.jpg",
+                "per" : 1,
+                "price" : 12900
+            }
+        ]
+    },
+    
+    {
+        "index" : "5",
+        "recommend" : {
+            "img"   : "/muji/img/recommend/side_banner_5.jpg",
+            "title" : "더위 걱정 없는 냉감 패브릭",
+            "desc"  : "작년 인기 상품, 냉감 패브릭이 새로운 색상과 베개 시리즈로 돌아왔습니다. 시원한 여름을 미리 준비해 보세요."
+        },
+        "product"   : [
+            {
+                "name" : "양면 사용이 가능한 냉감 우레탄 폼 베개",
+                "img" : "/muji/img/recommend/rec_prd_13.jpg",
+                "per" : 1,
+                "price" : 49900
+            },
+            {
+                "name" : "냉감 얇은 이불 라이트블루 Q",
+                "img" : "/muji/img/recommend/rec_prd_14.jpg",
+                "per" : 1,
+                "price" : 84900
+            },
+            {
+                "name" : "냉감 깔개 패드 베이지 Q",
+                "img" : "/muji/img/recommend/rec_prd_15.jpg",
+                "per" : 1,
+                "price" : 54900
+            }
+        ]
+    },
+    {
+        "index" : "6",
+        "recommend" : {
+            "img"   : "/muji/img/recommend/side_banner_6.jpg",
+            "title" : "언제든 손쉽게, 나만의 달콤한 시간",
+            "desc"  : "매일 반복되는 일상 속, 손쉽게 꺼내 먹는 간식으로 언제든 기분 전환을!"
+        },
+        "product"   : [
+            {
+                "name" : "옛날과자 옥수수 과자 달콤한 맛",
+                "img" : "/muji/img/recommend/rec_prd_16.jpg",
+                "per" : 1,
+                "price" : 1900
+            },
+            {
+                "name" : "옛날 과자 두부 과자",
+                "img" : "/muji/img/recommend/rec_prd_17.jpg",
+                "per" : 1,
+                "price" : 1900
+            },
+            {
+                "name" : "맛있게 채우는 오트 비스킷",
+                "img" : "/muji/img/recommend/rec_prd_18.jpg",
+                "per" : 1,
+                "price" : 2500
+            }
+        ]
+    },
+
+    {
+        "index" : "7",
+        "recommend" : {
+            "img"   : "/muji/img/recommend/side_banner_7.jpg",
+            "title" : "좋은데 저렴하니까!",
+            "desc"  : "무인양품이 준비한 특별한 쇼핑 즐기기! 좋은데 저렴한 무인양품의 다양한 상품을 지금 바로 만나보세요."
+        },
+        "product"   : [
+            {
+                "name" : "재생 폴리에스터 테이퍼드 팬츠",
+                "img" : "/muji/img/recommend/rec_prd_19.jpg",
+                "per" : 0.8,
+                "price" : 49900
+            },
+            {
+                "name" : "키즈 테리 룸 웨어 세트",
+                "img" : "/muji/img/recommend/rec_prd_20.jpg",
+                "per" : 0.2,
+                "price" : 49900
+            },
+            {
+                "name" : "내열유리 포트 · L · 750ml",
+                "img" : "/muji/img/recommend/rec_prd_21.jpg",
+                "per" : 0.3,
+                "price" : 27900
+            }
+        ]
+    },
+    {
+        "index" : "8",
+        "recommend" : {
+            "img"   : "/muji/img/recommend/side_banner_8.jpg",
+            "title" : "매일 꺼내 쓰는 나만의 문구",
+            "desc"  : "나를 가장 잘 보여주는 일상의 물건. 심플하고 견고해 오래도록 곁에 둘 수 있는 무인양품의 문구 시리즈를 소개합니다."
+        },
+        "product"   : [
+            {
+                "name" : "식림목 페이퍼 뒷면 배김이 적은 노트 · 5권 세트 · 7mm",
+                "img" : "/muji/img/recommend/rec_prd_22.jpg",
+                "per" : 1,
+                "price" : 4900
+            },
+            {
+                "name" : "나일론 메쉬 세로로도 가로로도 사용 가능한 펜 케이스 핑크 약 직경75x높이177mm",
+                "img" : "/muji/img/recommend/rec_prd_23.jpg",
+                "per" : 1,
+                "price" : 9900
+            },
+            {
+                "name" : "저중심 샤프펜 블랙 0.3mm",
+                "img" : "/muji/img/recommend/rec_prd_24.jpg",
+                "per" : 1,
+                "price" : 6900
+            }
+        ]
+    }
+    
+]

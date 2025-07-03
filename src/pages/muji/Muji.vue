@@ -90,7 +90,7 @@
                 </router-link>
             </section>
             <section class="recommend-section">
-                <article class="recommend-card" v-for ="(item,index) in recommendItemsOne" :key="index">
+                <article class="recommend-card" v-for ="(item,index) in recommendItems.slice(0,4)" :key="index">
                     <router-link to="">
                         <figure class="img-wrap">
                             <img :src="item.recommend.img" :alt="item.recommend.title">
@@ -124,7 +124,7 @@
         
         <div class="combie-section">
             <section class="recommend-section">
-                <article class="recommend-card" v-for ="(item,index) in recommendItemsTwo" :key="index">
+                <article class="recommend-card" v-for ="(item,index) in recommendItems.slice(4,8)" :key="index">
                     <router-link to="">
                         <figure class="img-wrap">
                             <img :src="item.recommend.img" :alt="item.recommend.title">
@@ -169,18 +169,46 @@
 
         <section class="event-section">
             <h2 class="section-title">From MUJI</h2>
-            <div class="event-card-wrap">
-                <article class="event-card" v-for="(item, index) in eventInfo" :key="index">
-                    <router-link to="">
-                        <figure class="img-wrap">
-                            <img :src="item.img" :alt="item.title">
-                        </figure>
-                        <div class="txt-wrap">
-                            <h4 class="title">{{ item.title }}</h4>
-                            <p class="desc">{{ item.desc }}</p>
-                        </div>
-                    </router-link>
-                </article>
+            <div class="event-card-container">
+                <div class="event-card-wrap">
+                    <article class="event-card" v-for="(item, index) in eventInfo.slice(0,3)" :key="index">
+                        <router-link to="">
+                            <figure class="img-wrap">
+                                <img :src="item.img" :alt="item.title">
+                            </figure>
+                            <div class="txt-wrap">
+                                <h4 class="title">{{ item.title }}</h4>
+                                <p class="desc">{{ item.desc }}</p>
+                            </div>
+                        </router-link>
+                    </article>
+                </div>
+                <div class="event-card-wrap">
+                    <article class="event-card" v-for="(item, index) in eventInfo.slice(3,6)" :key="index">
+                        <router-link to="">
+                            <figure class="img-wrap">
+                                <img :src="item.img" :alt="item.title">
+                            </figure>
+                            <div class="txt-wrap">
+                                <h4 class="title">{{ item.title }}</h4>
+                                <p class="desc">{{ item.desc }}</p>
+                            </div>
+                        </router-link>
+                    </article>
+                </div>
+                <div class="event-card-wrap">
+                    <article class="event-card" v-for="(item, index) in eventInfo.slice(6,9)" :key="index">
+                        <router-link to="">
+                            <figure class="img-wrap">
+                                <img :src="item.img" :alt="item.title">
+                            </figure>
+                            <div class="txt-wrap">
+                                <h4 class="title">{{ item.title }}</h4>
+                                <p class="desc">{{ item.desc }}</p>
+                            </div>
+                        </router-link>
+                    </article>
+                </div>
             </div>
         </section>
     </main>
@@ -195,7 +223,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, shallowReadonly } from 'vue';
+import { ref, onMounted } from 'vue';
 
 // 카테고리 배열
 const categories = [
@@ -220,27 +248,22 @@ const categories = [
 
 // 신상품 분류
 const activeIndex = ref(0);
-
 const newItems = ref({
     man : [],
     woman: []
 })
-
-const recommendItemsOne = ref([]);
-const recommendItemsTwo = ref([]);
+const recommendItems = ref([]);
 const eventInfo = ref([]);
 
 onMounted(async ()=> {
     try {
-        const [newData, recommendDataOne, recommendDataTwo, eventData] = await Promise.all([
+        const [newData, recommendData, eventData] = await Promise.all([
             fetchJson('/data/products/new-items.json'),
-            fetchJson('/data/products/recommend-items-one.json'),
-            fetchJson('/data/products/recommend-items-two.json'),
+            fetchJson('/data/products/recommend-items.json'),
             fetchJson('/data/products/event.json'),
         ])
         newItems.value = newData
-        recommendItemsOne.value = recommendDataOne.recItem
-        recommendItemsTwo.value = recommendDataTwo.recItem
+        recommendItems.value = recommendData
         eventInfo.value = eventData
 
     } catch (error) {
@@ -407,16 +430,19 @@ async function fetchJson(path) {
         position: sticky;
         top: 0;
         left: 0;
-        height: 100vh;
-        flex-shrink: 0;
-        overflow: hidden;
+        width: 50%;
+        height: 100%;
         
-        .banner-link { position: relative; }
+        .banner-link { 
+            position: relative; 
+        }
+            
         
         .img-wrap {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: 100vh;
+            img {
+                @include imgObject;
+            }
         }
         
         .txt-wrap {
@@ -438,14 +464,19 @@ async function fetchJson(path) {
     }
     
     .recommend-section {
+        flex: 1;
         display: flex;
         flex-wrap: wrap;
         gap: 3.6rem;
-        padding: 4.2rem 1.6rem;
+        padding: 3.6rem 1.6rem;
         background: #e9ecef;
+        overflow-x: hidden;
         overflow-y: auto;
         
-        .recommend-card { background-color: #fff; }
+        .recommend-card { 
+            width: calc(50% - 1.8rem);
+            background-color: #fff; 
+        }
         .info-wrap { padding: 1.6rem; }
         .title { @include font-24(700); }
         .desc {
@@ -457,28 +488,30 @@ async function fetchJson(path) {
         .product-list {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            column-gap: 2.4rem;
+            column-gap: 1.2rem;
             margin-top: 2.4rem;
+            
             
             .item {
                 display: flex;
                 flex-direction: column;
+                width: 9rem;
+                
             }
         }
         
-        
         .prd-img {
-            
+            width: 9rem;
+            height: 9rem;
         }
-        
         .prd-name {
+            margin-top: 0.4rem;
             @include ellipsis;
-            @include font-16(600);
+            @include font-14(600);
         }
         
         .prd-info { 
             margin-top: 0.8rem; 
-            &:not(:has(.discount)) { margin-top: auto; }
         }
         
         .discount { 
@@ -506,16 +539,22 @@ async function fetchJson(path) {
     .section-title {
         @include font-24(700);
     }
-    .event-card-wrap {
+    
+    .event-card-container {
         display: grid;        
         grid-template-columns: repeat(3, 1fr);
         column-gap: 3.6rem;
+    }
+    .event-card-wrap {
+        display: flex;
+        flex-direction: column;
         row-gap: 4.8rem;
         margin-top: 3.2rem;
     }
     
     .event-card {
         position: relative;
+        height: fit-content;
         transition: all 0.3s ease-in-out;
         
         &:hover {
