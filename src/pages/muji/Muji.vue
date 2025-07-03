@@ -1,31 +1,52 @@
 <template>
-    <header class="header" v-if="false">
+    <header class="header" :class="{ hide: isHidden }">
         <div class="container">
-            <h1 class="logo">MUJI</h1>
+            <h1 class="logo">
+                <img src="/muji/img/common/logo.svg" alt="MUJI">
+            </h1>
             <nav class="nav">
                 <ul class="nav-list">
-                    <li><a href="#">신상품</a></li>
-                    <li><a href="#">여성</a></li>
-                    <li><a href="#">남성</a></li>
-                    <li><a href="#">생활용품</a></li>
-                    <li><a href="#">푸드</a></li>
+                    <li><router-link to="">신상품</router-link></li>
+                    <li><router-link to="">여성</router-link></li>
+                    <li><router-link to="">남성</router-link></li>
+                    <li><router-link to="">생활용품</router-link></li>
+                    <li><router-link to="">푸드</router-link></li>
                 </ul>
             </nav>
             <div class="icons">
-                <button class="search-btn">🔍</button>
-                <button class="cart-btn">🛒</button>
+                <button class="btn-icon search" aria-label="검색"></button>
+                <button class="btn-icon cart" aria-label="장바구니 보기"></button>
             </div>
         </div>
     </header>
 
-
     <!-- 메인 배너 -->
-    <section class="main-banner" v-if="false">
-        <div class="banner-slider">
-            <div>배너 1</div>
-            <div>배너 2</div>
-            <div>배너 3</div>
-        </div>
+    <section class="main-banner">
+        <Swiper
+            :modules="[Autoplay, Navigation, Pagination]"
+            :autoplay="{ delay: 5000 }"
+            :loop="true"
+            :navigation="{
+                nextEl: '.btn-banner-arrow.next',
+                prevEl: '.btn-banner-arrow.prev'
+            }"
+            :pagination="{
+                el: '.swiper-pagination',
+                type: 'fraction' 
+            }"
+            class="main-swiper"
+        >
+            <SwiperSlide v-for="(item, i) in mainBanner" :key="i">
+                <div class="txt-wrap" :class="{black : item.type == 'black'}">
+                    <h3 class="title">{{ item.title }}</h3>
+                    <p class="desc">{{ item.desc }}</p>
+                </div>
+                <img :src="item.img" :alt="item.title" />
+            </SwiperSlide>
+            <div class="btn-banner-arrow prev"></div>
+            <div class="btn-banner-arrow next"></div>
+            <div class="swiper-pagination"></div>
+        </Swiper>
     </section>
 
     <main class="main-section">
@@ -223,7 +244,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 // 카테고리 배열
 const categories = [
@@ -254,14 +281,17 @@ const newItems = ref({
 })
 const recommendItems = ref([]);
 const eventInfo = ref([]);
+const mainBanner = ref([]);
 
 onMounted(async ()=> {
     try {
-        const [newData, recommendData, eventData] = await Promise.all([
+        const [bannerData, newData, recommendData, eventData] = await Promise.all([
+            fetchJson('/data/banner/main-banner.json'),
             fetchJson('/data/products/new-items.json'),
             fetchJson('/data/products/recommend-items.json'),
-            fetchJson('/data/products/event.json'),
+            fetchJson('/data/products/event.json')
         ])
+        mainBanner.value = bannerData
         newItems.value = newData
         recommendItems.value = recommendData
         eventInfo.value = eventData
@@ -277,15 +307,52 @@ async function fetchJson(path) {
     return await res.json()
 }
 
+
+const isHidden = ref(false);
+let lastScrollY = window.scrollY;
+
+const handleScroll = () => {
+    const currentY = window.scrollY
+    if (currentY > lastScrollY && currentY > 88 ){
+        isHidden.value = true
+    } else {
+        isHidden.value = false
+    }
+    lastScrollY = currentY
+}
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll)
+})
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
+})
+
 </script>
 
 <style scoped lang="scss">
+
+
 @use '@/assets/styles/mixins' as *;
 
-.header {
-    height: 8.8rem;
-    border: 1px solid #eee;
+button  {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
 
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8.8rem;
+    background: #fff;
+    @include shadow2;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    
+    .logo { width: 100%; }
+    
     .container {
         @include flexBox($jc: flex-start);
         height: 100%;
@@ -302,9 +369,82 @@ async function fetchJson(path) {
         }
 
         .icons {
-            margin-left: auto;
+            margin-left: 3.2rem;
+            @include inlineFlex;
+            column-gap: 1.6rem;
         }
     }
+    
+    .btn-icon {
+        display: inline-block;
+        width: 3.2rem;
+        height: 3.2rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        &.search {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23555'%3E%3Cpath d='M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z'/%3E%3C/svg%3E");
+        }
+        &.cart {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23555'%3E%3Cpath d='M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h440q17 0 28.5 11.5T760-320q0 17-11.5 28.5T720-280H280q-45 0-68-39.5t-2-78.5l54-98-144-304H80q-17 0-28.5-11.5T40-840q0-17 11.5-28.5T80-880h65q11 0 21 6t15 17l27 57Zm134 280h280-280Z'/%3E%3C/svg%3E");
+        }
+    }
+    
+    &.hide {
+        transform: translateY(-100%);
+    }
+}
+
+.main-banner {
+    .main-swiper { position: relative; }
+    .txt-wrap {
+        position: absolute;
+        bottom: 30%;
+        left: 10%;
+        color: #fff;
+        &.black { color: #333; }
+    }
+    .title {
+        @include font-32(700);
+    }
+    .desc {
+        margin-top: 1.6rem;
+        @include font-24(700);
+    }
+    
+    .swiper-pagination {
+        width: fit-content;
+        @include absCenterX;
+        bottom: 2.4rem;
+        background-color: rgba($color: #000000, $alpha: 0.4);
+        padding: 1.2rem 2.4rem;
+        border-radius: 2.4rem;
+        @include font-14;
+        color: #fff;
+    }
+    
+    .btn-banner-arrow {
+        position: absolute;
+        top: 50%;
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        z-index: 2;
+        
+        &.prev {
+            left: 2.4rem;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%2300000033'%3E%3Cpath d='m142-480 294 294q15 15 14.5 35T435-116q-15 15-35 15t-35-15L57-423q-12-12-18-27t-6-30q0-15 6-30t18-27l308-308q15-15 35.5-14.5T436-844q15 15 15 35t-15 35L142-480Z'/%3E%3C/svg%3E");
+        }
+        &.next {
+            right: 2.4rem;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%2300000033'%3E%3Cpath d='M579-480 285-774q-15-15-14.5-35.5T286-845q15-15 35.5-15t35.5 15l307 308q12 12 18 27t6 30q0 15-6 30t-18 27L356-115q-15 15-35 14.5T286-116q-15-15-15-35.5t15-35.5l293-293Z'/%3E%3C/svg%3E");
+        }
+    }
+    
+    
 }
 
 .main-section {
