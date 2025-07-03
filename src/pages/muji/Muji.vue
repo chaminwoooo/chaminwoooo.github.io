@@ -252,6 +252,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+
 // 카테고리 배열
 const categories = [
     { name: '남성', key: 'man', img: '/muji/img/category/cate_1.png' },
@@ -351,7 +352,9 @@ button  {
     transition: transform 0.3s ease;
     z-index: 1000;
     
-    .logo { width: 100%; }
+    .logo {
+        width: 100%; 
+    }
     
     .container {
         @include flexBox($jc: flex-start);
@@ -373,6 +376,9 @@ button  {
             @include inlineFlex;
             column-gap: 1.6rem;
         }
+        @include mobile {
+            justify-content: space-between;
+        }
     }
     
     .btn-icon {
@@ -393,23 +399,49 @@ button  {
     &.hide {
         transform: translateY(-100%);
     }
+    
+    @include mobile {
+        .btn-icon, nav, .icons {
+            display: none;
+        }
+    }
 }
 
 .main-banner {
-    .main-swiper { position: relative; }
+    margin-top: 8.8rem;
+    .main-swiper { 
+        position: relative; 
+        @include mobile {
+            height: 50vh;
+            img { @include imgObject; }
+        }
+    }
     .txt-wrap {
-        position: absolute;
-        bottom: 30%;
+        @include absCenterY;
         left: 10%;
         color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        
         &.black { color: #333; }
+        
+        @include mobile {
+            width: 100%;
+            @include absCenter;
+            text-align: center
+        }
     }
     .title {
         @include font-32(700);
+        @include mobile {
+            @include font-24(700);
+        }
     }
     .desc {
         margin-top: 1.6rem;
         @include font-24(700);
+        @include mobile {
+            @include font-16(700);
+        }
     }
     
     .swiper-pagination {
@@ -421,6 +453,7 @@ button  {
         border-radius: 2.4rem;
         @include font-14;
         color: #fff;
+        @include mobile { display: none; }
     }
     
     .btn-banner-arrow {
@@ -433,6 +466,8 @@ button  {
         background-repeat: no-repeat;
         cursor: pointer;
         z-index: 2;
+        
+        @include mobile { display: none; }
         
         &.prev {
             left: 2.4rem;
@@ -451,21 +486,34 @@ button  {
     display: flex;
     flex-direction: column;
     row-gap: 8rem;
-
+    margin-top: 8rem;
     .section-title {
         @include font-24(700);
+    }
+    
+    @include mobile {
+        row-gap: 6.4rem;
+        margin-top: 6.4rem;
     }
 }
 
 .category-section {
     padding: 0 4.8rem;
-
+    @include mobile {
+        padding: 0 2rem;
+    }
+    
     .category-list {
         display: flex;
         flex-wrap: wrap;
-        column-gap: 6.4rem;
-        row-gap: 6.4rem;
+        gap: 6.4rem;
         margin-top: 4.8rem;
+        @include mobile {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.4rem;
+            margin-top: 2.4rem;
+        }   
     }
 
     .item {
@@ -477,12 +525,13 @@ button  {
         &:hover {
             background-color: rgba($color: #ddd, $alpha: 0.3);
             border-radius: 1.6rem;
+            @include mobile {
+                background-color: transparent;
+                border-radius: 0;
+            }
         }
     }
-
-    .img-wrap {
-        width: 10rem;
-    }
+    .img-wrap { width: 10rem; }
 
     .name {
         margin-top: 1.6rem;
@@ -492,6 +541,10 @@ button  {
 
 .product-section {
     padding: 0 4.8rem;
+    
+    @include mobile {
+        padding: 0 2rem;
+    }
 
     .product-nav {
         margin-top: 1.6rem;
@@ -524,6 +577,11 @@ button  {
         &::-webkit-scrollbar {
             width: 0;
         }
+        
+        @include mobile {
+            margin: 0 -2rem;
+            padding: 0 2rem;
+        }
     }
 
     .product-list {
@@ -532,15 +590,23 @@ button  {
         column-gap: 2.4rem;
         row-gap: 4rem;
         margin-top: 3.2rem;
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 1.6rem;
+        }
     }
 
     .product-item {
         min-width: 0;
-
         &:hover {
             transform: scale(1.02);
             transition: all 0.2s;
+            @include mobile {
+                transform: none;
+                transition: none;
+            }
         }
+        
     }
 
     .name {
@@ -576,12 +642,13 @@ button  {
         .banner-link { 
             position: relative; 
         }
-            
         
         .img-wrap {
             height: 100vh;
-            img {
-                @include imgObject;
+            img { @include imgObject; }
+            @include mobile {
+                height: 50vh;
+                img { object-position: top; }
             }
         }
         
@@ -596,10 +663,27 @@ button  {
         
         .sub-title {
             @include font-24(600);
+            @include mobile {
+                @include font-16(600);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+            }
         }
+        
         .title {
             font-size: 5.2rem;
             font-weight: 700;
+            @include mobile {
+                @include font-32(700);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+            }
+        }
+        
+        @include mobile {
+            position:relative;
+            width: 100%;
+            order: 0;
         }
     }
     
@@ -616,6 +700,7 @@ button  {
         .recommend-card { 
             width: calc(50% - 1.8rem);
             background-color: #fff; 
+            @include mobile { width: 100%; }
         }
         .info-wrap { padding: 1.6rem; }
         .title { @include font-24(700); }
@@ -630,12 +715,13 @@ button  {
             grid-template-columns: repeat(3, 1fr);
             column-gap: 1.2rem;
             margin-top: 2.4rem;
-            
-            
             .item {
                 display: flex;
                 flex-direction: column;
                 width: 9rem;
+                @include mobile {
+                    width: auto;
+                }
                 
             }
         }
@@ -643,7 +729,12 @@ button  {
         .prd-img {
             width: 9rem;
             height: 9rem;
+            @include mobile {
+                width: auto;
+                height: auto;
+            }
         }
+        
         .prd-name {
             margin-top: 0.4rem;
             @include ellipsis;
@@ -671,11 +762,25 @@ button  {
             @include font-14(600);
             color: #f03e3e;
         }
+        
+        
+        @include mobile {
+            flex-direction: column;
+            order: 1;
+        }
+        
+    }
+    @include mobile {
+        flex-direction: column;
     }
 }
 
 .event-section {
     padding: 0 4.8rem;
+    
+    @include mobile {
+        padding: 0 2rem;
+    }
     .section-title {
         @include font-24(700);
     }
@@ -684,6 +789,10 @@ button  {
         display: grid;        
         grid-template-columns: repeat(3, 1fr);
         column-gap: 3.6rem;
+        
+        @include mobile {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
     .event-card-wrap {
         display: flex;
@@ -700,6 +809,7 @@ button  {
         &:hover {
             transform: translateY(-16px);
             .txt-wrap { display: block; }
+            @include mobile { transform: none; }
         }
     }
     
@@ -722,6 +832,14 @@ button  {
             margin-top: 1.2rem;
             @include font-14;
             @include ellipsis;
+        }
+        
+        @include mobile {
+            position: static;
+            display: block;
+            width: 100%;
+            transform: translateX(0);
+            border: 1px solid #eee;
         }
     }
     
