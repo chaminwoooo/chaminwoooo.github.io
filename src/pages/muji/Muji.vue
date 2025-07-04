@@ -77,7 +77,7 @@
             </nav>
 
             <ul class="product-list">
-                <li class="product-item" v-for="(item, index) in newItems[categories[activeIndex].key]" :key="index">
+                <li class="product-item" v-for="(item, index) in newItems[categories[activeIndex]?.key] || []" :key="index">
                     <a href="">
                         <figure class="img-wrap">
                             <img :src="item.img" :alt="item.name" />
@@ -235,16 +235,49 @@
     </main>
 
     <!-- 푸터 -->
-    <footer class="footer">
+    <footer class="pc-footer" v-if="!isMobile">
         <div class="container">
             <p class="copyright">© 2025 MUJI Korea Clone. All rights reserved.</p>
         </div>
     </footer>
+    <footer class="mo-footer" v-else>
+        <nav class="footer-nav">
+            <router-link to="/" class="nav-item">
+                <HomeIcon size="24" color="#333"/> 
+                <span>홈</span>
+            </router-link>
+            <router-link to="/" class="nav-item">
+                <GridIcon size="24" color="#333"/> 
+                <span>카테고리</span>
+            </router-link>
+            <router-link to="/" class="nav-item">
+                <HeartIcon size="24" color="#333"/> 
+                <span>찜</span>
+            </router-link>
+            <router-link to="/" class="nav-item">
+                <UserIcon size="24" color="#333"/> 
+                <span>마이</span>
+            </router-link>
+        </nav>
+    </footer>
 
 </template>
 
+
+
+
+
+
+
+
+
+<!-- 스크립트 -->
+
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+/* 1. 기본 라이브러리 */
+import { ref, onMounted, onUnmounted, onBeforeUnmount } from 'vue';
+
+/* 2. 외부 컴포넌트 */
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
@@ -252,87 +285,109 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+/* 3. 상태 변수 정의 */
 
-// 카테고리 배열
-const categories = [
-    { name: '남성', key: 'man', img: '/muji/img/category/cate_1.png' },
-    { name: '여성', key: 'woman', img: '/muji/img/category/cate_2.png' },
-    { name: '아동', key: 'kids', img: '/muji/img/category/cate_3.png' },
-    { name: '패션잡화', key: 'fashion', img: '/muji/img/category/cate_4.png' },
-    { name: '주방용품', key: 'kitchen', img: '/muji/img/category/cate_5.png' },
-    { name: '패브릭', key: 'fabric', img: '/muji/img/category/cate_6.png' },
-    { name: '수납/정리', key: 'storage', img: '/muji/img/category/cate_7.png' },
-    { name: '가구', key: 'furniture', img: '/muji/img/category/cate_8.png' },
-    { name: '생활용품', key: 'living', img: '/muji/img/category/cate_9.png' },
-    { name: '가전/디지털', key: 'digital', img: '/muji/img/category/cate_10.png' },
-    { name: '문구', key: 'stationery', img: '/muji/img/category/cate_11.png' },
-    { name: '뷰티', key: 'beauty', img: '/muji/img/category/cate_12.png' },
-    { name: '간편조리', key: 'easymeal', img: '/muji/img/category/cate_13.png' },
-    { name: '스낵', key: 'snack', img: '/muji/img/category/cate_14.png' },
-    { name: '숏클립', key: 'shortclip', img: '/muji/img/category/cate_15.png' },
-    { name: 'N배송', key: 'ndelivery', img: '/muji/img/category/cate_16.png' },
-]
+// - 메인배너 및 카테고리
+const mainBanner = ref([]);
+const categories = ref([]);
 
-
-// 신상품 분류
+// - 신상품 섹션
 const activeIndex = ref(0);
 const newItems = ref({
-    man : [],
-    woman: []
-})
+    man: [],
+    woman: [],
+});
+
+// - 추천/이벤트 상품
 const recommendItems = ref([]);
 const eventInfo = ref([]);
-const mainBanner = ref([]);
 
-onMounted(async ()=> {
+// - 뷰포트 정보
+const isMobile = ref(false);
+
+// - 헤더 숨김 여부
+const isHidden = ref(false);
+
+
+/* 4. 데이터 패칭 함수 */
+
+async function fetchJson(path) {
+    const res = await fetch(path);
+    if (!res.ok) throw new Error(`${path} 불러오기 실패`);
+    return await res.json();
+}
+
+
+/*  onMounted: 초기 데이터 로딩 + 이벤트 등록 */
+
+onMounted(async () => {
     try {
-        const [bannerData, newData, recommendData, eventData] = await Promise.all([
-            fetchJson('/data/banner/main-banner.json'),
-            fetchJson('/data/products/new-items.json'),
-            fetchJson('/data/products/recommend-items.json'),
-            fetchJson('/data/products/event.json')
-        ])
-        mainBanner.value = bannerData
-        newItems.value = newData
-        recommendItems.value = recommendData
-        eventInfo.value = eventData
+    const [bannerData, cateData, newData, recommendData, eventData] = await Promise.all([
+        fetchJson('/data/banner/main-banner.json'),
+        fetchJson('/data/category/category.json'),
+        fetchJson('/data/products/new-items.json'),
+        fetchJson('/data/products/recommend-items.json'),
+        fetchJson('/data/products/event.json'),
+    ]);
 
+    mainBanner.value = bannerData;
+    categories.value = cateData;
+    newItems.value = newData;
+    recommendItems.value = recommendData;
+    eventInfo.value = eventData;
+
+    checkViewport(); // 초기 체크
+    window.addEventListener('resize', checkViewport);
+    window.addEventListener('scroll', handleScroll);
     } catch (error) {
         console.error('에러데스네: ', error);
     }
-})
+});
 
-async function fetchJson(path) {
-    const res = await fetch(path)
-    if(!res.ok) throw new Error(`${path} 불러오기 실패`)
-    return await res.json()
+
+/* 언마운트 시 이벤트 제거 */
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener('resize', checkViewport);
+});
+
+
+/* 뷰포트 체크 함수 */
+
+function checkViewport() {
+    isMobile.value = window.innerWidth <= 1024;
 }
 
 
-const isHidden = ref(false);
+/* 스크롤 시 헤더 숨김 */
+
 let lastScrollY = window.scrollY;
 
-const handleScroll = () => {
-    const currentY = window.scrollY
-    if (currentY > lastScrollY && currentY > 88 ){
-        isHidden.value = true
-    } else {
-        isHidden.value = false
-    }
-    lastScrollY = currentY
+function handleScroll() {
+    const currentY = window.scrollY;
+    isHidden.value = currentY > lastScrollY && currentY > 88;
+    lastScrollY = currentY;
 }
-onMounted(() => {
-    window.addEventListener('scroll', handleScroll)
-})
-onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll)
-})
 
 </script>
 
+
+
+
+
+
+
+
+
+
+
+<!-- 스타일 -->
+
 <style scoped lang="scss">
-
-
 @use '@/assets/styles/mixins' as *;
 
 button  {
@@ -401,6 +456,7 @@ button  {
     }
     
     @include mobile {
+        height: 6.4rem;
         .btn-icon, nav, .icons {
             display: none;
         }
@@ -477,6 +533,10 @@ button  {
             right: 2.4rem;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%2300000033'%3E%3Cpath d='M579-480 285-774q-15-15-14.5-35.5T286-845q15-15 35.5-15t35.5 15l307 308q12 12 18 27t6 30q0 15-6 30t-18 27L356-115q-15 15-35 14.5T286-116q-15-15-15-35.5t15-35.5l293-293Z'/%3E%3C/svg%3E");
         }
+    }
+    
+    @include mobile {
+        margin-top: 6.4rem;
     }
     
     
@@ -624,8 +684,21 @@ button  {
     }
 
     .review-wrap {
+        @include inlineFlex;
         @include font-14;
         color: #777;
+    }
+    
+    .rate {
+        @include inlineFlex;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%2300000066'%3E%3Cpath d='m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143Zm126 18L314-169q-11 7-23 6t-21-8q-9-7-14-17.5t-2-23.5l44-189-147-127q-10-9-12.5-20.5T140-571q4-11 12-18t22-9l194-17 75-178q5-12 15.5-18t21.5-6q11 0 21.5 6t15.5 18l75 178 194 17q14 2 22 9t12 18q4 11 1.5 22.5T809-528L662-401l44 189q3 13-2 23.5T690-171q-9 7-21 8t-23-6L480-269Zm0-201Z'/%3E%3C/svg%3E");    
+            background-size: cover;
+        }
     }
 }
 
@@ -727,11 +800,24 @@ button  {
         }
         
         .prd-img {
+            position: relative;
             width: 9rem;
             height: 9rem;
             @include mobile {
                 width: auto;
                 height: auto;
+            }
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: #000, $alpha: 0.05)
             }
         }
         
@@ -846,15 +932,35 @@ button  {
     
 }
 
-.footer {
+.pc-footer {
     margin-top: 12rem;
     @include flexBox;
     height: 10rem;
     background-color: #e9ecef;
     
     .copyright { @include font-14; }
-    
 }
+
+.mo-footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    
+    .footer-nav {
+        height: 6.4rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background: #fff;
+        @include shadow4;
+    }
+    .nav-item {
+        @include inlineFlex;
+        flex-direction: column;
+        @include font-12(500);
+    }
+}
+
 
 
 </style>
