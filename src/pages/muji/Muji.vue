@@ -322,23 +322,23 @@ async function fetchJson(path) {
 
 onMounted(async () => {
     try {
-    const [bannerData, cateData, newData, recommendData, eventData] = await Promise.all([
-        fetchJson('/data/banner/main-banner.json'),
-        fetchJson('/data/category/category.json'),
-        fetchJson('/data/products/new-items.json'),
-        fetchJson('/data/products/recommend-items.json'),
-        fetchJson('/data/products/event.json'),
-    ]);
+        const [bannerData, cateData, newData, recommendData, eventData] = await Promise.all([
+            fetchJson('/data/banner/main-banner.json'),
+            fetchJson('/data/category/category.json'),
+            fetchJson('/data/products/new-items.json'),
+            fetchJson('/data/products/recommend-items.json'),
+            fetchJson('/data/products/event.json'),
+        ]);
 
-    mainBanner.value = bannerData;
-    categories.value = cateData;
-    newItems.value = newData;
-    recommendItems.value = recommendData;
-    eventInfo.value = eventData;
+        mainBanner.value = bannerData;
+        categories.value = cateData;
+        newItems.value = newData;
+        recommendItems.value = recommendData;
+        eventInfo.value = eventData;
 
-    checkViewport(); // 초기 체크
-    window.addEventListener('resize', checkViewport);
-    window.addEventListener('scroll', handleScroll);
+        checkViewport(); // 초기 체크
+        window.addEventListener('resize', checkViewport);
+        window.addEventListener('scroll', handleScroll);
     } catch (error) {
         console.error('에러데스네: ', error);
     }
