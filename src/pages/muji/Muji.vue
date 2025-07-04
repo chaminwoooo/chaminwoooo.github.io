@@ -274,10 +274,10 @@
 <!-- 스크립트 -->
 
 <script setup>
-/* 1. 기본 라이브러리 */
+/* 기본 라이브러리 */
 import { ref, onMounted, onUnmounted, onBeforeUnmount } from 'vue';
 
-/* 2. 외부 컴포넌트 */
+/* 외부 컴포넌트 */
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
@@ -285,7 +285,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-/* 3. 상태 변수 정의 */
+/* 상태 변수 정의 */
 
 // - 메인배너 및 카테고리
 const mainBanner = ref([]);
@@ -309,7 +309,7 @@ const isMobile = ref(false);
 const isHidden = ref(false);
 
 
-/* 4. 데이터 패칭 함수 */
+/*  데이터 패칭 함수 */
 
 async function fetchJson(path) {
     const res = await fetch(path);
