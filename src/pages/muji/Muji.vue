@@ -261,7 +261,6 @@
             </router-link>
         </nav>
     </footer>
-
 </template>
 
 
