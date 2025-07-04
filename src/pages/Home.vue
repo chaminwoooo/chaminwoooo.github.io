@@ -11,20 +11,20 @@
 
         <main class="main">
             <section class="section">
-                <h2 class="section-title">브랜드 사이트</h2>
+                <h2 class="section-title">소개 페이지</h2>
                 <div class="card-grid">
-                    <router-link to="/muji" class="card">
-                        <div class="card-box">MUJI</div>
-                    </router-link>
-                    <router-link to="/brand-b" class="card">
-                        <div class="card-box">Brand B</div>
+                    <router-link to="/about" class="card">
+                        <div class="card-box">About Me</div>
                     </router-link>
                 </div>
             </section>
 
             <section class="section">
-                <h2 class="section-title">기타 프로젝트</h2>
+                <h2 class="section-title">프로젝트</h2>
                 <div class="card-grid">
+                    <router-link to="/project/muji" class="card">
+                        <div class="card-box">MUJI</div>
+                    </router-link>
                     <router-link to="/tool" class="card">
                         <div class="card-box">Small Tool</div>
                     </router-link>
@@ -37,9 +37,8 @@
 
 
         <v-footer class="footer">
-            <span class="footer-txt">&copy; {{ new Date().getFullYear() }} CHAMINWOO. All rights reserved.</span>
+            <span class="footer-txt">&copy; {{ new Date().getFullYear() }} CHA MINWOO. All rights reserved.</span>
         </v-footer>
-
 
     </div>
 </template>
