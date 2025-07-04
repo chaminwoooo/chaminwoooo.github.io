@@ -25,7 +25,8 @@
         <Swiper
             :modules="[Autoplay, Navigation, Pagination]"
             :autoplay="{ delay: 5000 }"
-            :loop="true"
+            :loop="mainBanner.length > 3"
+            :slides-per-view="1"
             :navigation="{
                 nextEl: '.btn-banner-arrow.next',
                 prevEl: '.btn-banner-arrow.prev'
@@ -957,7 +958,7 @@ button  {
     .nav-item {
         @include inlineFlex;
         flex-direction: column;
-        @include font-12(500);
+        @include font-12(600);
     }
 }
 
