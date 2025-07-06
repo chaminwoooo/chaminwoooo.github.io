@@ -1,0 +1,146 @@
+{
+    "man": [
+        {
+            "name": "건조가 빠른 이지 턱 와이드 팬츠",
+            "price": "39,900",
+            "rate": "0.0",
+            "review": "0",
+            "img": "/muji/img/new-item/man_1.webp"
+        },
+        {
+            "name": "저지 크루넥 반소매 티셔츠",
+            "price": "12,900",
+            "rate": "4.5",
+            "review": "51",
+            "img": "/muji/img/new-item/man_2.webp"
+        },
+        {
+            "name": "사이드 심리스 서커 반소매 파자마",
+            "price": "49,900",
+            "rate": "5.0",
+            "review": "14",
+            "img": "/muji/img/new-item/man_3.webp"
+        },
+        {
+            "name": "시원한 UV 컷 와이드 반소매 티셔츠",
+            "price": "24,900",
+            "rate": "5.0",
+            "review": "24",
+            "img": "/muji/img/new-item/man_4.webp"
+        },
+        {
+            "name": "양면 파일 타월 반소매 파자마",
+            "price": "49,900",
+            "rate": "5.0",
+            "review": "12",
+            "img": "/muji/img/new-item/man_5.webp"
+        },
+        {
+            "name": "워싱 브로드 쇼트 팬츠",
+            "price": "19,900",
+            "rate": "5.0",
+            "review": "10",
+            "img": "/muji/img/new-item/man_6.webp"
+        },
+        {
+            "name": "면 저지 복서 팬츠",
+            "price": "8,900",
+            "rate": "0.0",
+            "review": "0",
+            "img": "/muji/img/new-item/man_7.webp"
+        },
+        {
+            "name": "통기성이 좋은 반소매 우븐 폴로 셔츠",
+            "price": "39,900",
+            "rate": "5.0",
+            "review": "1",
+            "img": "/muji/img/new-item/man_8.webp"
+        },
+        {
+            "name": "워싱 피케 반소매 폴로 셔츠",
+            "price": "29,900",
+            "rate": "5.0",
+            "review": "7",
+            "img": "/muji/img/new-item/man_9.webp"
+        },
+        {
+            "name": "시원한 UV 컷 5부소매 폴로 셔츠",
+            "price": "29,900",
+            "rate": "4.5",
+            "review": "2",
+            "img": "/muji/img/new-item/man_10.webp"
+        }
+    ],
+    "woman": [
+        {
+            "name": "라이트 스웨트 스커트",
+            "price": "29,900",
+            "rate": "5.0",
+            "review": "1",
+            "img": "/muji/img/new-item/woman_1.jpg"
+        },
+        {
+            "name": "슬러브 치노 턱 와이드 팬츠",
+            "price": "49,900",
+            "rate": "0.0",
+            "review": "0",
+            "img": "/muji/img/new-item/woman_2.jpg"
+        },
+        {
+            "name": "소프트 리브 브라 탱크톱",
+            "price": "24,900",
+            "rate": "5.0",
+            "review": "1",
+            "img": "/muji/img/new-item/woman_3.jpg"
+        },
+        {
+            "name": "소프트 미디 쇼츠",
+            "price": "6,900",
+            "rate": "5.0",
+            "review": "2",
+            "img": "/muji/img/new-item/woman_4.jpg"
+        },
+        {
+            "name": "저지 크루넥 반소매 티셔츠",
+            "price": "12,900",
+            "rate": "5.0",
+            "review": "62",
+            "img": "/muji/img/new-item/woman_5.jpg"
+        },
+        {
+            "name": "저지 크루넥 프렌치 슬리브 티셔츠",
+            "price": "12,900",
+            "rate": "5.0",
+            "review": "32",
+            "img": "/muji/img/new-item/woman_6.jpg"
+        },
+        {
+            "name": "소프트 브라 탱크톱",
+            "price": "24,900",
+            "rate": "0.0",
+            "review": "0",
+            "img": "/muji/img/new-item/woman_7.jpg"
+        },
+        {
+            "name": "소프트 브라 캐미솔",
+            "price": "24,900",
+            "rate": "0.0",
+            "review": "0",
+            "img": "/muji/img/new-item/woman_8.jpg"
+        },
+        {
+            "name": "양면 파일 타월 반소매 파자마",
+            "price": "49,900",
+            "rate": "4.8",
+            "review": "25",
+            "img": "/muji/img/new-item/woman_9.jpg"
+        },
+        {
+            "name": "워싱 브로드 쇼트 팬츠",
+            "price": "19,900",
+            "rate": "5.0",
+            "review": "6",
+            "img": "/muji/img/new-item/woman_10.jpg"
+        }
+    ]
+}

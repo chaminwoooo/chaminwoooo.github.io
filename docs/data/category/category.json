@@ -1,0 +1,19 @@
+
+[
+    { "name": "남성", "key": "man", "img": "/muji/img/category/cate_1.png" },
+    { "name": "여성", "key": "woman", "img": "/muji/img/category/cate_2.png" },
+    { "name": "아동", "key": "kids", "img": "/muji/img/category/cate_3.png" },
+    { "name": "패션잡화", "key": "fashion", "img": "/muji/img/category/cate_4.png" },
+    { "name": "주방용품", "key": "kitchen", "img": "/muji/img/category/cate_5.png" },
+    { "name": "패브릭", "key": "fabric", "img": "/muji/img/category/cate_6.png" },
+    { "name": "수납/정리", "key": "storage", "img": "/muji/img/category/cate_7.png" },
+    { "name": "가구", "key": "furniture", "img": "/muji/img/category/cate_8.png" },
+    { "name": "생활용품", "key": "living", "img": "/muji/img/category/cate_9.png" },
+    { "name": "가전/디지털", "key": "digital", "img": "/muji/img/category/cate_10.png" },
+    { "name": "문구", "key": "stationery", "img": "/muji/img/category/cate_11.png" },
+    { "name": "뷰티", "key": "beauty", "img": "/muji/img/category/cate_12.png" },
+    { "name": "간편조리", "key": "easymeal", "img": "/muji/img/category/cate_13.png" },
+    { "name": "스낵", "key": "snack", "img": "/muji/img/category/cate_14.png" },
+    { "name": "숏클립", "key": "shortclip", "img": "/muji/img/category/cate_15.png" },
+    { "name": "N배송", "key": "ndelivery", "img": "/muji/img/category/cate_16.png" }
+]
