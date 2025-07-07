@@ -140,7 +140,7 @@ onMounted(async () => {
         border-radius: 1.6rem;
         transition: all 0.2s ease;
         @include shadow2;
-        cursor: pointer;
+        cursor: pointer; 
 
         h3 {
             @include font-18(700);
