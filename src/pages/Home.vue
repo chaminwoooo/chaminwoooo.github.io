@@ -33,9 +33,9 @@ import { onMounted, nextTick } from 'vue';
 import gsap from 'gsap';
 const cards = [
     { title: '👤 About Me', desc: '안녕하세요 차민우 입니다', bg: '#d0e8ff', url: "/about" },
-    { title: '🧺 MUJI', desc: '모바일 반응형 메인페이지', bg: '#f2e8dc', url: "/project/muji" },
-    { title: '🏢 FastFive', desc: 'GSAP을 이용한 투어신청 페이지', bg: '#e3f5e6', url: "/landing/fastfive" },
-    { title: '🔠 민트영어 ', desc: 'GSAP을 이용한 이벤트 페이지', bg: '#c9f2d2', url: "/landing/mint" },
+    { title: '🧺 MUJI', desc: '반응형 메인페이지 with Vue', bg: '#f2e8dc', url: "/project/muji" },
+    { title: '🏢 FastFive', desc: '투어신청 페이지 with GSAP', bg: '#e3f5e6', url: "/landing/fastfive" },
+    { title: '🔠 민트영어 ', desc: '이벤트 페이지 with GSAP', bg: '#c9f2d2', url: "/landing/mint" },
     { title: '🚀 PLAYGROND', desc: '실험용 프로젝트', bg: '#fef6c9', url: "/playground/hub" },
     
 // 이름	HEX 값	느낌
