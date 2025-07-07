@@ -28,8 +28,8 @@
                     <router-link to="/landing/FastFive" class="card">
                         <div class="card-box">FastFive</div>
                     </router-link>
-                    <router-link to="/js-playground" class="card">
-                        <div class="card-box">JS PlayGround</div>
+                    <router-link to="/playground/hub" class="card">
+                        <div class="card-box">PlayGround</div>
                     </router-link>
                 </div>
             </section>
