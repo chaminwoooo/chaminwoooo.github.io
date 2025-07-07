@@ -48,10 +48,10 @@
                         <span class="d-day">D-5</span>
                         <p class="cta-timer"></p>
                     </div>
-                    <button class="buy-btn">10분 출석부 구매하기</button>
                 </div>
             </div>
         </section>
+        <button class="btn-buy">10분 출석부 구매하기</button>
     </div>
 </template>
 
@@ -67,29 +67,31 @@ onMounted(() => {
         .from('.price-card', { stagger: 0.2, duration: 0.6 }, '-=0.4')
         .from('.benefit-item', { x: -20, stagger: 0.2, duration: 0.6 }, '-=0.4')
         .from('.cta-title', { y: 40, duration: 0.6 }, '-=0.4')
-        .from('.cta-timer', { scale: 0.8, duration: 0.6 }, '-=0.4')
-        .from('.buy-btn', { scale: 0.8, duration: 0.6 }, '-=0.4')
+        .from('.btn-buy', { scale: 0.8, duration: 0.6 }, '-=0.4')
 })
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    let secondsLeft = 3600;
-    function Timer(sec) {
-        const h = String(Math.floor(sec / 3600)).padStart(2,'0');
-        const m = String(Math.floor((sec % 3600)/ 60)).padStart(2, '0');
-        const s = String(sec % 60).padStart(2, '0');
-        return `${h}:${m}:${s}`;
-    }
-
-    const timerEl = document.querySelector('.cta-timer');
-    const interval = setInterval(()=>{
-        if(secondsLeft <= 0) {
-            clearInterval(interval);
-            return
+    setTimeout(() => {
+        let secondsLeft = 3600;
+        function Timer(sec) {
+            const h = String(Math.floor(sec / 3600)).padStart(2, '0');
+            const m = String(Math.floor((sec % 3600) / 60)).padStart(2, '0');
+            const s = String(sec % 60).padStart(2, '0');
+            return `${h}:${m}:${s}`;
         }
-        secondsLeft--;
-        timerEl.textContent = Timer(secondsLeft);
-    },1000)
+
+        const timerEl = document.querySelector('.cta-timer');
+        const interval = setInterval(() => {
+            if (secondsLeft <= 0) {
+                clearInterval(interval);
+                return
+            }
+            secondsLeft--;
+            timerEl.textContent = Timer(secondsLeft);
+        }, 1000)
+    }, 1000);
+
 })
 
 </script>
@@ -100,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // url(https://cdn.mintspeaking.com/assets/icon/landing/mint_introduce/img_intro_bg.png) no-repeat top center / auto 84.5rem
 // https://cdn.mintspeaking.com/assets/icon/landing/mint_introduce/img_intro_phone.png
 .mint-landing {
-    padding-top : constant(safe-area-inset-top);
-    padding-bottom : constant(safe-area-inset-bottom);
-    padding-top : env(safe-area-inset-top);
+    padding-top: constant(safe-area-inset-top);
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
 }
 
@@ -152,7 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
     color: #fff;
     cursor: pointer;
     box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
-    &:hover { background: #4b63d3; }
+
+    &:hover {
+        background: #4b63d3;
+    }
 }
 
 .price-section {
@@ -172,13 +177,17 @@ document.addEventListener('DOMContentLoaded', () => {
     border: 1px solid #ddd;
     border-radius: 1.6rem;
     @include shadow4;
-    &.highlight { border: 2px solid #111; }
+
+    &.highlight {
+        border: 2px solid #111;
+    }
 }
 
 .card-label {
     @include font-18(500);
     color: #555;
 }
+
 .card-value {
     @include font-24(700);
     color: #111;
@@ -224,14 +233,24 @@ document.addEventListener('DOMContentLoaded', () => {
 .timer-wrap {
     @include font-32(700);
     text-align: center;
-    .d-day { color: #e53935; }
-    .cta-timer { color: #111; }
+
+    .d-day {
+        color: #e53935;
+    }
+
+    .cta-timer {
+        color: #111;
+    }
 }
 
 
 
-.buy-btn {
-    width: 100%;
+.btn-buy {
+    position: sticky;
+    bottom: 2rem;
+    display: block;
+    width: 80%;
+    margin: 0 auto 4rem;
     padding: 2rem 3.2rem;
     background: #5c7cfa;
     border: none;
@@ -240,7 +259,9 @@ document.addEventListener('DOMContentLoaded', () => {
     color: #fff;
     cursor: pointer;
     box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
-    &:hover { background: #4b63d3; }
+    z-index: 5;
+    &:hover {
+        background: #4b63d3;
+    }
 }
-
 </style>
