@@ -100,7 +100,6 @@ onMounted(async () => {
 }
 
 .hub-wrapper {
-    padding: 4rem 2rem;
     min-height: 100vh;
     text-align: center;
     .grid-box {
@@ -111,8 +110,7 @@ onMounted(async () => {
 
     .bento-card {
         padding: 2rem;
-        border-radius: 16px;
-        text-align: left;
+        border-radius: 1.6rem;
         transition: all 0.2s ease;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         cursor: pointer;
