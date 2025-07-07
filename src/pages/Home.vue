@@ -2,6 +2,7 @@
 <template>
     <div class="home-layout">
         <header class="home-header">
+            <span class="icon">🌞👋</span>
             <h1 class="home-title">
                 Ciao, mondo! <br>
                 Buongiorno, sono CHA MINWOO.
@@ -10,41 +11,64 @@
 
 
         <main class="main">
-            <section class="section">
-                <h2 class="section-title">소개 페이지</h2>
-                <div class="card-grid">
-                    <router-link to="/about" class="card">
-                        <div class="card-box">About Me</div>
-                    </router-link>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">프로젝트</h2>
-                <div class="card-grid">
-                    <router-link to="/project/muji" class="card">
-                        <div class="card-box">MUJI</div>
-                    </router-link>
-                    <router-link to="/landing/FastFive" class="card">
-                        <div class="card-box">FastFive</div>
-                    </router-link>
-                    <router-link to="/playground/hub" class="card">
-                        <div class="card-box">PlayGround</div>
+            <section class="hub-wrapper">
+                <div class="grid-box">
+                    <router-link v-for="(card, i) in cards" :key="i" class="bento-card"
+                        :style="{ backgroundColor: card.bg }" :to="card.url">
+                        <h3>{{ card.title }}</h3>
+                        <p>{{ card.desc }}</p>
                     </router-link>
                 </div>
             </section>
         </main>
 
-
-        <v-footer class="footer">
+        <footer class="footer">
             <span class="footer-txt">&copy; {{ new Date().getFullYear() }} CHA MINWOO. All rights reserved.</span>
-        </v-footer>
+        </footer>
 
     </div>
 </template>
 
 <script setup>
-// 지금은 로직 없음
+import { onMounted, ref, nextTick } from 'vue';
+import gsap from 'gsap';
+const cards = [
+    { title: '👤 자기소개', desc: 'GSAP', bg: '#d0e8ff', url: "/about" },
+    { title: '🌱 무인양품 클론', desc: '모바일 반응형 메인페이지', bg: '#f2e8dc', url: "/project/muji" },
+    { title: '💡 FastFive 랜딩', desc: 'GSAP', bg: '#e3f5e6', url: "/landing/FastFive" },
+    { title: '🧪 PLAYGROND', desc: '실험용 프로젝트', bg: '#fef6c9', url: "/playground/hub" }
+    
+    
+// 이름	HEX 값	느낌
+//     파스텔 민트	#c9f2d2	생기 있는 부드러운 민트
+//     소프트 핑크	#ffdce0	부드럽고 따뜻한 느낌
+//     베이비 블루	#d0e8ff	청량하고 안정감 있는 색
+//     라이트 옐로우	#fff4cc	가볍고 밝은 느낌
+//     라벤더 퍼플	#e3dfff	몽환적이고 포근한 색감
+//     민트 블루	#d7f0f6	아이스 블루톤의 청결한 색
+//     코튼 살몬	#ffe9d6	부드러운 복숭아톤
+//     버터 옐로우	#fef6c9	파스텔 노랑, 안정적임
+//     라이트 코랄	#ffdad5	따뜻하고 친근한 색
+//     세이지 민트	#e3f5e6	자연계열, 편안한 톤
+//     애쉬 블루	#dfeefb	고급스러운 쿨톤
+//     모카 베이지	#f2e8dc	은은한 뉴트럴 베이지
+// 
+
+];
+
+onMounted(async () => {
+    await nextTick();
+    gsap.set('.bento-card', { opacity: 1 }); // 초기값 강제 설정
+    gsap.set('.bento-card', { y: 0 }); // 초기값 강제 설정
+    gsap.from('.bento-card', {
+        opacity: 0,
+        y: 40,
+        delay: 0.2,
+        stagger: 0.2,
+        duration: 0.2,
+        ease: 'power3.out'
+    });
+});
 </script>
 
 <style scoped lang="scss">
@@ -54,21 +78,20 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(180deg, #f2eeea 0%, #e9e4e0 50%, #dcd6d1 100%);
-
+    background: linear-gradient(180deg, #cfd8dc, #eceff1);
 }
 
 .home-header {
     padding: 2.4rem;
+    .icon { font-size: 3.2rem; }
 }
 
 .home-title {
     @include font-32(700);
     font-style: italic;
-    background: linear-gradient(90deg, #8a7c74, #d6bfa8);
+    background: linear-gradient(90deg, #78909c, #cfd8dc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
 }
 
 .main {
@@ -76,39 +99,39 @@
     padding: 2rem;
 }
 
-.section {
-    margin-bottom: 3rem;
-}
-
-.section-title {
-    margin-bottom: 2.4rem;
-    @include font-24(600);
-    color: #6b645e;
-}
-
-.card-grid {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.card {
-    display: block;
-}
-
-.card-box {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    background-color: #f3f0ed;
-    background: #f1f1f1;
-    padding: 2rem 2.4rem;
-    border-radius: 8px;
+.hub-wrapper {
+    padding: 4rem 2rem;
+    min-height: 100vh;
     text-align: center;
-    @include font-16(500);
-    transition: 0.2s;
-}
+    .grid-box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.6rem;
+    }
 
-.card-box:hover {
-    background: #e1e1e1;
+    .bento-card {
+        padding: 2rem;
+        border-radius: 16px;
+        text-align: left;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        cursor: pointer;
+
+        h3 {
+            @include font-18(700);
+            margin-bottom: 0.8rem;
+            color: #1e1e2f;
+        }
+
+        p {
+            @include font-14;
+            color: #343a40;
+        }
+        &:hover {
+            transform: scale(1.03);
+            filter: brightness(1.03);
+        }
+    }
 }
 
 .footer {
@@ -118,7 +141,8 @@
     justify-content: center;
     align-items: center;
     margin-top: auto;
-    background-color: #b8b2ad;
+    background: linear-gradient(180deg, #b0bec5, #cfd8dc);
+
 
     .footer-txt {
         @include font-16;

@@ -1,4 +1,3 @@
 <template>
-    헬로
+    키즈카페
 </template>
-
