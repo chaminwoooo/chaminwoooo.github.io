@@ -124,7 +124,7 @@ onMounted(() => {
     h1 {
         margin-bottom: 1.6rem;
         padding-left: 1.2rem;
-        border-left: 6px solid #5c7cfa;
+        // border-left: 6px solid #5c7cfa;
         @include font-32(700);
         color: #212529;
     }
