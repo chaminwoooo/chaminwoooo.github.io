@@ -406,6 +406,8 @@ button  {
     @include shadow2;
     transition: transform 0.3s ease;
     z-index: 1000;
+    padding-top : constant(safe-area-inset-top);
+    padding-top : env(safe-area-inset-top);
     
     .logo {
         width: 100%; 
@@ -946,6 +948,8 @@ button  {
     left: 0;
     bottom: 0;
     z-index: 2;
+    padding-bottom : constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
     
     .footer-nav {
         height: 6.4rem;

@@ -129,10 +129,13 @@ const availableSpace = [
 @use '@/assets/styles/mixins' as *;
 
 .hero-section {
+    
     // background: linear-gradient(135deg, #91faff, #5c7cfa);
     background: url("/fastfive/img/img_fastfive_bg.jpg") no-repeat top center;
     background-size: cover;
     padding: 6rem 2rem;
+    padding-top : env(safe-area-inset-top);
+    padding-top : env(safe-area-inset-top);
     color: white;
     text-align: center;
     
@@ -252,6 +255,8 @@ const availableSpace = [
 .apply-section {
     background: #f8f9fa;
     padding: 4rem 2rem;
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-bottom : constant(safe-area-inset-bottom);
     text-align: center;
 
     h2 {

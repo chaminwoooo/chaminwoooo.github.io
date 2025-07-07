@@ -9,7 +9,6 @@
             </h1>
         </header>
 
-
         <main class="main">
             <section class="hub-wrapper">
                 <div class="grid-box">
@@ -30,14 +29,14 @@
 </template>
 
 <script setup>
-import { onMounted, ref, nextTick } from 'vue';
+import { onMounted, nextTick } from 'vue';
 import gsap from 'gsap';
 const cards = [
-    { title: '👤 자기소개', desc: 'GSAP', bg: '#d0e8ff', url: "/about" },
-    { title: '🌱 무인양품 클론', desc: '모바일 반응형 메인페이지', bg: '#f2e8dc', url: "/project/muji" },
-    { title: '💡 FastFive 랜딩', desc: 'GSAP', bg: '#e3f5e6', url: "/landing/FastFive" },
-    { title: '🧪 PLAYGROND', desc: '실험용 프로젝트', bg: '#fef6c9', url: "/playground/hub" }
-    
+    { title: '👤 About Me', desc: '안녕하세요 차민우 입니다', bg: '#d0e8ff', url: "/about" },
+    { title: '🧺 MUJI', desc: '모바일 반응형 메인페이지', bg: '#f2e8dc', url: "/project/muji" },
+    { title: '🏢 FastFive', desc: 'GSAP을 이용한 투어신청 페이지', bg: '#e3f5e6', url: "/landing/fastfive" },
+    { title: '🔠 민트영어 ', desc: 'GSAP을 이용한 이벤트 페이지', bg: '#c9f2d2', url: "/landing/mint" },
+    { title: '🚀 PLAYGROND', desc: '실험용 프로젝트', bg: '#fef6c9', url: "/playground/hub" },
     
 // 이름	HEX 값	느낌
 //     파스텔 민트	#c9f2d2	생기 있는 부드러운 민트
@@ -79,6 +78,10 @@ onMounted(async () => {
     flex-direction: column;
     min-height: 100vh;
     background: linear-gradient(180deg, #cfd8dc, #eceff1);
+    padding-top : constant(safe-area-inset-top);
+    padding-bottom : constant(safe-area-inset-bottom);
+    padding-top : env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 .home-header {
@@ -112,7 +115,7 @@ onMounted(async () => {
         padding: 2rem;
         border-radius: 1.6rem;
         transition: all 0.2s ease;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        @include shadow2;
         cursor: pointer;
 
         h3 {
@@ -140,8 +143,6 @@ onMounted(async () => {
     align-items: center;
     margin-top: auto;
     background: linear-gradient(180deg, #b0bec5, #cfd8dc);
-
-
     .footer-txt {
         @include font-16;
         color: #fefefe;
