@@ -181,8 +181,7 @@ onMounted(() => {
                 display: flex;
                 flex-direction: column;
                 margin-top: 2rem;
-                padding-left: 1.2rem;
-                border-left: 3px solid rgba(189, 196, 174, 0.6);
+                padding-left: 0.8rem;
                 @include font-16;
             }
         }
