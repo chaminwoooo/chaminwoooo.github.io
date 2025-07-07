@@ -25,8 +25,8 @@
                     <router-link to="/project/muji" class="card">
                         <div class="card-box">MUJI</div>
                     </router-link>
-                    <router-link to="/tool" class="card">
-                        <div class="card-box">Small Tool</div>
+                    <router-link to="/landing/FastFive" class="card">
+                        <div class="card-box">FastFive</div>
                     </router-link>
                     <router-link to="/js-playground" class="card">
                         <div class="card-box">JS PlayGround</div>

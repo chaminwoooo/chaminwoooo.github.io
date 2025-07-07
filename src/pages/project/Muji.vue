@@ -323,11 +323,11 @@ async function fetchJson(path) {
 onMounted(async () => {
     try {
         const [bannerData, cateData, newData, recommendData, eventData] = await Promise.all([
-            fetchJson('/data/banner/main-banner.json'),
-            fetchJson('/data/category/category.json'),
-            fetchJson('/data/products/new-items.json'),
-            fetchJson('/data/products/recommend-items.json'),
-            fetchJson('/data/products/event.json'),
+            fetchJson('/muji/data/banner/main-banner.json'),
+            fetchJson('/muji/data/category/category.json'),
+            fetchJson('/muji/data/products/new-items.json'),
+            fetchJson('/muji/data/products/recommend-items.json'),
+            fetchJson('/muji/data/products/event.json'),
         ]);
 
         mainBanner.value = bannerData;
