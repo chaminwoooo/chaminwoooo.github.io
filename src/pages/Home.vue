@@ -40,16 +40,20 @@
         <!-- About Me -->
         <section class="about-section">
             <h2 class="section-title">About Me</h2>
-            <figure class="img-wrap">
-                <img src="" alt="나의 이미지">
-            </figure>
 
-            <!-- 자기소개 조금 더 길게 해야겟네  -->
-            <p>
-                퍼블리싱을 단순한 구현을 넘어, UI/UX의 완성도와 유지보수성을 고려해 작업합니다.<br>
-                실무에서는 다양한 기획전·이벤트 페이지와 커머스 사이트를 제작하였고,<br>
-                효율적인 코드 설계와 팀 협업 경험을 통해 점진적으로 프론트엔드 개발로 역량을 확장하고 있습니다.
-            </p>
+            <div class="about-wrap">
+                <figure class="img-wrap">
+                    <img src="/home/img/about-me.png" alt="차민우 일러스트">
+                </figure>
+
+                <p class="desc">
+                    퍼블리싱을 단순한 구현을 넘어, <br> UI/UX의 완성도와 유지보수성을 고려해 작업합니다.<br>
+                    실무에서는 다양한 기획전 및 이벤트 페이지의 퍼블리싱과 <br>
+                    커머스 사이트 운영 유지보수 업무를 맡아왔으며,<br>
+                    효율적인 코드 설계와 팀 협업 경험을 통해 <br>
+                    점진적으로 프론트엔드 개발로 역량을 확장하고 있습니다.
+                </p>
+            </div>
         </section>
         <!--// About Me -->
 
@@ -108,12 +112,6 @@
         <!--// Career -->
     </section>
 
-    <!-- 실제 작업물 -->
-    <section id="work" class="work-section">
-        실제 업무 작업물
-    </section>
-    <!--// 실제 작업물 -->
-    
     <!-- Skills -->
     <section class="skill-section">
         <ul class="skill-list">
@@ -200,6 +198,59 @@
         </ul>
     </section>
     <!--// Skills -->
+
+    <!-- 실제 작업물 -->
+    <section id="work" class="work-section">
+        <h2 class="section-title">Work</h2>
+        <div class="work-card-wrap">
+            <article class="work-card">
+                <router-link to="">
+                    <figure class="img-wrap">
+                        <img src="/home/img/about-me.png" alt="">
+                    </figure>
+                    <h3 class="title">민트영어</h3>
+                    <p class="desc">Web,App | 유지보수 · 운영</p>
+                </router-link>
+            </article>
+            <article class="work-card">
+                <router-link to="">
+                    <figure class="img-wrap">
+                        <img src="/home/img/about-me.png" alt="">
+                    </figure>
+                    <h3 class="title">GS SHOP</h3>
+                    <p class="desc">Web,App | 유지보수 · 운영</p>
+                </router-link>
+            </article>
+            <article class="work-card">
+                <router-link to="">
+                    <figure class="img-wrap">
+                        <img src="/home/img/about-me.png" alt="">
+                    </figure>
+                    <h3 class="title">LF MALL</h3>
+                    <p class="desc">Web,App | 유지보수 · 운영</p>
+                </router-link>
+            </article>
+            <article class="work-card">
+                <router-link to="">
+                    <figure class="img-wrap">
+                        <img src="/home/img/about-me.png" alt="">
+                    </figure>
+                    <h3 class="title">롯데카드(LOCA 2.0)</h3>
+                    <p class="desc">Web,App | 구축</p>
+                </router-link>
+            </article>
+            <article class="work-card">
+                <router-link to="">
+                    <figure class="img-wrap">
+                        <img src="/home/img/about-me.png" alt="">
+                    </figure>
+                    <h3 class="title">칠성살롱</h3>
+                    <p class="desc">Web | Cafe24 · 구축 · 유지보수</p>
+                </router-link>
+            </article>
+        </div>
+    </section>
+    <!--// 실제 작업물 -->
 
     <!-- 프로젝트 -->
     <section id="project" class="project-section">
