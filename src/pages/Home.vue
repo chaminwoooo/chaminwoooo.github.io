@@ -52,6 +52,7 @@
             </p>
         </section>
         <!--// About Me -->
+
         <!-- Career -->
         <section class="career-section">
             <h2 class="section-title">Career</h2>
@@ -105,93 +106,6 @@
             </div>
         </section>
         <!--// Career -->
-
-        <!-- Skills -->
-        <section class="skill-section">
-            <ul class="skill-list">
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/html.png" alt="HTML5">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/css.svg" alt="CSS 3">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/js.png" alt="JavaScript">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/jquery.png" alt="jQuery">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/vue.png" alt="Vue">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/angular.svg" alt="Angular">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/git.png" alt="Git">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/figma.png" alt="Figma">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/html.png" alt="HTML5">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/css.svg" alt="CSS 3">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/js.png" alt="JavaScript">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/jquery.png" alt="jQuery">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/vue.png" alt="Vue">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/angular.svg" alt="Angular">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/git.png" alt="Git">
-                    </figure>
-                </li>
-                <li class="skill">
-                    <figure class="img-wrap">
-                        <img src="/home/img/figma.png" alt="Figma">
-                    </figure>
-                </li>
-            </ul>
-        </section>
-        <!--// Skills -->
     </section>
 
     <!-- 실제 작업물 -->
@@ -203,10 +117,8 @@
     <!-- 프로젝트 -->
     <section id="project" class="project-section">
         <div class="grid-box">
-            <router-link class="bento-card" v-for="(card, i) in cards" :key="i"
-                :style="{ backgroundColor: card.bg }" :to="card.url" 
-                @mouseenter="onHover(card.img)"
-                @mouseleave="onLeave">
+            <router-link class="bento-card" v-for="(card, i) in cards" :key="i" :style="{ borderColor: card.bg }"
+                :to="card.url" @mouseenter="onHover(card.img)" @mouseleave="onLeave">
                 <h3>{{ card.title }}</h3>
                 <p>{{ card.desc }}</p>
             </router-link>
@@ -218,11 +130,99 @@
         </div>
     </section>
     <!--// 프로젝트 -->
-
     
-    <!-- Contact -->
-    <section id="contact">
+    <!-- Skills -->
+    <section class="skill-section">
+        <ul class="skill-list">
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/html.png" alt="HTML5">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/css.svg" alt="CSS 3">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/js.png" alt="JavaScript">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/jquery.png" alt="jQuery">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/vue.png" alt="Vue">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/angular.svg" alt="Angular">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/git.png" alt="Git">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/figma.png" alt="Figma">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/html.png" alt="HTML5">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/css.svg" alt="CSS 3">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/js.png" alt="JavaScript">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/jquery.png" alt="jQuery">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/vue.png" alt="Vue">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/angular.svg" alt="Angular">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/git.png" alt="Git">
+                </figure>
+            </li>
+            <li class="skill">
+                <figure class="img-wrap">
+                    <img src="/home/img/figma.png" alt="Figma">
+                </figure>
+            </li>
+        </ul>
+    </section>
+    <!--// Skills -->
 
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <h2 class="title">함께 일할 웹 퍼블리셔를 찾고 계신가요?</h2>
+        <p class="e-mail">chamw53@naver.com</p>
+        <p class="desc">저에게 궁금한 점이 있으시다면 연락해 주세요 :) 빠르게 답장 드리겠습니다!</p>
     </section>
     <!--// Contact -->
 
@@ -232,7 +232,7 @@
     </footer>
     <!--// Footer -->
 
-    
+
     <!-- 최상단 바로가기 버튼 -->
     <aside class="btn-fixed-wrap">
         <button type="button" class="btn-top">
@@ -249,25 +249,10 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const cards = [
-    { title: '👤 About Me', desc: '안녕하세요 차민우 입니다', bg: '#d0e8ff', url: "/about", img: '/home/img/html.png' },
     { title: '🧺 MUJI', desc: '반응형 메인페이지 with Vue', bg: '#f2e8dc', url: "/project/muji", img: '/home/img/js.png' },
     { title: '🏢 FastFive', desc: '투어신청 페이지 with GSAP', bg: '#e3f5e6', url: "/landing/fastfive", img: '/about.png' },
     { title: '🔠 민트영어 ', desc: '이벤트 페이지 with GSAP', bg: '#c9f2d2', url: "/landing/mint", img: '/about.png' },
     { title: '🚀 PLAYGROND', desc: '실험용 프로젝트', bg: '#fef6c9', url: "/playground/hub", img: '/about.png' },
-
-    //     파스텔 민트	#c9f2d2	생기 있는 부드러운 민트
-    //     소프트 핑크	#ffdce0	부드럽고 따뜻한 느낌
-    //     베이비 블루	#d0e8ff	청량하고 안정감 있는 색
-    //     라이트 옐로우#fff4cc	가볍고 밝은 느낌
-    //     라벤더 퍼플	#e3dfff	몽환적이고 포근한 색감
-    //     민트 블루	#d7f0f6	아이스 블루톤의 청결한 색
-    //     코튼 살몬	#ffe9d6	부드러운 복숭아톤
-    //     버터 옐로우	#fef6c9	파스텔 노랑, 안정적임
-    //     라이트 코랄	#ffdad5	따뜻하고 친근한 색
-    //     세이지 민트	#e3f5e6	자연계열, 편안한 톤
-    //     애쉬 블루	#dfeefb	고급스러운 쿨톤
-    //     모카 베이지	#f2e8dc	은은한 뉴트럴 베이지
-    // 
 ];
 
 const toggleClassControl = () => {
@@ -299,22 +284,14 @@ const onLeave = () => {
 };
 
 
-
 onMounted(async () => {
     window.addEventListener('scroll', toggleClassControl);
     await nextTick();
-    gsap.set('.bento-card', { opacity: 1 }); // 초기값 강제 설정
-    gsap.set('.bento-card', { y: 0 }); // 초기값 강제 설정
-    gsap.from('.bento-card', {
-        opacity: 0,
-        y: 40,
-        delay: 0.2,
-        stagger: 0.2,
-        duration: 0.2,
-        ease: 'power3.out'
-    });
-
     gsap.from('.intro-section .intro-title', {
+        scrollTrigger: {
+            trigger: '.intro-section',
+            start: 'top 85%'
+        },
         y: 50,
         opacity: 0,
         duration: 0.8,
@@ -322,12 +299,42 @@ onMounted(async () => {
     });
 
     gsap.from('.intro-section .intro-desc', {
+        scrollTrigger: {
+            trigger: '.intro-section',
+            start: 'top 90%',
+        },
         y: 30,
         opacity: 0,
         duration: 0.8,
         delay: 0.3,
         ease: 'power3.out'
     });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '.contact-section',
+            start: 'top 50%',
+        }
+    })
+    .from('.contact-section .title', {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+    })
+    .from('.contact-section .e-mail', {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+    }, "-=0.4") 
+    .from('.contact-section .desc', {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+    }, "-=0.4");
+
 
 
     // 영역 스크롤 이동 버튼

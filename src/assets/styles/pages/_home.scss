@@ -1,18 +1,5 @@
 @use '@/assets/styles/mixins' as *;
 
-// 메인 Home
-// 기본 텍스트
-// $color-text-primary: #000000; // 기본 텍스트 (Light 모드 기준)
-// $color-text-secondary: #3C3C43; // 약간 흐린 텍스트 (60% 불투명도)
-// $color-text-tertiary: #3C3C43; // 더 흐린 텍스트 (30% 불투명도)
-// $color-text-placeholder: #3C3C43; // 입력 필드 placeholder (18% 불투명도)
-
-// // 포인트 컬러 텍스트 (시스템 컬러)
-// $color-text-link: #007AFF; // 링크, 액션 버튼
-// $color-text-danger: #FF3B30; // 경고 메시지
-// $color-text-success: #34C759; // 완료 메시지
-// $color-text-warning: #FF9500; // 주의 메시지
-
 // 헤더
 .home-header {
     position: sticky;
@@ -36,7 +23,10 @@
     .btn-go {
         @include font-18(500);
         color: #3C3C43;
-        &:hover { color: #007AFF; }
+
+        &:hover {
+            color: #007AFF;
+        }
     }
 
     &.on {
@@ -73,9 +63,10 @@
     z-index: 2;
     font-size: 8rem;
     font-weight: 700;
-    background: linear-gradient(90deg, #78909c, #cfd8dc);
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
 }
 
 .intro-desc {
@@ -205,26 +196,25 @@
 // About Me
 .about-section {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #f3f0e0 0%, #d8e2dc 100%);
-    color: #212529;
 
     p {
         margin-bottom: 1.6rem;
         @include font-24(500);
+        color: #5e5e5e;
     }
+
     .skills {
         display: flex;
         flex-direction: column;
         gap: 0.8rem;
         @include font-16(600);
-        color: #9caa7f;
+        color: #1e88e5;
     }
 }
 
 // Career
 .career-section {
     padding: 4rem 2rem;
-    // background-color: #f8f9fa;
 
     .job {
         background: #ffffff;
@@ -268,71 +258,93 @@
             display: block;
             margin-top: 1rem;
             @include font-14(700);
-            color: #9caa7f;
+            
         }
     }
 }
 
 // Skills
 .skill-section {
+    padding: 4rem 0 6.4rem;
     background-color: #fff;
     overflow: hidden;
     mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    .skill-list {  
+
+    .skill-list {
         display: flex;
         column-gap: 4em;
         width: max-content;
         animation: marquee 30s linear infinite;
     }
+
     .skill {
         width: 10rem;
         height: 10rem;
-        .img-wrap { @include imgObject; }
+
+        .img-wrap {
+            @include imgObject;
+        }
+
         img {
             width: 100%;
             height: 100%;
         }
     }
+
     @keyframes marquee {
-        0%   { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
     }
+}
+
+//Work
+.work-section {
+    height: 50vh;
 }
 
 // Project
 .project-section {
-    
+    padding: 6.4rem 2rem;
+    background: url('/home/img/project.png') no-repeat bottom -10rem center;
+    background-size: cover;
+
     .grid-box {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        // display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        display: flex;
+        flex-direction: column;
         gap: 1.6rem;
     }
 
     .bento-card {
         position: relative;
         padding: 2rem;
+        backdrop-filter: blur(16px) saturate(0%);
+        -webkit-backdrop-filter: blur(16px) saturate(0%);
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        transition: top 0.3s ease, box-shadow 0.3s ease;
         border-radius: 1.6rem;
-        transition: all 0.2s ease;
-        @include shadow2;
+        color: #fff;    
         cursor: pointer;
-
+        
         h3 {
             @include font-18(700);
             margin-bottom: 0.8rem;
-            color: #1e1e2f;
         }
-
-        p {
-            @include font-14;
-            color: #343a40;
-        }
+        p { @include font-14; }
 
         &:hover {
-            top: -5px;
-            filter: brightness(1.05);
+            top: -6px;
         }
     }
+
     .cursor {
         pointer-events: none;
         position: fixed;
@@ -340,6 +352,7 @@
         left: 0;
         z-index: 5;
     }
+
     .img-wrap {
         position: absolute;
         width: 20rem;
@@ -348,6 +361,7 @@
         opacity: 0;
         transition: opacity 0.2s ease;
         will-change: transform;
+
         img {
             width: 100%;
             height: auto;
@@ -358,20 +372,42 @@
     }
 }
 
+.contact-section {
+    @include flexBox;
+    flex-direction: column;
+    height: calc(100vh - 10rem);
+    background-color: #dee2e6;
+    color: #2e2e2e;
+
+    .title {
+        @include font-32(600);
+    }
+
+    .e-mail {
+        margin-top: 2.4rem;
+        @include font-24;
+    }
+
+    .desc {
+        margin-top: 1.6rem;
+        @include font-18;
+    }
+}
+
 .footer {
     position: relative;
     width: 100%;
-    height: 12rem;
+    height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: auto;
-    background: linear-gradient(180deg, #b0bec5, #cfd8dc);
+    background-color: #dee2e6;
     z-index: 2;
 
     .footer-txt {
         @include font-16;
-        color: #fefefe;
+        color: #263238;
     }
 }
 
@@ -387,11 +423,15 @@
     box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
     z-index: 3;
     display: none;
+
     .btn-top {
         width: 100%;
         height: 100%;
     }
-    &.on { display: block; }
+
+    &.on {
+        display: block;
+    }
 }
 
 @keyframes rotateBlob {
