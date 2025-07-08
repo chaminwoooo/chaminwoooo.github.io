@@ -1,19 +1,5 @@
 <template>
-    <section class="intro-section">
-        <div class="intro-inner">
-            <h1>안녕하세요. 웹 퍼블리셔 차민우입니다.</h1>
-            <p>
-                퍼블리싱을 단순한 구현을 넘어, UI/UX의 완성도와 유지보수성을 고려해 작업합니다.<br>
-                실무에서는 다양한 기획전·이벤트 페이지와 커머스 사이트를 제작하였고,<br>
-                효율적인 코드 설계와 팀 협업 경험을 통해 점진적으로 프론트엔드 개발로 역량을 확장하고 있습니다.
-            </p>
-            <ul class="skills">
-                <li>HTML5 / CSS3 / SCSS</li>
-                <li>JavaScript / jQuery / Swiper</li>
-                <li>Git / Bitbucket / Jira / Zeplin / Figma</li>
-            </ul>
-        </div>
-    </section>
+
 
     <section class="career-section">
         <h2>Career</h2>
@@ -120,85 +106,7 @@ onMounted(() => {
 <style scoped lang="scss">
 @use '@/assets/styles/mixins' as *;
 
-.intro-section {
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #f3f0e0 0%, #d8e2dc 100%);
-    color: #212529;
 
-    h1 {
-        margin-bottom: 1.6rem;
-        @include font-32(700);
-    }
 
-    p {
-        margin-bottom: 1.6rem;
-        @include font-24(500);
-    }
 
-    .skills {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        @include font-16(600);
-        color: #9caa7f;
-    }
-}
-
-.career-section {
-    padding: 4rem 2rem;
-    background-color: #f8f9fa;
-
-    h2 {
-        margin-bottom: 4rem;
-        @include font-32(700);
-        color: #212529;
-    }
-
-    .job {
-        background: #ffffff;
-        border-radius: 12px;
-        padding: 2rem;
-        margin-bottom: 3rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-
-        h3 {
-            @include flexBox($jc: space-between);
-            border-bottom: 1px solid #dee2e6;
-            padding-bottom: 0.6rem;
-            margin-bottom: 1.6rem;
-            @include font-18(700);
-
-            .period {
-                @include font-16;
-                color: #868e96;
-            }
-        }
-
-        ul {
-            color: #495057;
-
-            li {
-                display: flex;
-                flex-direction: column;
-                margin-top: 2rem;
-                padding-left: 0.8rem;
-                @include font-16;
-            }
-        }
-
-        .sub-title {
-            @include font-18(600);
-            margin-bottom: 0.8rem;
-            color: #343a40;
-        }
-
-        .tech {
-            display: block;
-            margin-top: 1rem;
-            @include font-14(700);
-            color: #9caa7f;
-
-        }
-    }
-}
 </style>

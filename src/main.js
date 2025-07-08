@@ -9,7 +9,7 @@ import * as icons from 'lucide-vue-next';
 import './assets/styles/reset.scss'
 
 const app = createApp(App);
-const iconNames = ['Home', 'User', 'Heart', 'Grid'];
+const iconNames = ['Home', 'User', 'Heart', 'Grid', 'ArrowUp'];
 
 iconNames.forEach((name) => {
     app.component(name + 'Icon', icons[name]);
