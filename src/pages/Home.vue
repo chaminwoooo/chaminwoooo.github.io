@@ -113,23 +113,6 @@
         실제 업무 작업물
     </section>
     <!--// 실제 작업물 -->
-
-    <!-- 프로젝트 -->
-    <section id="project" class="project-section">
-        <div class="grid-box">
-            <router-link class="bento-card" v-for="(card, i) in cards" :key="i" :style="{ borderColor: card.bg }"
-                :to="card.url" @mouseenter="onHover(card.img)" @mouseleave="onLeave">
-                <h3>{{ card.title }}</h3>
-                <p>{{ card.desc }}</p>
-            </router-link>
-            <div class="cursor" ref="cursorImg">
-                <figure class="img-wrap">
-                    <img :src="hoverImg" alt="샘플">
-                </figure>
-            </div>
-        </div>
-    </section>
-    <!--// 프로젝트 -->
     
     <!-- Skills -->
     <section class="skill-section">
@@ -217,6 +200,23 @@
         </ul>
     </section>
     <!--// Skills -->
+
+    <!-- 프로젝트 -->
+    <section id="project" class="project-section">
+        <div class="grid-box">
+            <router-link class="bento-card" v-for="(card, i) in cards" :key="i" :style="{ borderColor: card.bg }"
+                :to="card.url" @mouseenter="onHover(card.img)" @mouseleave="onLeave">
+                <h3>{{ card.title }}</h3>
+                <p>{{ card.desc }}</p>
+            </router-link>
+            <div class="cursor" ref="cursorImg">
+                <figure class="img-wrap">
+                    <img :src="hoverImg" alt="샘플">
+                </figure>
+            </div>
+        </div>
+    </section>
+    <!--// 프로젝트 -->
 
     <!-- Contact -->
     <section id="contact" class="contact-section">
@@ -334,16 +334,21 @@ onMounted(async () => {
         duration: 0.8,
         ease: 'power3.out'
     }, "-=0.4");
-
-
-
+    
     // 영역 스크롤 이동 버튼
     const btnGo = document.querySelectorAll('.btn-go');
     btnGo.forEach((btn) => {
         btn.addEventListener('click', () => {
             const targetId = btn.dataset.target;
             const targetEl = document.getElementById(targetId);
-            if (targetEl) {
+            
+            console.log(targetId)
+            if (targetId == 'contact') {
+                window.scrollTo({
+                    top: targetEl.offsetTop,
+                    behavior: 'smooth'
+                })
+            }else {
                 window.scrollTo({
                     top: targetEl.offsetTop - 100,
                     behavior: 'smooth'
