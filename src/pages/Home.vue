@@ -423,8 +423,8 @@ onMounted(async () => {
 
 
     // 프로젝트 마우스hover 시 이미지 노출
-    const cursorImgWrap = document.querySelector('.cursor .img-wrap');
-    const cardLinks = document.querySelectorAll('.bento-card');
+    const cursorImgWrap = document.querySelector('.project-section .cursor .img-wrap');
+    const cardLinks = document.querySelectorAll('.project-section .info-card');
     if (!cursorImgWrap) return; // 에러 방지
 
     const cardMouseHover = (e) => {
@@ -446,14 +446,14 @@ onMounted(async () => {
     });
 });
 
-// onUnmounted(() => {
-//     window.removeEventListener('scroll', toggleClassControl);
-//     document.removeEventListener('mousemove', cardMouseHover);
-//     cardLinks.forEach((el) => {
-//         el.removeEventListener('mouseenter', showCursor);
-//         el.removeEventListener('mouseleave', hideCursor);
-//     });
-// });
+onUnmounted(() => {
+    window.removeEventListener('scroll', toggleClassControl);
+    document.removeEventListener('mousemove', cardMouseHover);
+    cardLinks.forEach((el) => {
+        el.removeEventListener('mouseenter', showCursor);
+        el.removeEventListener('mouseleave', hideCursor);
+    });
+});
 </script>
 
 <style scoped lang="scss">

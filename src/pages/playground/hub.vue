@@ -35,7 +35,8 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue';
 const cards = [
-    { title: '타이머', url: "/"},
+    { title: '메인으로 돌아가기', url: "/"},
+    { title: '타이머', url: "/playground/timer"},
 ];
 
 onMounted(() => {

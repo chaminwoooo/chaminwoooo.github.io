@@ -5,6 +5,7 @@ import Muji from '@/pages/project/Muji.vue';
 import FastFive from '@/pages/landing/FastFive.vue';
 import Mint from '@/pages/landing/Mint.vue';
 import PlayGround from '@/pages/playground/hub.vue';
+import Timer from '@/pages/playground/timer.vue';
 
 
 
@@ -15,6 +16,7 @@ const routes = [
     { path: '/landing/fastfive', component: FastFive },
     { path: '/landing/mint', component: Mint },
     { path: '/playground/hub', component: PlayGround },
+    { path: '/playground/timer', component: Timer },
 ]
 
 
