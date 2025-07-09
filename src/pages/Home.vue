@@ -61,7 +61,7 @@
         <section class="career-section">
             <h2 class="section-title">Career</h2>
 
-            <div class="job">
+            <div class="info-card">
                 <h3>(주) 에듀서브 <span class="period">2023.12 ~ 재직 중</span></h3>
                 <ul>
                     <li>
@@ -73,7 +73,7 @@
                 </ul>
             </div>
 
-            <div class="job">
+            <div class="info-card">
                 <h3>(주) 아이이에이 <span class="period">2021.04 ~ 2023.07</span></h3>
                 <ul>
                     <li>
@@ -99,7 +99,7 @@
                 </ul>
             </div>
 
-            <div class="job">
+            <div class="info-card">
                 <h3>(주) 현대포리텍 <span class="period">2019.08 ~ 2020.03</span></h3>
                 <ul>
                     <li>
@@ -203,7 +203,7 @@
     <section id="work" class="work-section">
         <h2 class="section-title">Work</h2>
         <div class="work-card-wrap">
-            <article class="work-card">
+            <article class="info-card">
                 <button type="button">
                     <figure class="img-wrap">
                         <img src="/home/img/mint.png" alt="민트영어">
@@ -212,7 +212,7 @@
                     <p class="desc">Web,App | 유지보수 · 운영</p>
                 </button>
             </article>
-            <article class="work-card">
+            <article class="info-card">
                 <button type="button">
                     <figure class="img-wrap">
                         <img src="/home/img/gs-shop.jpg" alt="GS SHOP">
@@ -221,7 +221,7 @@
                     <p class="desc">Web,App | 유지보수 · 운영</p>
                 </button>
             </article>
-            <article class="work-card">
+            <article class="info-card">
                 <button type="button">
                     <figure class="img-wrap">
                         <img src="/home/img/lfmall.png" alt="LF MALL">
@@ -230,7 +230,7 @@
                     <p class="desc">Web,App | 유지보수 · 운영</p>
                 </button>
             </article>
-            <article class="work-card">
+            <article class="info-card">
                 <button type="button">
                     <figure class="img-wrap">
                         <img src="/home/img/loca.jpg" alt="LOCA 2.0">
@@ -239,7 +239,7 @@
                     <p class="desc">Web,App | 구축</p>
                 </button>
             </article>
-            <article class="work-card">
+            <article class="info-card">
                 <button type="button">
                     <figure class="img-wrap">
                         <img src="/home/img/chill.png" alt="칠성살롱">
@@ -255,7 +255,7 @@
     <!-- 프로젝트 -->
     <section id="project" class="project-section">
         <div class="grid-box">
-            <router-link class="bento-card" v-for="(card, i) in cards" :key="i" :style="{ borderColor: card.bg }"
+            <router-link class="info-card" v-for="(card, i) in cards" :key="i"
                 :to="card.url" @mouseenter="onHover(card.img)" @mouseleave="onLeave">
                 <h3>{{ card.title }}</h3>
                 <p>{{ card.desc }}</p>

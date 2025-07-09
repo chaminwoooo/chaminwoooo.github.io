@@ -53,6 +53,16 @@
     color: #212529;
 }
 
+.info-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1.6rem;
+}
+
 .intro-section,
 .about-section,
 .career-section,
@@ -237,13 +247,9 @@
 .career-section {
     background-color: #dee2e6;
 
-    .job {
-        background: #fff;
-        border-radius: 12px;
-        padding: 2rem;
+    .info-card {
+        padding: 2.4rem;
         margin-bottom: 3rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-
         h3 {
             @include flexBox($jc: space-between);
             border-bottom: 1px solid #dee2e6;
@@ -335,14 +341,10 @@
         gap: 4rem;
     }
 
-    .work-card {
+    .info-card {
         padding: 2.4rem;
-        background: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 1.6rem;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
         transition: all 0.3s;
 
         button {
@@ -389,30 +391,16 @@
         gap: 1.6rem;
     }
 
-    .bento-card {
-        position: relative;
-        padding: 2rem;
-        background: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 1.6rem;
+    .info-card {
+        padding: 2.4rem;
         transition: top 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
-
         h3 {
             @include font-18(700);
             margin-bottom: 0.8rem;
         }
-
-        p {
-            @include font-14;
-        }
-
-        &:hover {
-            top: -6px;
-        }
+        p { @include font-14; }
+        &:hover { top: -6px; }
     }
 
     .cursor {
