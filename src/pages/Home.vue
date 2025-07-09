@@ -446,14 +446,14 @@ onMounted(async () => {
     });
 });
 
-onUnmounted(() => {
-    window.removeEventListener('scroll', toggleClassControl);
-    document.removeEventListener('mousemove', cardMouseHover);
-    cardLinks.forEach((el) => {
-        el.removeEventListener('mouseenter', showCursor);
-        el.removeEventListener('mouseleave', hideCursor);
-    });
-});
+// onUnmounted(() => {
+//     window.removeEventListener('scroll', toggleClassControl);
+//     document.removeEventListener('mousemove', cardMouseHover);
+//     cardLinks.forEach((el) => {
+//         el.removeEventListener('mouseenter', showCursor);
+//         el.removeEventListener('mouseleave', hideCursor);
+//     });
+// });
 </script>
 
 <style scoped lang="scss">
