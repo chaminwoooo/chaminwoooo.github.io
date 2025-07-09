@@ -204,49 +204,49 @@
         <h2 class="section-title">Work</h2>
         <div class="work-card-wrap">
             <article class="work-card">
-                <router-link to="">
+                <button type="button">
                     <figure class="img-wrap">
-                        <img src="/home/img/about-me.png" alt="">
+                        <img src="/home/img/mint.png" alt="민트영어">
                     </figure>
                     <h3 class="title">민트영어</h3>
                     <p class="desc">Web,App | 유지보수 · 운영</p>
-                </router-link>
+                </button>
             </article>
             <article class="work-card">
-                <router-link to="">
+                <button type="button">
                     <figure class="img-wrap">
-                        <img src="/home/img/about-me.png" alt="">
+                        <img src="/home/img/gs-shop.jpg" alt="GS SHOP">
                     </figure>
                     <h3 class="title">GS SHOP</h3>
                     <p class="desc">Web,App | 유지보수 · 운영</p>
-                </router-link>
+                </button>
             </article>
             <article class="work-card">
-                <router-link to="">
+                <button type="button">
                     <figure class="img-wrap">
-                        <img src="/home/img/about-me.png" alt="">
+                        <img src="/home/img/lfmall.png" alt="LF MALL">
                     </figure>
                     <h3 class="title">LF MALL</h3>
                     <p class="desc">Web,App | 유지보수 · 운영</p>
-                </router-link>
+                </button>
             </article>
             <article class="work-card">
-                <router-link to="">
+                <button type="button">
                     <figure class="img-wrap">
-                        <img src="/home/img/about-me.png" alt="">
+                        <img src="/home/img/loca.jpg" alt="LOCA 2.0">
                     </figure>
                     <h3 class="title">롯데카드(LOCA 2.0)</h3>
                     <p class="desc">Web,App | 구축</p>
-                </router-link>
+                </button>
             </article>
             <article class="work-card">
-                <router-link to="">
+                <button type="button">
                     <figure class="img-wrap">
-                        <img src="/home/img/about-me.png" alt="">
+                        <img src="/home/img/chill.png" alt="칠성살롱">
                     </figure>
                     <h3 class="title">칠성살롱</h3>
                     <p class="desc">Web | Cafe24 · 구축 · 유지보수</p>
-                </router-link>
+                </button>
             </article>
         </div>
     </section>
@@ -271,9 +271,14 @@
 
     <!-- Contact -->
     <section id="contact" class="contact-section">
+        <div class="contact-blobs">
+            <div class="blob blob1"></div>
+            <div class="blob blob3"></div>
+            <div class="blob blob7"></div>
+        </div>
         <h2 class="title">함께 일할 웹 퍼블리셔를 찾고 계신가요?</h2>
         <p class="e-mail">chamw53@naver.com</p>
-        <p class="desc">저에게 궁금한 점이 있으시다면 연락해 주세요 :) 빠르게 답장 드리겠습니다!</p>
+        <p class="desc">저에게 궁금한 점이 있으시다면 연락해 주세요 :) <br> 빠르게 답장 드리겠습니다!</p>
     </section>
     <!--// Contact -->
 
@@ -300,10 +305,10 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const cards = [
-    { title: '🧺 MUJI', desc: '반응형 메인페이지 with Vue', bg: '#f2e8dc', url: "/project/muji", img: '/home/img/js.png' },
-    { title: '🏢 FastFive', desc: '투어신청 페이지 with GSAP', bg: '#e3f5e6', url: "/landing/fastfive", img: '/about.png' },
-    { title: '🔠 민트영어 ', desc: '이벤트 페이지 with GSAP', bg: '#c9f2d2', url: "/landing/mint", img: '/about.png' },
-    { title: '🚀 PLAYGROND', desc: '실험용 프로젝트', bg: '#fef6c9', url: "/playground/hub", img: '/about.png' },
+    { title: '🧺 MUJI', desc: '반응형 메인페이지 with Vue', bg: '#f2e8dc', url: "/project/muji", img: '/home/img/my_muji.jpg' },
+    { title: '🏢 FastFive', desc: '투어신청 페이지 with GSAP', bg: '#e3f5e6', url: "/landing/fastfive", img: '/home/img/my_fastfive.jpg' },
+    { title: '🔠 민트영어 ', desc: '이벤트 페이지 with GSAP', bg: '#c9f2d2', url: "/landing/mint", img: '/home/img/my_mint.jpg' },
+    { title: '🚀 PLAYGROND', desc: '실험용 프로젝트', bg: '#fef6c9', url: "/playground/hub", img: '/home/img/my_playground.png' },
 ];
 
 const toggleClassControl = () => {

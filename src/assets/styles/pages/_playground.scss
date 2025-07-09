@@ -1,0 +1,86 @@
+@use '@/assets/styles/mixins' as *;
+
+
+
+.playground-hub {
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    background: url('/playground/img/bg-playground.png') repeat center center;
+    background-size: cover;
+    
+    .main-title {
+        padding: 5vw 8vw 0;
+        img { 
+            width: auto;
+            height: 5vw;
+            object-fit: cover;
+        }
+    }
+}
+
+.hub-section {
+    padding: 5vw 8vw;
+    
+    .glass-box {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease-in;
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    .glass-filter {
+        position: absolute;
+        inset: 0;
+        backdrop-filter: blur(8px) saturate(150%) brightness(120%);
+        -webkit-backdrop-filter: blur(8px) saturate(150%) brightness(120%);
+        z-index: 0;
+    }
+
+    .glass-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: 1;
+    }
+
+    .glass-specular {
+        position: absolute;
+        inset: 0;
+        box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.6), inset -1px -1px 2px rgba(255, 255, 255, 0.1);
+        z-index: 2;
+    }
+
+    .glass-card {
+        position: relative;
+        @include inlineFlex;
+        flex-direction: column;
+        height: 100%;
+        // padding: 2rem;
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(0px) saturate(180%) brightness(115%) contrast(105%);
+        -webkit-backdrop-filter: blur(0px) saturate(180%) brightness(115%) contrast(105%);
+        border-radius: 1.2rem;
+        cursor: pointer;
+        text-align: center;
+        color: #fff;
+        overflow: hidden;
+
+        h3 {
+            @include font-32(700);
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #7df9ff;
+        }
+    }
+}
