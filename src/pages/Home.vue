@@ -305,10 +305,11 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const cards = [
-    { title: '🧺 MUJI', desc: '반응형 메인페이지 with Vue', bg: '#f2e8dc', url: "/project/muji", img: '/home/img/my_muji.jpg' },
-    { title: '🏢 FastFive', desc: '투어신청 페이지 with GSAP', bg: '#e3f5e6', url: "/landing/fastfive", img: '/home/img/my_fastfive.jpg' },
-    { title: '🔠 민트영어 ', desc: '이벤트 페이지 with GSAP', bg: '#c9f2d2', url: "/landing/mint", img: '/home/img/my_mint.jpg' },
-    { title: '🚀 PLAYGROND', desc: '실험용 프로젝트', bg: '#fef6c9', url: "/playground/hub", img: '/home/img/my_playground.png' },
+    { title: '🧺 MUJI', desc: '반응형 메인페이지 with Vue', url: "/project/muji", img: '/home/img/my-muji.jpg' },
+    { title: '🏠 AIRBNB', desc: '메인페이지 with Vue', url: "/project/airbnb", img: '/home/img/my-airbnb.jpg' },
+    { title: '🏢 FastFive', desc: '투어신청 페이지 with GSAP', url: "/landing/fastfive", img: '/home/img/my-fastfive.jpg' },
+    // { title: '🔠 민트영어 ', desc: '이벤트 페이지 with GSAP', url: "/landing/mint", img: '/home/img/my-mint.jpg' },
+    { title: '🚀 PLAYGROND', desc: '실험용 프로젝트', url: "/playground/hub", img: '/home/img/my-playground.png' },
 ];
 
 const toggleClassControl = () => {
