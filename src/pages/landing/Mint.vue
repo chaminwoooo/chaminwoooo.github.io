@@ -91,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
             timerEl.textContent = Timer(secondsLeft);
         }, 1000)
     }, 1000);
-
 })
 
 </script>
