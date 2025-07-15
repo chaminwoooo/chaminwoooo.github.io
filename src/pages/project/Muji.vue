@@ -787,13 +787,13 @@ button  {
         
         .product-list {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
             column-gap: 1.2rem;
+            row-gap: 2.4rem;
             margin-top: 2.4rem;
             .item {
                 display: flex;
                 flex-direction: column;
-                width: 9rem;
                 @include mobile {
                     width: auto;
                 }
