@@ -18,6 +18,12 @@
             object-fit: cover;
         }
     }
+    
+    .main-desc {
+        padding: 1vw 8vw;
+        @include font-16(700);
+        color: #fff;
+    }
 }
 
 .hub-section {

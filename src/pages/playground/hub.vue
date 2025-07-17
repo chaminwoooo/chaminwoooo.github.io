@@ -4,6 +4,7 @@
         <h2 class="main-title">
             <img src="/playground/img/playground-title.png" alt="PLAYGROUND">
         </h2>
+        <p class="main-desc"> 👷 PLAYGROUND 프로젝트는 계속해서 작업 중이에요! </p>
         
         <section class="hub-section">
             <router-link class="glass-box" v-for="(card, i) in cards" :key="i" :to="card.url">
