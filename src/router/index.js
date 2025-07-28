@@ -8,10 +8,10 @@ import Mint from '@/pages/landing/Mint.vue';
 import PlayGround from '@/pages/playground/Hub.vue';
 import Timer from '@/pages/playground/Timer.vue';
 import Watches from '@/pages/playground/Watches.vue'
+import DayNight from '@/pages/playground/DayNight.vue'
 
 
 
-3
 const routes = [
     { path: '/', component: Home },
     { path: '/project/muji', component: Muji },
@@ -21,6 +21,7 @@ const routes = [
     { path: '/playground/hub', component: PlayGround },
     { path: '/playground/timer', component: Timer },
     { path: '/playground/watches', component: Watches },
+    { path: '/playground/DayNight', component: DayNight },
 ]
 
 
