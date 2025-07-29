@@ -39,6 +39,7 @@ const cards = [
     { title: '메인으로 돌아가기', url: "/"},
     { title: '🌞 & 🌝', url: "/playground/daynight"},
     { title: '타이머', url: "/playground/timer"},
+    { title: '🚧', url: "/playground/timer"},
     // { title: '🚧 시계', url: "/playground/watches"},
 ];
 
