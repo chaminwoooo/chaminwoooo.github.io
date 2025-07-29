@@ -16,7 +16,7 @@ function toggleDark() {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use '@/assets/styles/mixins' as *;
 
 :root {
@@ -26,9 +26,7 @@ function toggleDark() {
 .light-section {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexBox;
     background-color: var(--color-bg);
     color: var(--color-text);
     transition: background-color 0.6s ease-in-out;
