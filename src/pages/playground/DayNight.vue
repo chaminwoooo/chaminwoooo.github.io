@@ -1,7 +1,9 @@
 <template>
     <section ref="toggleControl" :class="{ dark: isDark }" class="light-section">
+        
         <button type="button" id="switch" @click="toggleDark">
             {{isDark ? '🌝' : '🌞' }}
+            <span class="click-me">Click Me !</span>
         </button>
     </section>
 </template>
@@ -21,6 +23,7 @@ function toggleDark() {
 
 :root {
     --color-bg:#fff3bf;
+    --color-txt: #212112;
 }
 
 .light-section {
@@ -33,11 +36,21 @@ function toggleDark() {
 
     &.dark {
         --color-bg: #333;
+        --color-txt: #fff3bf;
     }
 }
 
 #switch {
+    @include inlineFlex;
+    flex-direction: column;
     cursor: pointer;
     @include font-48;
+}
+
+.click-me {
+    margin-top: 1.6rem;
+    @include font-32(600);
+    color: var(--color-txt);
+    transition: color 0.6s ease-in-out;
 }
 </style>
